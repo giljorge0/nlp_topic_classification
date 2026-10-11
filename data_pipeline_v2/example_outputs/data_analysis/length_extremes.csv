@@ -1,0 +1,41 @@
+field,kind,record_id,line_start,whitespace_tokens,chars,label,snippet
+description,shortest_nonempty,TR000018,19,2,18,Cardiovascular-Pulmonary,2-D Echocardiogram
+description,shortest_nonempty,TR002116,2119,2,24,Surgery,Parotidectomy procedure
+description,shortest_nonempty,TR002566,2570,2,20,Surgery,Normal Circumcision
+description,shortest_nonempty,TR002404,2408,2,30,Surgery,Laparoscopic cholecystectomy.
+description,shortest_nonempty,TR000330,331,2,24,Gastroenterology,Flexible Sigmoidoscopy.
+description,longest,TR001347,1349,76,432,Orthopedic,"The patient is a 58-year-old female, referred to therapy due to left knee osteoarthritis. The patie…"
+description,longest,TR002138,2141,69,414,Surgery,Trigger finger release. A longitudinal incision was made over the digit's A1 pulley. Dissection was…
+description,longest,TR000863,864,68,366,Neurology,Patient reports a rotational sensation upon arising from the bed or chair that lasts for several mi…
+description,longest,TR001423,1425,65,379,Orthopedic,"Ankle sprain, left ankle. The patient tripped over her dog toy and fell with her left foot inverted…"
+description,longest,TR001354,1356,65,491,Orthopedic,"Anterior cervical discectomy, removal of herniated disc and osteophytes, bilateral C4 nerve root de…"
+sample_name,shortest_nonempty,TR002669,2673,1,15,Surgery,Cardioversion
+sample_name,shortest_nonempty,TR000033,34,1,14,Cardiovascular-Pulmonary,Tracheostomy
+sample_name,shortest_nonempty,TR000022,23,1,16,Cardiovascular-Pulmonary,Pneumoconiosis
+sample_name,shortest_nonempty,TR000017,18,1,10,Cardiovascular-Pulmonary,Stenting
+sample_name,shortest_nonempty,TR000011,12,1,14,Cardiovascular-Pulmonary,Thrombectomy
+sample_name,longest,TR000804,805,8,49,Neurology,Phenol Neurolysis & Botulinum Toxin Injection - 3
+sample_name,longest,TR002489,2493,8,51,Surgery,Anterior Cervical Discectomy & Interbody Fusion - 3
+sample_name,longest,TR001260,1262,8,51,Orthopedic,Anterior Cervical Discectomy & Interbody Fusion - 1
+sample_name,longest,TR000691,692,8,45,General Medicine,Airway Compromise & Foreign Body - ER Visit
+sample_name,longest,TR001269,1271,8,59,Orthopedic,Anterior Cervical Discectomy & Fusion - Discharge Summary
+transcription,shortest_nonempty,TR000571,572,1,11,General Medicine,SUBJECTIVE:
+transcription,shortest_nonempty,TR001914,1916,1,11,Surgery,INDICATION:
+transcription,shortest_nonempty,TR001088,1090,1,11,Gastroenterology,INDICATION:
+transcription,shortest_nonempty,TR001295,1297,2,16,Orthopedic,CHIEF COMPLAINT:
+transcription,shortest_nonempty,TR001377,1379,2,16,Orthopedic,CHIEF COMPLAINT:
+transcription,longest,TR000767,768,2454,15194,Neurology,HISTORY OF PRESENT ILLNESS:The patient is a 79-year-old right-handed man who reports that approxima…
+transcription,longest,TR000303,304,2330,14507,Dermatology,"REASON FOR VISIT: The patient presents for a followup for history of erythema nodosum.,HISTORY OF P…"
+transcription,longest,TR001786,1788,2003,12559,Surgery,"PREOPERATIVE DIAGNOSES:1. Clinical stage T2, NX, MX transitional cell carcinoma of the urinary blad…"
+transcription,longest,TR001519,1521,1942,12757,Psychiatry-Psychology,REASON FOR REFERRAL: The patient is a 58-year-old African-American right-handed female with 16 year…
+transcription,longest,TR000812,813,1942,12757,Neurology,REASON FOR REFERRAL: The patient is a 58-year-old African-American right-handed female with 16 year…
+keywords,shortest_nonempty,TR000465,466,1,16,Gastroenterology,gastroenterology
+keywords,shortest_nonempty,TR000501,502,1,16,Gastroenterology,gastroenterology
+keywords,shortest_nonempty,TR002130,2133,1,7,Surgery,surgery
+keywords,shortest_nonempty,TR000396,397,1,17,Gastroenterology,"gastroenterology,"
+keywords,shortest_nonempty,TR001862,1864,1,7,Surgery,surgery
+keywords,longest,TR002116,2119,118,902,Surgery,"surgery, parotidectomy, mixter clamp, auditory canal, buccal, buccinator, curved clamp, earlobe, fa…"
+keywords,longest,TR000627,628,118,915,General Medicine,"general medicine, snoring, chronic snoring, behavior difficulty, fatigue, hyperactivity, obstructiv…"
+keywords,longest,TR002404,2408,116,894,Surgery,"surgery, laparoscopic, calot, ochsner clamps, additional ports, cholangiogram, cholecystectomy, cys…"
+keywords,longest,TR000961,963,116,903,Gastroenterology,"gastroenterology, laparoscopic, calot, ochsner clamps, additional ports, cholangiogram, cholecystec…"
+keywords,longest,TR002084,2086,115,859,Surgery,"surgery, inguinal orchiopexy, keith needles, aponeurosis, bolster, catgut, dartos pouch, external o…"

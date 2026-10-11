@@ -1,0 +1,22 @@
+{
+  "train": "train.csv",
+  "test": "test_no_labels.csv",
+  "output_dir": "processed_data",
+  "seed": 42,
+  "partial_policy": "include",
+  "window_size": 256,
+  "window_overlap": 64,
+  "window_field_policy": "repeat_meta",
+  "head_words": 128,
+  "tail_words": 128,
+  "deletion_prob": 0.05,
+  "aug_copies": 1,
+  "back_translation_backend": "none",
+  "variants": [
+    "all_fields__raw__full__no_aug",
+    "all_fields_without_keywords__raw__full__no_aug",
+    "all_fields_no_specialty_keyword_prefix__raw__full__no_aug",
+    "transcription_only__raw__windows__no_aug"
+  ],
+  "split_manifest": null
+}

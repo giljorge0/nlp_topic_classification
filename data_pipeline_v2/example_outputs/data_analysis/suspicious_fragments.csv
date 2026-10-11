@@ -1,0 +1,3 @@
+record_id,line_start,issue
+TR000476,477,text starts with lowercase letter fragment
+TR001896,1898,text starts with lowercase letter fragment

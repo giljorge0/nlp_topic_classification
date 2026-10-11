@@ -1,0 +1,10 @@
+2026-10-11 18:25:12,562 INFO args: {'train': '/mnt/user-data/uploads/train.csv', 'test': '/mnt/user-data/uploads/test_no_labels.csv', 'output_dir': 'example_outputs/data_analysis', 'seed': 42, 'val_ratio': 0.2, 'near_dup_threshold': 0.9, 'near_dup_min_threshold': 0.8, 'near_dup_field': 'transcription', 'min_chars_dup': 30, 'top_k': 25, 'snippet_chars': 100, 'no_plots': False}
+2026-10-11 18:25:12,703 INFO train logical records: 2669; test records: 398 (header=False)
+2026-10-11 18:25:12,906 WARNING quarantined TR000160 lines 161: truncated_open_quote
+2026-10-11 18:25:12,906 WARNING quarantined TR000713 lines 714: truncated_open_quote
+2026-10-11 18:25:12,906 WARNING quarantined TR000946 lines 947: truncated_open_quote
+2026-10-11 18:25:12,906 WARNING quarantined TR001086 lines 1088: truncated_open_quote
+2026-10-11 18:25:12,906 WARNING quarantined TR002087 lines 2089: truncated_open_quote
+2026-10-11 18:25:12,906 WARNING quarantined TR002326 lines 2329: truncated_open_quote
+2026-10-11 18:25:12,906 WARNING quarantined TR002390 lines 2394: truncated_open_quote
+2026-10-11 18:25:28,688 INFO done -> example_outputs/data_analysis

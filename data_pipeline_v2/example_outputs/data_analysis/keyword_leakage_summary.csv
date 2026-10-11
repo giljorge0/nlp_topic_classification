@@ -1,0 +1,3 @@
+split,records,keywords_nonempty,specialty_as_first_keyword(prefix pattern),percent_prefix,specialty_string_anywhere_in_keywords,percent_anywhere,anywhere_but_not_as_prefix,prefix_equals_true_label,prefix_present_but_different_label,label_name_in_description,any_specialty_name_in_description,label_name_in_sample_name,any_specialty_name_in_sample_name,label_name_in_transcription,any_specialty_name_in_transcription
+train,2662,2219,2219,83.36,2219,83.36,0,2219.0,0.0,22.0,51.0,18.0,28.0,313.0,787.0
+test,398,320,320,80.4,320,80.4,0,,,,,,,,

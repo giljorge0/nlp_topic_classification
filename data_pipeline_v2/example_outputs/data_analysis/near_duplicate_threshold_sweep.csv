@@ -1,0 +1,6 @@
+cosine_threshold,pairs,pairs_with_label_conflict,records_involved,connected_groups
+0.8,902,884,1547,733
+0.9,887,877,1544,735
+0.95,877,873,1540,735
+0.99,874,873,1534,732
+1.0,873,872,1532,731

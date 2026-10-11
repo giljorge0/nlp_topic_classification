@@ -1,0 +1,39 @@
+item,classification,line_start,line_end,physical_lines,detail,record_id,label,method
+default_parse_swallowed_span,confirmed_corruption,161,163,3,default CSV parse merged 3 physical lines into 1 record; description field length=9724; fields=5,,,
+default_parse_swallowed_span,confirmed_corruption,714,726,13,default CSV parse merged 13 physical lines into 1 record; description field length=28659; fields=5,,,
+default_parse_swallowed_span,confirmed_corruption,947,961,15,default CSV parse merged 15 physical lines into 1 record; description field length=32759; fields=5,,,
+default_parse_swallowed_span,confirmed_corruption,1088,1096,9,default CSV parse merged 9 physical lines into 1 record; description field length=28981; fields=5,,,
+default_parse_swallowed_span,confirmed_corruption,2089,2100,12,default CSV parse merged 12 physical lines into 1 record; description field length=32759; fields=5,,,
+default_parse_swallowed_span,confirmed_corruption,2329,2337,9,default CSV parse merged 9 physical lines into 1 record; description field length=32759; fields=5,,,
+default_parse_swallowed_span,confirmed_corruption,2394,2395,2,default CSV parse merged 2 physical lines into 1 record; description field length=4669; fields=5,,,
+fake_label_record,confirmed_corruption,962,962,1,default parse yields non-specialty 'label' of length 3336: 'd is open about may be roughly a centim…',,,
+fake_label_record,confirmed_corruption,2101,2101,1,default parse yields non-specialty 'label' of length 5657: 'ypothyroidism secondary to hyperthyroid…',,,
+fake_label_record,confirmed_corruption,2338,2338,1,default parse yields non-specialty 'label' of length 2067: 'ted and this was used to aspirate appro…',,,
+logical_record,unrecoverable,161,161,1,only label+description present; description begins with an unterminated quote that makes a quote-aware parser swallow following lines; sample_name/transcription/keywords are not in the file,TR000160,Cardiovascular-Pulmonary,truncated_open_quote
+logical_record,suspicious_recovered,163,163,1,5 fields present with 7 quote chars (odd); trailing empty fields dropped=2; all fields kept exactly as parsed (quote artefacts retained),TR000162,Psychiatry-Psychology,stray_quote_complete_record
+logical_record,unrecoverable,714,714,1,only label+description present; description begins with an unterminated quote that makes a quote-aware parser swallow following lines; sample_name/transcription/keywords are not in the file,TR000713,General Medicine,truncated_open_quote
+logical_record,suspicious_recovered,726,726,1,5 fields present with 13 quote chars (odd); trailing empty fields dropped=0; all fields kept exactly as parsed (quote artefacts retained),TR000725,Obstetrics-Gynecology,stray_quote_complete_record
+logical_record,unrecoverable,947,947,1,only label+description present; description begins with an unterminated quote that makes a quote-aware parser swallow following lines; sample_name/transcription/keywords are not in the file,TR000946,Neurosurgery,truncated_open_quote
+logical_record,confirmed_corruption_partially_recovered,961,962,2,"line ends with a cut transcription (head 756 chars, 1 trailing artefact quote(s) removed); next physical line is an orphan fragment (3336 chars) ending ';;;;'. Joined without inventing characters; the joint likely lost 1 character (cell-limit boundary). keywords not in file.",TR000960,General Medicine,cell_limit_overflow_join
+logical_record,unrecoverable,1088,1088,1,only label+description present; description begins with an unterminated quote that makes a quote-aware parser swallow following lines; sample_name/transcription/keywords are not in the file,TR001086,Obstetrics-Gynecology,truncated_open_quote
+logical_record,confirmed_corruption_partially_recovered,1096,1096,1,line ends with cut transcription (3 artefact quote(s) removed) and no overflow fragment follows; remainder of transcription and keywords absent from file,TR001094,General Medicine,truncated_transcription
+logical_record,unrecoverable,2089,2089,1,only label+description present; description begins with an unterminated quote that makes a quote-aware parser swallow following lines; sample_name/transcription/keywords are not in the file,TR002087,Surgery,truncated_open_quote
+logical_record,confirmed_corruption_partially_recovered,2100,2101,2,"line ends with a cut transcription (head 247 chars, 1 trailing artefact quote(s) removed); next physical line is an orphan fragment (5666 chars) ending ';;;;'. Joined without inventing characters; the joint likely lost 1 character (cell-limit boundary). keywords not in file.",TR002098,Neurology,cell_limit_overflow_join
+logical_record,unrecoverable,2329,2329,1,only label+description present; description begins with an unterminated quote that makes a quote-aware parser swallow following lines; sample_name/transcription/keywords are not in the file,TR002326,Surgery,truncated_open_quote
+logical_record,confirmed_corruption_partially_recovered,2337,2338,2,"line ends with a cut transcription (head 5037 chars, 1 trailing artefact quote(s) removed); next physical line is an orphan fragment (2067 chars) ending ';;;;'. Joined without inventing characters; the joint likely lost 1 character (cell-limit boundary). keywords not in file.",TR002334,Surgery,cell_limit_overflow_join
+logical_record,unrecoverable,2394,2394,1,only label+description present; description begins with an unterminated quote that makes a quote-aware parser swallow following lines; sample_name/transcription/keywords are not in the file,TR002390,Surgery,truncated_open_quote
+logical_record,suspicious_recovered,2395,2395,1,5 fields present with 23 quote chars (odd); trailing empty fields dropped=2; all fields kept exactly as parsed (quote artefacts retained),TR002391,Radiology,stray_quote_complete_record
+odd_quote_physical_line,suspicious,161,161,1,1 quote chars on this physical line,,,
+odd_quote_physical_line,suspicious,163,163,1,7 quote chars on this physical line,,,
+odd_quote_physical_line,suspicious,714,714,1,1 quote chars on this physical line,,,
+odd_quote_physical_line,suspicious,726,726,1,13 quote chars on this physical line,,,
+odd_quote_physical_line,suspicious,947,947,1,1 quote chars on this physical line,,,
+odd_quote_physical_line,suspicious,961,961,1,1 quote chars on this physical line,,,
+odd_quote_physical_line,suspicious,1088,1088,1,1 quote chars on this physical line,,,
+odd_quote_physical_line,suspicious,1096,1096,1,7 quote chars on this physical line,,,
+odd_quote_physical_line,suspicious,2089,2089,1,1 quote chars on this physical line,,,
+odd_quote_physical_line,suspicious,2100,2100,1,1 quote chars on this physical line,,,
+odd_quote_physical_line,suspicious,2329,2329,1,1 quote chars on this physical line,,,
+odd_quote_physical_line,suspicious,2337,2337,1,1 quote chars on this physical line,,,
+odd_quote_physical_line,suspicious,2394,2394,1,1 quote chars on this physical line,,,
+odd_quote_physical_line,suspicious,2395,2395,1,23 quote chars on this physical line,,,

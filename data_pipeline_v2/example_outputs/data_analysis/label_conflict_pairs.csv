@@ -1,0 +1,28 @@
+label_a,label_b,conflicting_transcription_groups
+Orthopedic,Surgery,152
+Cardiovascular-Pulmonary,Surgery,124
+Gastroenterology,Surgery,99
+Obstetrics-Gynecology,Surgery,67
+Neurology,Radiology,58
+Neurosurgery,Surgery,58
+Orthopedic,Radiology,44
+Cardiovascular-Pulmonary,Radiology,44
+Ophthalmology,Surgery,42
+Neurosurgery,Orthopedic,34
+Neurology,Orthopedic,29
+Neurology,Neurosurgery,22
+Neurology,Surgery,18
+Obstetrics-Gynecology,Radiology,16
+Gastroenterology,Radiology,13
+Radiology,Surgery,11
+Dermatology,Surgery,10
+Cardiovascular-Pulmonary,General Medicine,8
+Neurology,Psychiatry-Psychology,7
+Gastroenterology,General Medicine,3
+Dermatology,General Medicine,2
+General Medicine,Orthopedic,2
+Gastroenterology,Obstetrics-Gynecology,1
+Cardiovascular-Pulmonary,Gastroenterology,1
+General Medicine,Radiology,1
+Cardiovascular-Pulmonary,Neurology,1
+Cardiovascular-Pulmonary,Obstetrics-Gynecology,1

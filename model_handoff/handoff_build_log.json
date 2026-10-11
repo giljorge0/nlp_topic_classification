@@ -1,0 +1,107 @@
+[
+  {
+    "step": "1_read_raw",
+    "order": 1,
+    "utc": "2026-10-11T23:20:03+00:00",
+    "train": "/mnt/user-data/uploads/train.csv",
+    "test": "/mnt/user-data/uploads/test_no_labels.csv"
+  },
+  {
+    "step": "2_repair_records",
+    "order": 2,
+    "utc": "2026-10-11T23:20:03+00:00",
+    "recovered": 7
+  },
+  {
+    "step": "3_quarantine",
+    "order": 3,
+    "utc": "2026-10-11T23:20:03+00:00",
+    "quarantined": 7
+  },
+  {
+    "step": "4_validate_labels_columns",
+    "order": 4,
+    "utc": "2026-10-11T23:20:03+00:00",
+    "labels_ok": true,
+    "test_records": 398,
+    "raw_test_records": 398,
+    "test_header": false
+  },
+  {
+    "step": "5_assign_source_ids",
+    "order": 5,
+    "utc": "2026-10-11T23:20:03+00:00",
+    "first": "TR000001",
+    "last": "TR002669"
+  },
+  {
+    "step": "6_duplicate_groups",
+    "order": 6,
+    "utc": "2026-10-11T23:20:04+00:00",
+    "transcription_groups": 1863,
+    "complete_input_groups": 2573
+  },
+  {
+    "step": "7_split_manifest",
+    "order": 7,
+    "utc": "2026-10-11T23:20:05+00:00",
+    "primary_reused_existing": false,
+    "primary_train": 2129,
+    "primary_validation": 533
+  },
+  {
+    "step": "8_fit_on_train_only",
+    "order": 8,
+    "utc": "2026-10-11T23:20:07+00:00",
+    "boilerplate_rules_from_train_only": 2,
+    "fitted_on_records": 2129
+  },
+  {
+    "step": "9_transform_all_partitions",
+    "order": 9,
+    "utc": "2026-10-11T23:20:10+00:00",
+    "variant": "baseline_all_fields",
+    "train": 2129,
+    "validation": 533,
+    "test": 398
+  },
+  {
+    "step": "9_transform_all_partitions",
+    "order": 10,
+    "utc": "2026-10-11T23:20:13+00:00",
+    "variant": "clinical_text",
+    "train": 2129,
+    "validation": 533,
+    "test": 398
+  },
+  {
+    "step": "9_transform_all_partitions",
+    "order": 11,
+    "utc": "2026-10-11T23:20:17+00:00",
+    "variant": "compressed_unique_text",
+    "train": 2129,
+    "validation": 533,
+    "test": 398
+  },
+  {
+    "step": "9_transform_all_partitions",
+    "order": 12,
+    "utc": "2026-10-11T23:20:20+00:00",
+    "variant": "diagnostic_original_keywords",
+    "train": 2129,
+    "validation": 533,
+    "test": 398
+  },
+  {
+    "step": "10_augment_train_only",
+    "order": 13,
+    "utc": "2026-10-11T23:20:20+00:00",
+    "skipped": true,
+    "reason": "augmentation is opt-in (--augment word_dropout [sentence_dropout])"
+  },
+  {
+    "step": "11_export",
+    "order": 14,
+    "utc": "2026-10-11T23:20:20+00:00"
+  }
+]

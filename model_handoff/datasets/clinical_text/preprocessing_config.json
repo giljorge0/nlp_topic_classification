@@ -1,0 +1,51 @@
+{
+  "variant": "clinical_text",
+  "description": "description + transcription only (no sample_name, no keywords).",
+  "fields": [
+    "description",
+    "transcription"
+  ],
+  "markers": {
+    "description": "[DESCRIPTION]",
+    "sample_name": "[SAMPLE_NAME]",
+    "transcription": "[TRANSCRIPTION]",
+    "keywords": "[KEYWORDS]"
+  },
+  "normalization": "clinical (pp.normalize_text)",
+  "numeric_normalization": "none: numbers, dosages and units kept verbatim in every variant",
+  "keyword_specialty_prefix_removed": false,
+  "boilerplate_compression": false,
+  "boilerplate_min_df_train": 15,
+  "boilerplate_min_words": 6,
+  "boilerplate_rule_count": 0,
+  "unk_token": "<unk>",
+  "unk_index": 1,
+  "pad_token": "<pad>",
+  "pad_index": 0,
+  "vocab_min_freq": 2,
+  "vocab_size": 16973,
+  "vocab_fit_on": "train partition (original, unaugmented rows) only",
+  "validation_oov_token_rate_diagnostic_only": 0.0127,
+  "max_length_policy": {
+    "unit": "vocabulary tokens (see tokenize())",
+    "train_length_percentiles": {
+      "50": 505.0,
+      "90": 1050.0,
+      "95": 1248.6,
+      "99": 1715.3199999999938,
+      "100": 2988.0
+    },
+    "suggested_max_len": 1249,
+    "truncation_applied_in_data": false,
+    "note": "No text is truncated in the exported CSVs. Apply the SAME max_len/truncation rule to train, validation and test inside the model input pipeline."
+  },
+  "rows": {
+    "train": 2129,
+    "validation": 533,
+    "test": 398
+  },
+  "sentences_removed_total": {
+    "train": 0,
+    "all": 0
+  }
+}

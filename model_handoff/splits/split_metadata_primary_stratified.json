@@ -1,0 +1,89 @@
+{
+  "split_tag": "primary_stratified",
+  "strategy": "stratified_random",
+  "seed": 42,
+  "validation_fraction": 0.2,
+  "partial_policy": "include",
+  "config_fingerprint": "c7a171b12862ec1b2d109f7b97d67f50f29ae2c5ab8d36484affa89c0c6acf66",
+  "records_total": 2662,
+  "records_train": 2129,
+  "records_validation": 533,
+  "per_class_counts": {
+    "Surgery": {
+      "total": 890,
+      "validation": 178,
+      "train": 712,
+      "validation_share": 0.2
+    },
+    "Cardiovascular-Pulmonary": {
+      "total": 308,
+      "validation": 62,
+      "train": 246,
+      "validation_share": 0.201
+    },
+    "Orthopedic": {
+      "total": 300,
+      "validation": 60,
+      "train": 240,
+      "validation_share": 0.2
+    },
+    "Radiology": {
+      "total": 222,
+      "validation": 44,
+      "train": 178,
+      "validation_share": 0.198
+    },
+    "General Medicine": {
+      "total": 211,
+      "validation": 42,
+      "train": 169,
+      "validation_share": 0.199
+    },
+    "Gastroenterology": {
+      "total": 195,
+      "validation": 39,
+      "train": 156,
+      "validation_share": 0.2
+    },
+    "Neurology": {
+      "total": 184,
+      "validation": 37,
+      "train": 147,
+      "validation_share": 0.201
+    },
+    "Obstetrics-Gynecology": {
+      "total": 135,
+      "validation": 27,
+      "train": 108,
+      "validation_share": 0.2
+    },
+    "Neurosurgery": {
+      "total": 78,
+      "validation": 16,
+      "train": 62,
+      "validation_share": 0.205
+    },
+    "Ophthalmology": {
+      "total": 73,
+      "validation": 15,
+      "train": 58,
+      "validation_share": 0.205
+    },
+    "Psychiatry-Psychology": {
+      "total": 41,
+      "validation": 8,
+      "train": 33,
+      "validation_share": 0.195
+    },
+    "Dermatology": {
+      "total": 25,
+      "validation": 5,
+      "train": 20,
+      "validation_share": 0.2
+    }
+  },
+  "stratification_feasible": true,
+  "stratification_warnings": [],
+  "created_utc": "2026-10-11T23:20:04+00:00",
+  "status": "PROPOSED -- needs owner approval"
+}

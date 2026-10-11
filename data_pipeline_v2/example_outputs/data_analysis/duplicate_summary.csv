@@ -1,0 +1,9 @@
+level,records_considered,duplicate_groups,records_in_duplicate_groups,extra_copies(rows-groups),groups_with_label_conflict,percent_records_in_groups,note
+raw_exact_row(all 5 fields),2662,0,0,0.0,0.0,0.0,
+raw_exact_transcription,2638,731,1530,799.0,730.0,58.0,
+normalized_exact_transcription,2638,731,1530,799.0,730.0,58.0,
+normalized_exact_combined_input,2662,82,171,89.0,82.0,6.42,
+normalized_exact_description,2661,740,1569,829.0,734.0,58.96,
+normalized_exact_sample_name,2662,741,1551,810.0,741.0,58.26,
+normalized_exact_keywords,2219,3,6,3.0,0.0,0.27,
+"near_duplicate(transcription, tfidf word 1-2gram cosine>=0.9)",2632,735,1544,,,,pairs/conflicts in near_duplicate_threshold_sweep.csv

@@ -1,0 +1,89 @@
+{
+  "split_tag": "optional_group_aware",
+  "strategy": "duplicate_group_aware",
+  "seed": 42,
+  "validation_fraction": 0.2,
+  "partial_policy": "include",
+  "config_fingerprint": "07a914bdfb84d59bda50d25f0741f51e68f6d60e4fc7e02afe8eca6e1ed4073a",
+  "records_total": 2662,
+  "records_train": 2129,
+  "records_validation": 533,
+  "per_class_counts": {
+    "Surgery": {
+      "total": 890,
+      "validation": 178,
+      "train": 712,
+      "validation_share": 0.2
+    },
+    "Cardiovascular-Pulmonary": {
+      "total": 308,
+      "validation": 62,
+      "train": 246,
+      "validation_share": 0.201
+    },
+    "Orthopedic": {
+      "total": 300,
+      "validation": 60,
+      "train": 240,
+      "validation_share": 0.2
+    },
+    "Radiology": {
+      "total": 222,
+      "validation": 45,
+      "train": 177,
+      "validation_share": 0.203
+    },
+    "General Medicine": {
+      "total": 211,
+      "validation": 43,
+      "train": 168,
+      "validation_share": 0.204
+    },
+    "Gastroenterology": {
+      "total": 195,
+      "validation": 39,
+      "train": 156,
+      "validation_share": 0.2
+    },
+    "Neurology": {
+      "total": 184,
+      "validation": 37,
+      "train": 147,
+      "validation_share": 0.201
+    },
+    "Obstetrics-Gynecology": {
+      "total": 135,
+      "validation": 27,
+      "train": 108,
+      "validation_share": 0.2
+    },
+    "Neurosurgery": {
+      "total": 78,
+      "validation": 15,
+      "train": 63,
+      "validation_share": 0.192
+    },
+    "Ophthalmology": {
+      "total": 73,
+      "validation": 14,
+      "train": 59,
+      "validation_share": 0.192
+    },
+    "Psychiatry-Psychology": {
+      "total": 41,
+      "validation": 8,
+      "train": 33,
+      "validation_share": 0.195
+    },
+    "Dermatology": {
+      "total": 25,
+      "validation": 5,
+      "train": 20,
+      "validation_share": 0.2
+    }
+  },
+  "stratification_feasible": true,
+  "stratification_warnings": [],
+  "created_utc": "2026-10-11T23:20:05+00:00",
+  "status": "OPTIONAL robustness check -- not a substitute for the primary split"
+}

@@ -1,0 +1,7 @@
+{
+  "test_records": 398,
+  "test_nonempty_transcription": 396,
+  "test_with_exact_twin_in_train": 239,
+  "percent_of_test": 60.05,
+  "twin_matches_with_multiple_train_labels": 29
+}

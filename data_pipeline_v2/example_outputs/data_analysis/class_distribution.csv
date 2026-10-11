@@ -1,0 +1,13 @@
+label,count,percent,quarantined_with_this_label,clean
+Surgery,890,33.43,3,889
+Cardiovascular-Pulmonary,308,11.57,1,308
+Orthopedic,300,11.27,0,300
+Radiology,222,8.34,0,221
+General Medicine,211,7.93,1,209
+Gastroenterology,195,7.33,0,195
+Neurology,184,6.91,0,183
+Obstetrics-Gynecology,135,5.07,1,134
+Neurosurgery,78,2.93,1,78
+Ophthalmology,73,2.74,0,73
+Psychiatry-Psychology,41,1.54,0,40
+Dermatology,25,0.94,0,25

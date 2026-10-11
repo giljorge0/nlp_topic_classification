@@ -1,0 +1,71 @@
+{
+  "train": {
+    "bytes": 8991598,
+    "physical_lines_incl_header": 2673,
+    "header_present": true,
+    "header": [
+      "medical_specialty",
+      "description",
+      "sample_name",
+      "transcription",
+      "keywords"
+    ],
+    "default_parser_rows_incl_header": 2617,
+    "default_parser_data_rows": 2616,
+    "default_parser_field_count_distribution": {
+      "5": 2617
+    },
+    "default_parser_rows_with_valid_label": 2613,
+    "default_parser_rows_with_invalid_label": 3,
+    "default_parser_multiline_records": 7,
+    "default_parser_lines_inside_multiline": 63,
+    "physical_lines_with_odd_quote_count": 14,
+    "odd_quote_line_numbers": [
+      161,
+      163,
+      714,
+      726,
+      947,
+      961,
+      1088,
+      1096,
+      2089,
+      2100,
+      2329,
+      2337,
+      2394,
+      2395
+    ],
+    "physical_lines_starting_with_valid_label": 2669,
+    "physical_lines_not_starting_with_label": 3,
+    "non_label_line_numbers": [
+      962,
+      2101,
+      2338
+    ],
+    "physical_lines_ending_with_3_semicolons": 7,
+    "lines_near_cell_limit_32767": [],
+    "intended_logical_records_estimate": 2669,
+    "logical_records_by_status": {
+      "clean": 2655,
+      "quarantined": 7,
+      "recovered": 3,
+      "recovered_partial": 4
+    },
+    "records_absorbed_by_default_parser": 56,
+    "note": "Intended-record count = physical lines that begin with '<valid label>;' (every well-formed record verified to be a single physical line)."
+  },
+  "test": {
+    "bytes": 1371646,
+    "physical_lines": 398,
+    "default_parser_records": 398,
+    "default_parser_field_counts": {
+      "4": 398
+    },
+    "first_line_is_header": false,
+    "physical_lines_with_odd_quote_count": 0,
+    "blank_physical_lines": 0,
+    "lines_starting_with_a_label_name": 0,
+    "verified_record_count": 398
+  }
+}

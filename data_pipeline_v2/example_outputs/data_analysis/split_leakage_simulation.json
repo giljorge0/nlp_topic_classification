@@ -1,0 +1,93 @@
+{
+  "seed": 42,
+  "val_ratio": 0.2,
+  "grouping": "exact normalized transcription + near-dup cosine>=0.9",
+  "n_groups": 1851,
+  "largest_group": 4,
+  "designs": [
+    {
+      "design": "stratified_random",
+      "train_n": 2129,
+      "val_n": 533,
+      "val_with_exact_normalized_transcription_in_train": 269,
+      "percent_val_exact_in_train": 50.47,
+      "val_exact_twin_in_train_SAME_label": 1,
+      "val_exact_twin_in_train_ONLY_DIFFERENT_labels": 268,
+      "percent_val_with_train_cosine>=0.8": 50.66,
+      "percent_val_with_train_cosine>=0.9": 50.66,
+      "percent_val_with_train_cosine>=0.95": 50.47,
+      "percent_val_with_train_cosine>=0.99": 50.28,
+      "per_class_percent_val_exact_in_train": {
+        "Surgery": 52.8,
+        "Cardiovascular-Pulmonary": 45.2,
+        "Orthopedic": 65.0,
+        "Radiology": 63.6,
+        "General Medicine": 7.1,
+        "Gastroenterology": 56.4,
+        "Neurology": 51.4,
+        "Obstetrics-Gynecology": 44.4,
+        "Neurosurgery": 81.2,
+        "Ophthalmology": 53.3,
+        "Psychiatry-Psychology": 12.5,
+        "Dermatology": 40.0
+      },
+      "duplicate_groups_crossing_split": 264,
+      "val_class_counts": {
+        "Surgery": 178,
+        "Cardiovascular-Pulmonary": 62,
+        "Neurosurgery": 16,
+        "Orthopedic": 60,
+        "General Medicine": 42,
+        "Radiology": 44,
+        "Ophthalmology": 15,
+        "Neurology": 37,
+        "Gastroenterology": 39,
+        "Obstetrics-Gynecology": 27,
+        "Psychiatry-Psychology": 8,
+        "Dermatology": 5
+      }
+    },
+    {
+      "design": "duplicate_aware_grouped(StratifiedGroupKFold fold 0)",
+      "train_n": 2129,
+      "val_n": 533,
+      "val_with_exact_normalized_transcription_in_train": 0,
+      "percent_val_exact_in_train": 0.0,
+      "val_exact_twin_in_train_SAME_label": 0,
+      "val_exact_twin_in_train_ONLY_DIFFERENT_labels": 0,
+      "percent_val_with_train_cosine>=0.8": 0.75,
+      "percent_val_with_train_cosine>=0.9": 0.0,
+      "percent_val_with_train_cosine>=0.95": 0.0,
+      "percent_val_with_train_cosine>=0.99": 0.0,
+      "per_class_percent_val_exact_in_train": {
+        "Surgery": 0.0,
+        "Cardiovascular-Pulmonary": 0.0,
+        "Orthopedic": 0.0,
+        "Radiology": 0.0,
+        "General Medicine": 0.0,
+        "Gastroenterology": 0.0,
+        "Neurology": 0.0,
+        "Obstetrics-Gynecology": 0.0,
+        "Neurosurgery": 0.0,
+        "Ophthalmology": 0.0,
+        "Psychiatry-Psychology": 0.0,
+        "Dermatology": 0.0
+      },
+      "duplicate_groups_crossing_split": 0,
+      "val_class_counts": {
+        "Cardiovascular-Pulmonary": 62,
+        "Dermatology": 5,
+        "Gastroenterology": 39,
+        "General Medicine": 42,
+        "Ophthalmology": 14,
+        "Obstetrics-Gynecology": 27,
+        "Neurology": 37,
+        "Neurosurgery": 16,
+        "Orthopedic": 60,
+        "Psychiatry-Psychology": 8,
+        "Radiology": 45,
+        "Surgery": 178
+      }
+    }
+  ]
+}

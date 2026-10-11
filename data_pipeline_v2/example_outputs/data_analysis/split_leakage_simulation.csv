@@ -1,0 +1,3 @@
+design,train_n,val_n,val_with_exact_normalized_transcription_in_train,percent_val_exact_in_train,val_exact_twin_in_train_SAME_label,val_exact_twin_in_train_ONLY_DIFFERENT_labels,percent_val_with_train_cosine>=0.8,percent_val_with_train_cosine>=0.9,percent_val_with_train_cosine>=0.95,percent_val_with_train_cosine>=0.99,duplicate_groups_crossing_split
+stratified_random,2129,533,269,50.47,1,268,50.66,50.66,50.47,50.28,264
+duplicate_aware_grouped(StratifiedGroupKFold fold 0),2129,533,0,0.0,0,0,0.75,0.0,0.0,0.0,0

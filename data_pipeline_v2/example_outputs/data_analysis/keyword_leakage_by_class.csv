@@ -1,0 +1,13 @@
+label,records,prefix_present,percent_prefix_present,other_specialty_string_anywhere
+Surgery,890,830,93.3,0
+Cardiovascular-Pulmonary,308,230,74.7,0
+Orthopedic,300,252,84.0,0
+Radiology,222,203,91.4,0
+General Medicine,211,122,57.8,0
+Gastroenterology,195,166,85.1,0
+Neurology,184,134,72.8,0
+Obstetrics-Gynecology,135,112,83.0,0
+Neurosurgery,78,66,84.6,0
+Ophthalmology,73,70,95.9,0
+Psychiatry-Psychology,41,14,34.1,0
+Dermatology,25,20,80.0,0

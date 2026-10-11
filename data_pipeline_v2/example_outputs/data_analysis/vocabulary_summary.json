@@ -1,0 +1,101 @@
+{
+  "tokenization": "lowercased regex tokens [A-Za-z0-9]+ with internal . - ' / allowed; punctuation dropped for counting; fields: description+sample_name+transcription (keywords excluded)",
+  "tokens_total": 1298685,
+  "vocab_size": 24461,
+  "vocab_size_min_count_2": 18778,
+  "negation_term_counts": {
+    "no": 7560,
+    "not": 2859,
+    "without": 1852,
+    "denies": 599,
+    "denied": 239,
+    "negative": 889,
+    "none": 967,
+    "never": 77,
+    "absent": 76,
+    "neither": 7,
+    "nor": 47,
+    "cannot": 104
+  },
+  "percent_docs_with_negation_term": 88.39,
+  "numeric_token_count": 48116,
+  "numeric_percent_of_tokens": 3.7,
+  "measurement_mentions": 6437,
+  "top_measurement_units": [
+    [
+      "1 cm",
+      227
+    ],
+    [
+      "2 cm",
+      160
+    ],
+    [
+      "10 mg",
+      133
+    ],
+    [
+      "5 mm",
+      120
+    ],
+    [
+      "3 cm",
+      116
+    ],
+    [
+      "20 mg",
+      110
+    ],
+    [
+      "12 mm",
+      110
+    ],
+    [
+      "10 ml",
+      102
+    ]
+  ],
+  "top_tokens": [
+    [
+      "the",
+      89397
+    ],
+    [
+      "and",
+      46939
+    ],
+    [
+      "was",
+      45390
+    ],
+    [
+      "of",
+      33052
+    ],
+    [
+      "to",
+      27297
+    ],
+    [
+      "a",
+      24092
+    ],
+    [
+      "with",
+      21577
+    ],
+    [
+      "in",
+      18014
+    ],
+    [
+      "patient",
+      11095
+    ],
+    [
+      "is",
+      10801
+    ]
+  ],
+  "suspicious_lowercase_start_transcriptions": 2
+}
