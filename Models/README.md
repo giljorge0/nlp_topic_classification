@@ -6,7 +6,6 @@ Put `train.csv` and `test_no_labels.csv` in this folder, alongside the Python fi
 
 ```cmd
 pip install -r requirements.txt
-python -m unittest test_models.py test_cv.py test_compare_results.py -v
 python train.py make-folds --train-csv "train.csv"
 ```
 
