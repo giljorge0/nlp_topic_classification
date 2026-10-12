@@ -1,63 +1,62 @@
-# Commands to Run
+# Medical Specialty Classification — Quick Start
 
-## 1. Install dependencies and test the models
+Put `train.csv` and `test_no_labels.csv` in this folder, alongside the Python files. Run all commands from here.
 
-```bash
-python -m pip install -r requirements.txt
+## 1. Setup (once)
+
+```cmd
+pip install -r requirements.txt
+python -m unittest test_models.py test_cv.py test_compare_results.py -v
+python train.py make-folds --train-csv "train.csv"
 ```
 
-## 2. Train all models (all input fields)
+## 2. Train the four models (5-fold cross-validation)
 
-```bash
-python train.py train --model birnn --train-csv "train.csv" --output-dir runs/birnn
-python train.py train --model bilstm --train-csv "train.csv" --output-dir runs/bilstm
-python train.py train --model bilstm_attention --train-csv "train.csv" --output-dir runs/bilstm_attention
+```cmd
+python train.py cv --model birnn --train-csv "train.csv"
+python train.py cv --model birnn_attention --train-csv "train.csv"
+python train.py cv --model bilstm --train-csv "train.csv"
+python train.py cv --model bilstm_attention --train-csv "train.csv"
 ```
 
-By default, the naive inputs are concatenated as `description + sample_name + transcription + keywords`.
+By default, all four input fields are used: `description + sample_name + transcription + keywords`.
 
-## 3. Try different inputs
+## 3. Choose different inputs
 
-These examples use `birnn`; replace it with `bilstm` or `bilstm_attention` to test the others.
+Add **one** of these options to any `cv` command:
 
-**Keywords only:**
-```bash
-python train.py train --model birnn --train-csv "train.csv" --output-dir runs/birnn_keywords --fields keywords
+| Input | Option |
+| --- | --- |
+| Keywords only | `--fields keywords` |
+| Keywords without specialty prefix | `--fields keywords --strip-keyword-prefix` |
+| Prefix only (all keywords if none found) | `--fields keywords --keep-keyword-prefix-only` |
+| Transcription only | `--fields transcription` |
+| Description only | `--fields description` |
+| No keywords | `--fields description sample_name transcription` |
+
+Example:
+
+```cmd
+python train.py cv --model bilstm_attention --train-csv "train.csv" --fields keywords --strip-keyword-prefix
 ```
 
-**Keywords without the specialty prefix:**
-```bash
-python train.py train --model birnn --train-csv "train.csv" --output-dir runs/birnn_keywords_clean --fields keywords --strip-keyword-prefix
+To override training settings, append `--epochs 30 --patience 6` (early stopping uses inner-validation macro-F1). Append `--device xpu` for a working Intel XPU environment. Completed folds are skipped automatically; append `--overwrite` to rerun them.
+
+## 4. View results
+
+```cmd
+python compare_results.py
 ```
 
-**Transcription only:**
-```bash
-python train.py train --model birnn --train-csv "train.csv" --output-dir runs/birnn_transcription --fields transcription
+Open **`Results/index.html`** in a browser. Find model comparisons in `Models_Comparison/`, input comparisons in `TrainingSet_Comparison/`, and each class's F1, precision, recall, and confusion matrices in `Metrics/`. The tables show five-fold averages ± standard deviation and pooled out-of-fold results. Raw checkpoints and predictions are retained in `runs/`.
+
+## 5. Final predictions (after choosing the best model)
+
+Retrain your chosen configuration on all labelled training data, using an epoch count selected from cross-validation (15 below is an example):
+
+```cmd
+python train.py train-final --model bilstm_attention --train-csv "train.csv" --fields transcription --epochs 15 --output-dir runs/final
+python train.py predict --checkpoint runs/final/final.pt --test-csv "test_no_labels.csv" --output results.txt
 ```
 
-**Description only:**
-```bash
-python train.py train --model birnn --train-csv "train.csv" --output-dir runs/birnn_description --fields description
-```
-
-**Description + sample name + transcription:**
-```bash
-python train.py train --model birnn --train-csv "train.csv" --output-dir runs/birnn_no_keywords --fields description sample_name transcription
-```
-
-## 4. Get predictions from a trained model
-
-```bash
-python train.py predict --checkpoint runs/birnn/best.pt --test-csv "test_no_labels.csv" --output runs/birnn/predictions.txt
-python train.py predict --checkpoint runs/bilstm/best.pt --test-csv "test_no_labels.csv" --output runs/bilstm/predictions.txt
-python train.py predict --checkpoint runs/bilstm_attention/best.pt --test-csv "test_no_labels.csv" --output runs/bilstm_attention/predictions.txt
-```
-
-## Useful options
-
-If you have Intel GPU, feel free to append `--device xpu` to a training command, or `--device cuda` if you have a supported NVIDIA GPU. 
-The default training limit is 12 epochs; append `--epochs 20` or else to change it.
-
-
-Results (validation metrics, confusion matrix, misclassified examples, and best checkpoint) are saved in each `runs/...` folder. 
-**Do not use `test_no_labels.csv` to evaluate or tune models.**
+Submit `results.txt` (one label per test row, no header). **Never use the official unlabeled test file for training or model selection.**
