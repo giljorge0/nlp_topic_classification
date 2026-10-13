@@ -41,15 +41,23 @@ python train.py cv --model bilstm_attention --train-csv "train.csv" --fields key
 
 To override training settings, append `--epochs 30 --patience 6` (early stopping uses inner-validation macro-F1). Append `--device xpu` for a working Intel XPU environment. Completed folds are skipped automatically; append `--overwrite` to rerun them.
 
-## 4. View results
+## 4. Classical baseline (description only)
+
+```cmd
+python baseline.py --train-csv "train.csv"
+```
+
+Uses the same five outer folds. Fits TF-IDF (lowercase + Porter stemming, word unigrams) and Multinomial Naive Bayes. Saves to `runs/cv/description_only/naive_bayes/`.
+
+## 5. View results
 
 ```cmd
 python compare_results.py
 ```
 
-Open **`Results/index.html`** in a browser. Find model comparisons in `Models_Comparison/`, input comparisons in `TrainingSet_Comparison/`, and each class's F1, precision, recall, and confusion matrices in `Metrics/`. The tables show five-fold averages ± standard deviation and pooled out-of-fold results. Raw checkpoints and predictions are retained in `runs/`.
+Open **`Results/index.html`** in a browser. Find the Naive Bayes baseline alongside the neural models in `Models_Comparison/description_only.html`; other model comparisons are in `Models_Comparison/`, input comparisons in `TrainingSet_Comparison/`, and each class's F1, precision, recall, and confusion matrices in `Metrics/`. The tables show five-fold averages ± standard deviation and pooled out-of-fold results. Raw checkpoints and predictions are retained in `runs/`.
 
-## 5. Final predictions (after choosing the best model)
+## 6. Final predictions (after choosing the best model)
 
 Retrain your chosen configuration on all labelled training data, using an epoch count selected from cross-validation (15 below is an example):
 

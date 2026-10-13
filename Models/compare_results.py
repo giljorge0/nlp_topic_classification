@@ -18,8 +18,9 @@ LABELS = (
     "General Medicine", "Neurology", "Neurosurgery", "Obstetrics-Gynecology",
     "Ophthalmology", "Orthopedic", "Psychiatry-Psychology", "Radiology", "Surgery",
 )
-MODELS = ("birnn", "birnn_attention", "bilstm", "bilstm_attention")
+MODELS = ("naive_bayes", "birnn", "birnn_attention", "bilstm", "bilstm_attention")
 DISPLAY_MODELS = {
+    "naive_bayes": "TF-IDF + Multinomial NB",
     "birnn": "BiRNN", "birnn_attention": "BiRNN + Attention",
     "bilstm": "BiLSTM", "bilstm_attention": "BiLSTM + Attention",
 }
@@ -185,8 +186,8 @@ def summary_row(item: dict, label: str):
     values = {"name": label, "config": item["configuration"], "model": item["model"],
               "n": data["n_examples"], "passing_folds": data["folds_passing_both_thresholds"],
               "parameters_mean": round(data["parameter_count"]["mean"]),
-              "best_epoch_mean": data["best_epoch"]["mean"],
-              "best_epoch_sd": data["best_epoch"]["sd"]}
+              "best_epoch_mean": ("" if item["model"] == "naive_bayes" else data["best_epoch"]["mean"]),
+              "best_epoch_sd": ("" if item["model"] == "naive_bayes" else data["best_epoch"]["sd"])}
     for field in COLUMNS:
         values[field + "_mean"] = val(data, field)
         values[field + "_sd"] = sd(data, field)
@@ -212,7 +213,8 @@ def comparison_table(items: list[dict], name_fn):
         columns.extend([
             f'<td class="num b">{f3(pooled(data,"macro_f1"))}</td>',
             f'<td class="num">{data["folds_passing_both_thresholds"]}/5</td>',
-            f'<td class="num">{f3(data["best_epoch"]["mean"])} ± {f3(data["best_epoch"]["sd"])}</td>',
+            (f'<td class="num">{f3(data["best_epoch"]["mean"])} ± {f3(data["best_epoch"]["sd"])}</td>'
+             if item["model"] != "naive_bayes" else '<td class="num muted">—</td>'),
         ])
         rows.append("<tr>" + "".join(columns) + "</tr>")
     return f'<div class="tablewrap"><table><thead>{heading}</thead><tbody>{"".join(rows)}</tbody></table></div>'
@@ -246,7 +248,9 @@ def create_comparisons(results: Path, group_name: str, sets: dict, name_fn, titl
         body = f"<p>{esc(len(items))} completed five-fold experiment(s). Fold mean ± sample standard deviation; pooled OOF is computed over all labelled examples.</p>"
         if len(fingerprints) != 1 or len(split_seeds) != 1:
             body += info_box("WARNING: These results have differing datasets/seeds and are not directly paired comparisons.", True)
-        body += '<section class="panel"><h2>Aggregate performance</h2>' + comparison_table(items, name_fn) + '</section>'
+        if any(item["model"] == "naive_bayes" for item in items) and any(item["model"] != "naive_bayes" for item in items):
+            body += info_box("Training-data difference: Naive Bayes uses the full outer-training partition (~80%); recurrent models reserve an inner-validation partition for early stopping (~64% actually fitted).")
+        body += '<section class="panel"><h2>Aggregate performance</h2>' + comparison_table(items, name_fn) + '</section>' 
         body += '<section class="panel"><h2>Per-class F1</h2><p>Top line: fold mean ± SD. Second line: pooled out-of-fold F1.</p>' + per_class_comparison(items, name_fn) + '</section>'
         title = title_fn(key)
         write_html(output / (key + ".html"), title, body, 1)
@@ -287,7 +291,7 @@ def create_metrics(results: Path, item: dict):
     fold_rows = []
     for i in range(5):
         fold_rows.append({"fold": i + 1, **{field: data["metrics"][field]["folds"][i] for field in COLUMNS},
-                          "best_epoch": data["best_epoch"]["folds"][i], "outer_size": data["fold_sizes"][i]})
+                          "best_epoch": (None if model == "naive_bayes" else data["best_epoch"]["folds"][i]), "outer_size": data["fold_sizes"][i]})
     write_csv(out / "fold_metrics.csv", fold_rows, list(fold_rows[0]))
 
     cells = []
@@ -304,6 +308,8 @@ def create_metrics(results: Path, item: dict):
              "<th>Pooled precision</th><th>Pooled recall</th><th>Support</th><th>F1 ≥ 0.25</th></tr>")
     body = (f'<p>{esc(title_config(config))} / {esc(title_model(model))}. '
             f'5 outer folds; {data["n_examples"]} held-out predictions, one per example.</p>')
+    if model == "naive_bayes":
+        body += info_box("Professor-specified baseline: description only, lowercase, Porter stemming, TF-IDF word unigrams, Multinomial Naive Bayes (alpha=1). Each fold fits on the full outer-training partition; no epochs or early stopping.")
     body += '<div class="cards">' + "".join(
         f'<div class="card"><small>{esc(COL_NAMES[field])}</small><div class="number">{f3(val(data,field))}</div>'
         f'<small>SD {f3(sd(data,field))} · pooled {f3(pooled(data,field))}</small></div>'
@@ -312,7 +318,7 @@ def create_metrics(results: Path, item: dict):
     body += '<section class="panel"><h2>Individual outer folds</h2>'
     body += '<div class="tablewrap"><table><tr><th>Fold</th>' + "".join(f"<th>{esc(COL_NAMES[k])}</th>" for k in COLUMNS) + '<th>Best epoch</th></tr>'
     for fold in fold_rows:
-        body += f'<tr><td>Fold {fold["fold"]}</td>' + "".join(f'<td class="num">{f3(fold[k])}</td>' for k in COLUMNS) + f'<td class="num">{int(fold["best_epoch"])}</td></tr>'
+        body += f'<tr><td>Fold {fold["fold"]}</td>' + "".join(f'<td class="num">{f3(fold[k])}</td>' for k in COLUMNS) + f'<td class="num">{int(fold["best_epoch"]) if fold["best_epoch"] is not None else "—"}</td></tr>'
     body += '</table></div></section>'
     body += '<section class="panel"><h2>Pooled confusion matrix</h2><p>Rows = correct labels; columns = predicted labels. Values are summed from all five outer folds.</p>'
     body += '<div class="tablewrap"><table><thead><tr><th>Actual ↓ / Predicted →</th>' + "".join(f'<th>{esc(k)}</th>' for k in LABELS) + '</tr></thead><tbody>'

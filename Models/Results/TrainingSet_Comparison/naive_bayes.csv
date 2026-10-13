@@ -1,0 +1,2 @@
+﻿name,config,model,n,accuracy_mean,accuracy_sd,accuracy_pooled,macro_f1_mean,macro_f1_sd,macro_f1_pooled,weighted_f1_mean,weighted_f1_sd,weighted_f1_pooled,min_class_f1_mean,min_class_f1_sd,min_class_f1_pooled,passing_folds,parameters_mean,best_epoch_mean,best_epoch_sd
+Description only,description_only,naive_bayes,2613,0.3918866252023765,0.010581924960273261,0.3918867202449292,0.12529607310713384,0.013986194308239245,0.12604925937766712,0.27347668312455936,0.01714171211448285,0.27430848073908937,0.0,0.0,0.0,0,0,,
