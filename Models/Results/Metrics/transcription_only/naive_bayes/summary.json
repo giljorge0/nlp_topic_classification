@@ -1,0 +1,525 @@
+{
+  "cv_version": 1,
+  "n_folds": 5,
+  "configuration": {
+    "model": "naive_bayes",
+    "config_name": "transcription_only",
+    "fields": [
+      "transcription"
+    ],
+    "data_fingerprint": "ee93c31475ee6bc7438e467074582fdcc0b52e21705030f45ef5be791ed42a2d",
+    "seed": 42,
+    "algorithm": "MultinomialNB",
+    "alpha": 1.0,
+    "features": "TF-IDF word unigrams",
+    "lowercase": true,
+    "stemming": "NLTK PorterStemmer",
+    "tfidf_min_df": 1,
+    "tfidf_norm": "l2",
+    "fit_partition": "full outer training split (no inner validation)",
+    "strip_keyword_prefix": false,
+    "keep_keyword_prefix_only": false
+  },
+  "data_fingerprint": "ee93c31475ee6bc7438e467074582fdcc0b52e21705030f45ef5be791ed42a2d",
+  "n_examples": 2613,
+  "metrics": {
+    "accuracy": {
+      "mean": 0.40030988329926814,
+      "sd": 0.008597825596302454,
+      "folds": [
+        0.3919694072657744,
+        0.39579349904397704,
+        0.40344168260038243,
+        0.41379310344827586,
+        0.39655172413793105
+      ]
+    },
+    "macro_f1": {
+      "mean": 0.13051029277021065,
+      "sd": 0.008906613187549409,
+      "folds": [
+        0.12638543235082397,
+        0.12345072675237978,
+        0.13079584503459696,
+        0.14573175162383697,
+        0.12618770808941543
+      ]
+    },
+    "weighted_f1": {
+      "mean": 0.27322341715380716,
+      "sd": 0.010786904610210226,
+      "folds": [
+        0.2644170001853187,
+        0.26414891698523,
+        0.27656345319323417,
+        0.29020609891807736,
+        0.27078161648717525
+      ]
+    },
+    "min_class_f1": {
+      "mean": 0.0,
+      "sd": 0.0,
+      "folds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "per_class_f1": {
+    "Cardiovascular-Pulmonary": {
+      "mean": 0.30834458578780766,
+      "sd": 0.07560171977045585,
+      "folds": [
+        0.19444444444444445,
+        0.273972602739726,
+        0.3333333333333333,
+        0.3855421686746988,
+        0.35443037974683544
+      ]
+    },
+    "Dermatology": {
+      "mean": 0.0,
+      "sd": 0.0,
+      "folds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Gastroenterology": {
+      "mean": 0.0,
+      "sd": 0.0,
+      "folds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "General Medicine": {
+      "mean": 0.4851311084202551,
+      "sd": 0.07531748104264152,
+      "folds": [
+        0.4307692307692308,
+        0.5277777777777778,
+        0.4788732394366197,
+        0.5882352941176471,
+        0.4
+      ]
+    },
+    "Neurology": {
+      "mean": 0.2017562348586594,
+      "sd": 0.05659798596307627,
+      "folds": [
+        0.2857142857142857,
+        0.13953488372093023,
+        0.1702127659574468,
+        0.22727272727272727,
+        0.18604651162790697
+      ]
+    },
+    "Neurosurgery": {
+      "mean": 0.0,
+      "sd": 0.0,
+      "folds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Obstetrics-Gynecology": {
+      "mean": 0.0,
+      "sd": 0.0,
+      "folds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Ophthalmology": {
+      "mean": 0.0,
+      "sd": 0.0,
+      "folds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Orthopedic": {
+      "mean": 0.026561081781976477,
+      "sd": 0.02753484269111179,
+      "folds": [
+        0.06557377049180328,
+        0.0,
+        0.03333333333333333,
+        0.0,
+        0.03389830508474576
+      ]
+    },
+    "Psychiatry-Psychology": {
+      "mean": 0.0,
+      "sd": 0.0,
+      "folds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Radiology": {
+      "mean": 0.0,
+      "sd": 0.0,
+      "folds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Surgery": {
+      "mean": 0.5443305023938289,
+      "sd": 0.006253301925990013,
+      "folds": [
+        0.5401234567901234,
+        0.5401234567901234,
+        0.5537974683544303,
+        0.5477308294209703,
+        0.5398773006134969
+      ]
+    }
+  },
+  "folds_passing_both_thresholds": 0,
+  "best_epoch": {
+    "mean": 0.0,
+    "sd": 0.0,
+    "folds": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "vocabulary_size": {
+    "mean": 13193.8,
+    "sd": 61.73896662562469,
+    "folds": [
+      13229.0,
+      13204.0,
+      13267.0,
+      13107.0,
+      13162.0
+    ]
+  },
+  "parameter_count": {
+    "mean": 0.0,
+    "sd": 0.0,
+    "folds": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "pooled_oof": {
+    "accuracy": 0.4003061615001913,
+    "macro_f1": 0.13124591290221188,
+    "weighted_f1": 0.2739539057561441,
+    "min_class_f1": 0.0,
+    "per_class_f1": {
+      "Cardiovascular-Pulmonary": 0.31202046035805625,
+      "Dermatology": 0.0,
+      "Gastroenterology": 0.0,
+      "General Medicine": 0.4880952380952381,
+      "Neurology": 0.20353982300884957,
+      "Neurosurgery": 0.0,
+      "Obstetrics-Gynecology": 0.0,
+      "Ophthalmology": 0.0,
+      "Orthopedic": 0.02702702702702703,
+      "Psychiatry-Psychology": 0.0,
+      "Radiology": 0.0,
+      "Surgery": 0.5442684063373718
+    },
+    "classification_report": {
+      "Cardiovascular-Pulmonary": {
+        "precision": 0.6630434782608695,
+        "recall": 0.2040133779264214,
+        "f1-score": 0.31202046035805625,
+        "support": 299.0
+      },
+      "Dermatology": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 25.0
+      },
+      "Gastroenterology": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 192.0
+      },
+      "General Medicine": {
+        "precision": 0.6356589147286822,
+        "recall": 0.3961352657004831,
+        "f1-score": 0.4880952380952381,
+        "support": 207.0
+      },
+      "Neurology": {
+        "precision": 0.5111111111111111,
+        "recall": 0.1270718232044199,
+        "f1-score": 0.20353982300884957,
+        "support": 181.0
+      },
+      "Neurosurgery": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 78.0
+      },
+      "Obstetrics-Gynecology": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 135.0
+      },
+      "Ophthalmology": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 71.0
+      },
+      "Orthopedic": {
+        "precision": 1.0,
+        "recall": 0.0136986301369863,
+        "f1-score": 0.02702702702702703,
+        "support": 292.0
+      },
+      "Psychiatry-Psychology": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 40.0
+      },
+      "Radiology": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 217.0
+      },
+      "Surgery": {
+        "precision": 0.3738796414852753,
+        "recall": 1.0,
+        "f1-score": 0.5442684063373718,
+        "support": 876.0
+      },
+      "accuracy": 0.4003061615001913,
+      "macro avg": {
+        "precision": 0.2653077621321615,
+        "recall": 0.14507659141402587,
+        "f1-score": 0.13124591290221188,
+        "support": 2613.0
+      },
+      "weighted avg": {
+        "precision": 0.3987221861465937,
+        "recall": 0.4003061615001913,
+        "f1-score": 0.2739539057561441,
+        "support": 2613.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        61,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        223
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        24
+      ],
+      [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        177
+      ],
+      [
+        4,
+        0,
+        0,
+        82,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        120
+      ],
+      [
+        0,
+        0,
+        0,
+        3,
+        23,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        155
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        78
+      ],
+      [
+        1,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        71
+      ],
+      [
+        0,
+        0,
+        0,
+        3,
+        3,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        282
+      ],
+      [
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        36
+      ],
+      [
+        26,
+        0,
+        0,
+        0,
+        18,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        173
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        876
+      ]
+    ],
+    "passes_accuracy": false,
+    "passes_min_class_f1": false
+  },
+  "fold_sizes": [
+    523,
+    523,
+    523,
+    522,
+    522
+  ]
+}

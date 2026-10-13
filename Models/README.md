@@ -41,13 +41,17 @@ python train.py cv --model bilstm_attention --train-csv "train.csv" --fields key
 
 To override training settings, append `--epochs 30 --patience 6` (early stopping uses inner-validation macro-F1). Append `--device xpu` for a working Intel XPU environment. Completed folds are skipped automatically; append `--overwrite` to rerun them.
 
-## 4. Classical baseline (description only)
+## 4. Classical baseline (Naive Bayes)
 
 ```cmd
 python baseline.py --train-csv "train.csv"
+python baseline.py --train-csv "train.csv" --fields description sample_name transcription keywords
+python baseline.py --train-csv "train.csv" --fields keywords
+python baseline.py --train-csv "train.csv" --fields keywords --strip-keyword-prefix
+python baseline.py --train-csv "train.csv" --fields transcription
 ```
 
-Uses the same five outer folds. Fits TF-IDF (lowercase + Porter stemming, word unigrams) and Multinomial Naive Bayes. Saves to `runs/cv/description_only/naive_bayes/`.
+The first command reproduces the professor-specified description-only baseline. Others use the same classifier with the selected inputs. All share the five outer folds, fit TF-IDF (lowercase + Porter stemming, word unigrams) and Multinomial Naive Bayes, and save to their own `runs/cv/<configuration>/naive_bayes/` directories. Existing completed folds are reused. Keyword prefix retention can reveal the specialty label directly; compare with prefix removal. No new dependencies beyond `requirements.txt`.
 
 ## 5. View results
 
@@ -55,7 +59,7 @@ Uses the same five outer folds. Fits TF-IDF (lowercase + Porter stemming, word u
 python compare_results.py
 ```
 
-Open **`Results/index.html`** in a browser. Find the Naive Bayes baseline alongside the neural models in `Models_Comparison/description_only.html`; other model comparisons are in `Models_Comparison/`, input comparisons in `TrainingSet_Comparison/`, and each class's F1, precision, recall, and confusion matrices in `Metrics/`. The tables show five-fold averages ± standard deviation and pooled out-of-fold results. Raw checkpoints and predictions are retained in `runs/`.
+Open **`Results/index.html`** in a browser. Find each Naive Bayes run alongside the neural models for the same input configuration in `Models_Comparison/`; other model comparisons are in `Models_Comparison/`, input comparisons in `TrainingSet_Comparison/`, and each class's F1, precision, recall, and confusion matrices in `Metrics/`. The tables show five-fold averages ± standard deviation and pooled out-of-fold results. Raw checkpoints and predictions are retained in `runs/`.
 
 ## 6. Final predictions (after choosing the best model)
 

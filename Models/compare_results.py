@@ -309,7 +309,11 @@ def create_metrics(results: Path, item: dict):
     body = (f'<p>{esc(title_config(config))} / {esc(title_model(model))}. '
             f'5 outer folds; {data["n_examples"]} held-out predictions, one per example.</p>')
     if model == "naive_bayes":
-        body += info_box("Professor-specified baseline: description only, lowercase, Porter stemming, TF-IDF word unigrams, Multinomial Naive Bayes (alpha=1). Each fold fits on the full outer-training partition; no epochs or early stopping.")
+        baseline_type = ("Professor-specified baseline" if config == "description_only"
+                         else "Input-matched classical baseline variant")
+        body += info_box(f"{baseline_type}: {title_config(config)}; lowercasing, Porter stemming, TF-IDF word unigrams and Multinomial Naive Bayes (alpha=1). Each fold fits on the full outer-training partition; no epochs or early stopping.")
+        if "keywords" in data["configuration"].get("fields", []) and not data["configuration"].get("strip_keyword_prefix", False):
+            body += info_box("Caution: the keywords field can begin with the true specialty name. Scores that retain this prefix may exploit label-like information and overstate clinical text understanding.", True)
     body += '<div class="cards">' + "".join(
         f'<div class="card"><small>{esc(COL_NAMES[field])}</small><div class="number">{f3(val(data,field))}</div>'
         f'<small>SD {f3(sd(data,field))} · pooled {f3(pooled(data,field))}</small></div>'
@@ -354,7 +358,7 @@ def generate(runs_dir: Path, output: Path):
               f'<div class="card"><small>Input configurations</small><div class="number">{len(by_config)}</div></div>'
               f'<div class="card"><small>Models</small><div class="number">{len(by_model)}</div></div>'
               '</div>'))
-    panels += '<p>Results represent five independent held-out folds per experiment, with separate inner validation for early stopping. ± denotes fold-to-fold sample standard deviation, not a confidence interval.</p>'
+    panels += '<p>Results represent five held-out folds per experiment. Neural models reserve an inner validation partition for early stopping; Naive Bayes uses the full outer-training partition. ± denotes fold-to-fold sample standard deviation, not a confidence interval.</p>'
     for heading, links in (("Models comparison", by_config_links),
                            ("Training set comparison", by_model_links),
                            ("Per-class metrics", metric_links)):
