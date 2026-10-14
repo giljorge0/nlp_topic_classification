@@ -1,0 +1,13 @@
+﻿actual\predicted,Cardiovascular-Pulmonary,Dermatology,Gastroenterology,General Medicine,Neurology,Neurosurgery,Obstetrics-Gynecology,Ophthalmology,Orthopedic,Psychiatry-Psychology,Radiology,Surgery
+Cardiovascular-Pulmonary,34,0,0,10,0,0,0,0,0,0,1,14
+Dermatology,0,2,0,0,0,0,0,0,0,2,0,1
+Gastroenterology,0,0,34,4,0,0,0,0,0,0,0,1
+General Medicine,1,0,0,38,0,0,0,0,0,2,0,1
+Neurology,0,0,0,2,22,0,0,0,4,3,4,1
+Neurosurgery,0,0,0,0,1,8,0,0,5,0,0,1
+Obstetrics-Gynecology,1,0,0,1,1,0,14,0,0,0,0,10
+Ophthalmology,0,0,0,1,0,0,0,13,0,0,0,1
+Orthopedic,0,0,0,1,0,0,0,0,53,0,0,4
+Psychiatry-Psychology,0,0,0,2,1,0,0,0,0,5,0,0
+Radiology,2,0,0,0,5,0,0,0,1,0,35,0
+Surgery,3,0,0,1,0,0,0,1,16,0,0,154
