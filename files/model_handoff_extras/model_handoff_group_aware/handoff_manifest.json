@@ -1,0 +1,619 @@
+{
+  "created_utc": "2026-10-12T20:26:56+00:00",
+  "configuration": {
+    "args": {
+      "train": "/mnt/user-data/uploads/train.csv",
+      "test": "/mnt/user-data/uploads/test_no_labels.csv",
+      "output_dir": "/tmp/ex/model_handoff_group_aware",
+      "seed": 42,
+      "val_fraction": 0.2,
+      "partial_policy": "include",
+      "force_resplit": false,
+      "split": "group_aware",
+      "augment": [
+        "word_dropout",
+        "sentence_dropout"
+      ],
+      "augment_variants": [
+        "baseline_all_fields"
+      ],
+      "word_dropout_prob": 0.05,
+      "aug_copies": 1,
+      "sentence_dropout_prob": 0.1,
+      "sentence_min_sentences": 8,
+      "sentence_min_words": 100,
+      "protected_terms_file": null,
+      "min_freq": 2,
+      "boilerplate_min_df": 15,
+      "boilerplate_min_words": 6,
+      "alphas": "0,0.25,0.5,0.75,1",
+      "no_zip": true
+    },
+    "variants": {
+      "baseline_all_fields": {
+        "variant": "baseline_all_fields",
+        "description": "description + sample_name + transcription + keywords; the specialty-name prefix is removed from keywords (logged). Recommended default.",
+        "fields": [
+          "description",
+          "sample_name",
+          "transcription",
+          "keywords"
+        ],
+        "markers": {
+          "description": "[DESCRIPTION]",
+          "sample_name": "[SAMPLE_NAME]",
+          "transcription": "[TRANSCRIPTION]",
+          "keywords": "[KEYWORDS]"
+        },
+        "normalization": "clinical (pp.normalize_text)",
+        "numeric_normalization": "none: numbers, dosages and units kept verbatim in every variant",
+        "keyword_specialty_prefix_removed": true,
+        "boilerplate_compression": false,
+        "boilerplate_min_df_train": 15,
+        "boilerplate_min_words": 6,
+        "boilerplate_rule_count": 0,
+        "unk_token": "<unk>",
+        "unk_index": 1,
+        "pad_token": "<pad>",
+        "pad_index": 0,
+        "vocab_min_freq": 2,
+        "vocab_size": 17342,
+        "vocab_fit_on": "train partition (original, unaugmented rows) only",
+        "validation_oov_token_rate_diagnostic_only": 0.0192,
+        "max_length_policy": {
+          "unit": "vocabulary tokens (see tokenize())",
+          "train_length_percentiles": {
+            "50": 552.0,
+            "90": 1091.0,
+            "95": 1285.0,
+            "99": 1738.0799999999972,
+            "100": 2994.0
+          },
+          "suggested_max_len": 1285,
+          "truncation_applied_in_data": false,
+          "note": "No text is truncated in the exported CSVs. Apply the SAME max_len/truncation rule to train, validation and test inside the model input pipeline."
+        },
+        "rows": {
+          "train": 2129,
+          "validation": 533,
+          "test": 398
+        },
+        "sentences_removed_total": {
+          "train": 0,
+          "all": 0
+        }
+      },
+      "clinical_text": {
+        "variant": "clinical_text",
+        "description": "description + transcription only (no sample_name, no keywords).",
+        "fields": [
+          "description",
+          "transcription"
+        ],
+        "markers": {
+          "description": "[DESCRIPTION]",
+          "sample_name": "[SAMPLE_NAME]",
+          "transcription": "[TRANSCRIPTION]",
+          "keywords": "[KEYWORDS]"
+        },
+        "normalization": "clinical (pp.normalize_text)",
+        "numeric_normalization": "none: numbers, dosages and units kept verbatim in every variant",
+        "keyword_specialty_prefix_removed": false,
+        "boilerplate_compression": false,
+        "boilerplate_min_df_train": 15,
+        "boilerplate_min_words": 6,
+        "boilerplate_rule_count": 0,
+        "unk_token": "<unk>",
+        "unk_index": 1,
+        "pad_token": "<pad>",
+        "pad_index": 0,
+        "vocab_min_freq": 2,
+        "vocab_size": 17086,
+        "vocab_fit_on": "train partition (original, unaugmented rows) only",
+        "validation_oov_token_rate_diagnostic_only": 0.0191,
+        "max_length_policy": {
+          "unit": "vocabulary tokens (see tokenize())",
+          "train_length_percentiles": {
+            "50": 511.0,
+            "90": 1063.2000000000003,
+            "95": 1267.1999999999998,
+            "99": 1724.0,
+            "100": 2988.0
+          },
+          "suggested_max_len": 1268,
+          "truncation_applied_in_data": false,
+          "note": "No text is truncated in the exported CSVs. Apply the SAME max_len/truncation rule to train, validation and test inside the model input pipeline."
+        },
+        "rows": {
+          "train": 2129,
+          "validation": 533,
+          "test": 398
+        },
+        "sentences_removed_total": {
+          "train": 0,
+          "all": 0
+        }
+      },
+      "compressed_unique_text": {
+        "variant": "compressed_unique_text",
+        "description": "clinical_text with (a) repeated sentences inside a note collapsed and (b) train-derived boilerplate sentences removed (negation/number-bearing sentences protected).",
+        "fields": [
+          "description",
+          "transcription"
+        ],
+        "markers": {
+          "description": "[DESCRIPTION]",
+          "sample_name": "[SAMPLE_NAME]",
+          "transcription": "[TRANSCRIPTION]",
+          "keywords": "[KEYWORDS]"
+        },
+        "normalization": "clinical (pp.normalize_text)",
+        "numeric_normalization": "none: numbers, dosages and units kept verbatim in every variant",
+        "keyword_specialty_prefix_removed": false,
+        "boilerplate_compression": true,
+        "boilerplate_min_df_train": 15,
+        "boilerplate_min_words": 6,
+        "boilerplate_rule_count": 2,
+        "unk_token": "<unk>",
+        "unk_index": 1,
+        "pad_token": "<pad>",
+        "pad_index": 0,
+        "vocab_min_freq": 2,
+        "vocab_size": 17078,
+        "vocab_fit_on": "train partition (original, unaugmented rows) only",
+        "validation_oov_token_rate_diagnostic_only": 0.0193,
+        "max_length_policy": {
+          "unit": "vocabulary tokens (see tokenize())",
+          "train_length_percentiles": {
+            "50": 509.0,
+            "90": 1055.4,
+            "95": 1257.6,
+            "99": 1724.0,
+            "100": 2988.0
+          },
+          "suggested_max_len": 1258,
+          "truncation_applied_in_data": false,
+          "note": "No text is truncated in the exported CSVs. Apply the SAME max_len/truncation rule to train, validation and test inside the model input pipeline."
+        },
+        "rows": {
+          "train": 2129,
+          "validation": 533,
+          "test": 398
+        },
+        "sentences_removed_total": {
+          "train": 352,
+          "all": 465
+        }
+      },
+      "diagnostic_original_keywords": {
+        "variant": "diagnostic_original_keywords",
+        "description": "all four fields with keywords UNCHANGED (specialty-name prefix kept). Leakage diagnostic only -- not the recommended dataset.",
+        "fields": [
+          "description",
+          "sample_name",
+          "transcription",
+          "keywords"
+        ],
+        "markers": {
+          "description": "[DESCRIPTION]",
+          "sample_name": "[SAMPLE_NAME]",
+          "transcription": "[TRANSCRIPTION]",
+          "keywords": "[KEYWORDS]"
+        },
+        "normalization": "clinical (pp.normalize_text)",
+        "numeric_normalization": "none: numbers, dosages and units kept verbatim in every variant",
+        "keyword_specialty_prefix_removed": false,
+        "boilerplate_compression": false,
+        "boilerplate_min_df_train": 15,
+        "boilerplate_min_words": 6,
+        "boilerplate_rule_count": 0,
+        "unk_token": "<unk>",
+        "unk_index": 1,
+        "pad_token": "<pad>",
+        "pad_index": 0,
+        "vocab_min_freq": 2,
+        "vocab_size": 17345,
+        "vocab_fit_on": "train partition (original, unaugmented rows) only",
+        "validation_oov_token_rate_diagnostic_only": 0.0191,
+        "max_length_policy": {
+          "unit": "vocabulary tokens (see tokenize())",
+          "train_length_percentiles": {
+            "50": 555.0,
+            "90": 1093.0,
+            "95": 1285.0,
+            "99": 1739.5199999999968,
+            "100": 2994.0
+          },
+          "suggested_max_len": 1285,
+          "truncation_applied_in_data": false,
+          "note": "No text is truncated in the exported CSVs. Apply the SAME max_len/truncation rule to train, validation and test inside the model input pipeline."
+        },
+        "rows": {
+          "train": 2129,
+          "validation": 533,
+          "test": 398
+        },
+        "sentences_removed_total": {
+          "train": 0,
+          "all": 0
+        }
+      }
+    },
+    "split_primary": {
+      "split_tag": "primary_stratified",
+      "strategy": "stratified_random",
+      "seed": 42,
+      "validation_fraction": 0.2,
+      "partial_policy": "include",
+      "config_fingerprint": "c7a171b12862ec1b2d109f7b97d67f50f29ae2c5ab8d36484affa89c0c6acf66",
+      "records_total": 2662,
+      "records_train": 2129,
+      "records_validation": 533,
+      "per_class_counts": {
+        "Surgery": {
+          "total": 890,
+          "validation": 178,
+          "train": 712,
+          "validation_share": 0.2
+        },
+        "Cardiovascular-Pulmonary": {
+          "total": 308,
+          "validation": 62,
+          "train": 246,
+          "validation_share": 0.201
+        },
+        "Orthopedic": {
+          "total": 300,
+          "validation": 60,
+          "train": 240,
+          "validation_share": 0.2
+        },
+        "Radiology": {
+          "total": 222,
+          "validation": 44,
+          "train": 178,
+          "validation_share": 0.198
+        },
+        "General Medicine": {
+          "total": 211,
+          "validation": 42,
+          "train": 169,
+          "validation_share": 0.199
+        },
+        "Gastroenterology": {
+          "total": 195,
+          "validation": 39,
+          "train": 156,
+          "validation_share": 0.2
+        },
+        "Neurology": {
+          "total": 184,
+          "validation": 37,
+          "train": 147,
+          "validation_share": 0.201
+        },
+        "Obstetrics-Gynecology": {
+          "total": 135,
+          "validation": 27,
+          "train": 108,
+          "validation_share": 0.2
+        },
+        "Neurosurgery": {
+          "total": 78,
+          "validation": 16,
+          "train": 62,
+          "validation_share": 0.205
+        },
+        "Ophthalmology": {
+          "total": 73,
+          "validation": 15,
+          "train": 58,
+          "validation_share": 0.205
+        },
+        "Psychiatry-Psychology": {
+          "total": 41,
+          "validation": 8,
+          "train": 33,
+          "validation_share": 0.195
+        },
+        "Dermatology": {
+          "total": 25,
+          "validation": 5,
+          "train": 20,
+          "validation_share": 0.2
+        }
+      },
+      "stratification_feasible": true,
+      "stratification_warnings": [],
+      "created_utc": "2026-10-12T20:26:32+00:00",
+      "status": "PROPOSED -- needs owner approval"
+    },
+    "split_group_aware": {
+      "split_tag": "optional_group_aware",
+      "strategy": "duplicate_group_aware",
+      "seed": 42,
+      "validation_fraction": 0.2,
+      "partial_policy": "include",
+      "config_fingerprint": "07a914bdfb84d59bda50d25f0741f51e68f6d60e4fc7e02afe8eca6e1ed4073a",
+      "records_total": 2662,
+      "records_train": 2129,
+      "records_validation": 533,
+      "per_class_counts": {
+        "Surgery": {
+          "total": 890,
+          "validation": 178,
+          "train": 712,
+          "validation_share": 0.2
+        },
+        "Cardiovascular-Pulmonary": {
+          "total": 308,
+          "validation": 62,
+          "train": 246,
+          "validation_share": 0.201
+        },
+        "Orthopedic": {
+          "total": 300,
+          "validation": 60,
+          "train": 240,
+          "validation_share": 0.2
+        },
+        "Radiology": {
+          "total": 222,
+          "validation": 45,
+          "train": 177,
+          "validation_share": 0.203
+        },
+        "General Medicine": {
+          "total": 211,
+          "validation": 43,
+          "train": 168,
+          "validation_share": 0.204
+        },
+        "Gastroenterology": {
+          "total": 195,
+          "validation": 39,
+          "train": 156,
+          "validation_share": 0.2
+        },
+        "Neurology": {
+          "total": 184,
+          "validation": 37,
+          "train": 147,
+          "validation_share": 0.201
+        },
+        "Obstetrics-Gynecology": {
+          "total": 135,
+          "validation": 27,
+          "train": 108,
+          "validation_share": 0.2
+        },
+        "Neurosurgery": {
+          "total": 78,
+          "validation": 15,
+          "train": 63,
+          "validation_share": 0.192
+        },
+        "Ophthalmology": {
+          "total": 73,
+          "validation": 14,
+          "train": 59,
+          "validation_share": 0.192
+        },
+        "Psychiatry-Psychology": {
+          "total": 41,
+          "validation": 8,
+          "train": 33,
+          "validation_share": 0.195
+        },
+        "Dermatology": {
+          "total": 25,
+          "validation": 5,
+          "train": 20,
+          "validation_share": 0.2
+        }
+      },
+      "stratification_feasible": true,
+      "stratification_warnings": [],
+      "created_utc": "2026-10-12T20:26:32+00:00",
+      "status": "OPTIONAL robustness check -- not a substitute for the primary split"
+    }
+  },
+  "files": {
+    "AUDIT_SUMMARY.md": {
+      "sha256": "062f3722b15b8cbb8e907c1c965fbcffa222616084aa9f3dee898c3a42479273",
+      "bytes": 3672
+    },
+    "CLASS_WEIGHTING_EXPERIMENTS.md": {
+      "sha256": "b8ab46e9c17bae90b25814e5db86d7f204bebda316036374d3d8ec85a2730ca9",
+      "bytes": 4575
+    },
+    "DATA_DICTIONARY.md": {
+      "sha256": "205de83b089d2d5670a101697912bbfc5cded659bcdf2859f06920206fc4f638",
+      "bytes": 1647
+    },
+    "MODEL_HANDOFF_README.md": {
+      "sha256": "e88b7cc9110c668dc7a18a4e1b33cc9ece22769063b91698b55977369908b4e3",
+      "bytes": 10297
+    },
+    "audit/audit_summary.json": {
+      "sha256": "2c832d5830d6325daa7fd67de6ff7cd9c5667b0f3a9403bea80759619b6a124d",
+      "bytes": 4031
+    },
+    "audit/cleaned_test_source_fields.csv": {
+      "sha256": "b9f1af7edc556c1ed457fa9fcbb65339d0cbffe668edbe7134c88d603aa71e85",
+      "bytes": 1385755
+    },
+    "audit/cleaned_train_source_fields.csv": {
+      "sha256": "882fa723e4915a1664e48cc5dd417f374b6ac7b3cc3fc0b99a6ce424f1ee4daa",
+      "bytes": 9161418
+    },
+    "audit/quarantined_train.csv": {
+      "sha256": "b6b0a365ff0ad9b354227503905763148b0e8c69fd0b6f61df903909f86744f2",
+      "bytes": 1814
+    },
+    "augmentation_check.json": {
+      "sha256": "f03ef42e2ac72122ed175b51be3165a8581122654b24d6f704b5910b17baf7b9",
+      "bytes": 1462
+    },
+    "datasets/baseline_all_fields/preprocessing_config.json": {
+      "sha256": "83b666ec3db26674bdc62234ce0be84173e2548f072018f957a872f10e1aa1bc",
+      "bytes": 1627
+    },
+    "datasets/baseline_all_fields/test.csv": {
+      "sha256": "756786f4cd41a6a48595622f607a30b6140f28d0dcdbf0c3f8bfd24d2b01260b",
+      "bytes": 1391494
+    },
+    "datasets/baseline_all_fields/train.csv": {
+      "sha256": "dd54fbc1672627b88a989b4b603ff0e60c51332ea94c06981ae9012cf7f73d4e",
+      "bytes": 7416394
+    },
+    "datasets/baseline_all_fields/train_augmented_sentence_dropout.csv": {
+      "sha256": "41dfef143ef3f661d43a4d2dcb6436870a0dccf919f091d6362edccd799c69a2",
+      "bytes": 14262657
+    },
+    "datasets/baseline_all_fields/train_augmented_word_dropout.csv": {
+      "sha256": "a7ffb8e567981e6de2fabb342c003e149cf282e40032940e3ffd9f548f9fcaa5",
+      "bytes": 14896046
+    },
+    "datasets/baseline_all_fields/validation.csv": {
+      "sha256": "e82df4f5ef30a492e29960d965048b2f9cd2ea1aa6719c7eee284c19c61f0ebe",
+      "bytes": 1753945
+    },
+    "datasets/baseline_all_fields/vocab_train_only.json": {
+      "sha256": "05822f42ba3587909fb0610f31f5843292168e1d6176db16239784463d983d74",
+      "bytes": 352720
+    },
+    "datasets/clinical_text/preprocessing_config.json": {
+      "sha256": "de3f038467d1b76bad70416159f0061020008f5f4e1271bc50a8e1ef5811fedf",
+      "bytes": 1527
+    },
+    "datasets/clinical_text/test.csv": {
+      "sha256": "91d7bd85c117479c3ef426b0083ce472459e5a0b6ff4ab7ddd6d91e5221eb87d",
+      "bytes": 1303030
+    },
+    "datasets/clinical_text/train.csv": {
+      "sha256": "10bbcf82f6dce296ac225635f2590f94833a2f0fe4d35dc89675e7352967c815",
+      "bytes": 6905930
+    },
+    "datasets/clinical_text/validation.csv": {
+      "sha256": "56523b6c123f8d53432b5b54cb97ab90b66df632b5c244bb46a5dbcee19e1f14",
+      "bytes": 1624352
+    },
+    "datasets/clinical_text/vocab_train_only.json": {
+      "sha256": "a3839ec2c626384bb552affd2dc83f90a525196b5eecf0702a6b87b01dfa19d4",
+      "bytes": 347012
+    },
+    "datasets/compressed_unique_text/boilerplate_rules_train_only.json": {
+      "sha256": "225e3c9abc2b8c3694cd9f1e4caa43f285833f2d052c675a977682f99f78680d",
+      "bytes": 196
+    },
+    "datasets/compressed_unique_text/compression_log.csv": {
+      "sha256": "7c2d48005dcfc70fef570ac920272728cef929c17ab3a1122ae8871c9672e844",
+      "bytes": 145699
+    },
+    "datasets/compressed_unique_text/compression_removed_sentences.csv": {
+      "sha256": "8f240fb0f3348be3d9d5e9af3a056ec1ec3b5e04374b49ef1703d6e8984c31b7",
+      "bytes": 53413
+    },
+    "datasets/compressed_unique_text/preprocessing_config.json": {
+      "sha256": "a82f1bfb8d67e17a3b119368c4270c96f6e02049c378afed163523b1145fa344",
+      "bytes": 1616
+    },
+    "datasets/compressed_unique_text/test.csv": {
+      "sha256": "024ee4bca0eae8143ce6ab75823dafbb4a34225150b441aea8919e78d8afb5ac",
+      "bytes": 1298897
+    },
+    "datasets/compressed_unique_text/train.csv": {
+      "sha256": "300354a3d7eafe0cef42c6c58b787195e0f0123835694215cbf0c0731a85670c",
+      "bytes": 6885438
+    },
+    "datasets/compressed_unique_text/validation.csv": {
+      "sha256": "1bce7be651eca9ba155ecd46db5bf8da2ddb4d3b719125790e7b781bfcb4d441",
+      "bytes": 1618170
+    },
+    "datasets/compressed_unique_text/vocab_train_only.json": {
+      "sha256": "6f0422528cfb2e3ac51b405c32ec6c0a6ca6e175abcefa1ee26ae6d2188b8110",
+      "bytes": 346855
+    },
+    "datasets/diagnostic_original_keywords/preprocessing_config.json": {
+      "sha256": "6a46eb145b4da43d636f4fff9b54823ce73d6ee4d50852683d6c67315ed0601e",
+      "bytes": 1627
+    },
+    "datasets/diagnostic_original_keywords/test.csv": {
+      "sha256": "08de529a4e4b949226df4a76683f3de56da04df508fc76bc2fa506d782f15198",
+      "bytes": 1395918
+    },
+    "datasets/diagnostic_original_keywords/train.csv": {
+      "sha256": "2f6fe2ac225e649e7aa472537d21891b5530b2e5341a8759dbf448a2bffd47ae",
+      "bytes": 7441259
+    },
+    "datasets/diagnostic_original_keywords/validation.csv": {
+      "sha256": "f91dc2e10d7529eec3ccf4f864d3d6d90daaff63be613bf4527e69d88c647ca6",
+      "bytes": 1760285
+    },
+    "datasets/diagnostic_original_keywords/vocab_train_only.json": {
+      "sha256": "5db59bcf35c4b32d4f482fb03680d9247d85aa5c53e4bd3f8451167059c8da29",
+      "bytes": 352789
+    },
+    "handoff_build_log.json": {
+      "sha256": "d2596e7f8e4c7094088d03ced6f397c5bd0432722e0cb7d192075ae37953eaa1",
+      "bytes": 2842
+    },
+    "mappings/record_mapping.csv": {
+      "sha256": "9ba54ba7e812f4c7eaf29793ab13a27cb5b165f3632d4c9d42f328644e663c8d",
+      "bytes": 378293
+    },
+    "splits/split_manifest_optional_group_aware.csv": {
+      "sha256": "12a3478f141bae381c679e08dfcf51abdd7ce1297eba4bbbc762714785074c42",
+      "bytes": 200439
+    },
+    "splits/split_manifest_primary_stratified.csv": {
+      "sha256": "f85478c55305c8a2b5338647428f675310cb78df3432074554cf7344dc10079f",
+      "bytes": 189791
+    },
+    "splits/split_metadata_optional_group_aware.json": {
+      "sha256": "f2ac02deed285aff059981330a5cb599c29a9b8e88ef4e6302c9900f211c43f7",
+      "bytes": 2057
+    },
+    "splits/split_metadata_primary_stratified.json": {
+      "sha256": "23ef0d8c1037780f7c22df24828c7064d1677658a64d7c1e1f6041c506b6d0d4",
+      "bytes": 2016
+    },
+    "splits/split_overlap_report.json": {
+      "sha256": "42ae0d9ef93f2ed310481aaf42339fe58e598b68b536bfe5e792e56f110fcb69",
+      "bytes": 1426
+    },
+    "splits/validation_subsets_group_aware.csv": {
+      "sha256": "8e5d42502c5ee0b5b7ebd91ec3ee58ab4bfe86e0f5ffc27a914a1e82074a7314",
+      "bytes": 50777
+    },
+    "splits/validation_subsets_primary.csv": {
+      "sha256": "9c90af7d1efccea98acd7cee81ca1b7ad89a5c9a505e8f2d8e78fc228058ce48",
+      "bytes": 50509
+    },
+    "weights/class_counts.csv": {
+      "sha256": "3109d6268bfc5b628495bbec47b20cd9c81e8c1960b0e1170e54821d0ad18866",
+      "bytes": 1061
+    },
+    "weights/class_weights_long.csv": {
+      "sha256": "a5ef47421ed9fdcc22ed9a2844b7060de379da648fd4b723d1881e28f499fc22",
+      "bytes": 22264
+    },
+    "weights/class_weights_primary_split.json": {
+      "sha256": "96ddb43e2590309c0843e413761df37399992474fbdd9cac69fb16606309fea7",
+      "bytes": 3930
+    },
+    "weights/class_weights_primary_split_wide.csv": {
+      "sha256": "60d9a0c59f9c58adc96542aabb81b7e4968c5504787fc1cf6466e4c563cada88",
+      "bytes": 2121
+    },
+    "weights/duplicate_group_sample_weights_primary_train.csv": {
+      "sha256": "c45a147f121c431004c122120a04d1d9420c2de97bc9b58af4dd12494ad98750",
+      "bytes": 100137
+    },
+    "weights/label_to_index.json": {
+      "sha256": "cd0a53e99a01bc079bdda3235c7e6b3d2748ad723d9cce1487b0ebe9e38522d1",
+      "bytes": 281
+    }
+  }
+}

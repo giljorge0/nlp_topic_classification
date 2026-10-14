@@ -1,0 +1,9 @@
+{
+  "fit_on": "train partition only",
+  "min_df": 15,
+  "min_words": 6,
+  "rules": {
+    "the patient tolerated the procedure well.": 144,
+    "the rest of the cn exam was unremarkable.": 17
+  }
+}

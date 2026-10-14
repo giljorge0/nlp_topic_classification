@@ -1,0 +1,14 @@
+{
+  "Surgery": 0,
+  "Cardiovascular-Pulmonary": 1,
+  "Orthopedic": 2,
+  "Radiology": 3,
+  "General Medicine": 4,
+  "Gastroenterology": 5,
+  "Neurology": 6,
+  "Obstetrics-Gynecology": 7,
+  "Neurosurgery": 8,
+  "Ophthalmology": 9,
+  "Psychiatry-Psychology": 10,
+  "Dermatology": 11
+}

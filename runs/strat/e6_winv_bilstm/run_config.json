@@ -7,7 +7,7 @@
   "split": "stratified",
   "handoff_root": "model_handoff",
   "train_file": "model_handoff/datasets/baseline_all_fields/train.csv",
-  "max_length": 1024,
+  "max_length": 2048,
   "max_length_source": "explicit",
   "model": "bilstm",
   "seed": 42,
