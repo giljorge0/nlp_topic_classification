@@ -1,0 +1,22 @@
+{
+  "model": "naive_bayes",
+  "config_name": "all_four_fields__full_text",
+  "fields": [
+    "description",
+    "sample_name",
+    "transcription",
+    "keywords"
+  ],
+  "data_fingerprint": "ee93c31475ee6bc7438e467074582fdcc0b52e21705030f45ef5be791ed42a2d",
+  "seed": 42,
+  "algorithm": "MultinomialNB",
+  "alpha": 1.0,
+  "features": "TF-IDF word unigrams",
+  "lowercase": true,
+  "stemming": "NLTK PorterStemmer",
+  "tfidf_min_df": 1,
+  "tfidf_norm": "l2",
+  "fit_partition": "full outer training split (no inner validation)",
+  "strip_keyword_prefix": false,
+  "keep_keyword_prefix_only": false
+}
