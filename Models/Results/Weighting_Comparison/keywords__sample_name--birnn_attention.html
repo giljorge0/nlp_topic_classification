@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Keywords + Sample Name · BiRNN + Attention · Clinical NLP</title>
+<style>
+:root{color-scheme:light;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+--text:#13233a;--muted:#64748b;--bg:#f3f6fb;--edge:#dbe3ef;--navy:#163451;--cyan:#1c8eaa}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}
+.container{max-width:1250px;margin:auto;padding:32px 28px 70px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.kicker{text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:800;color:#527189}
+h1{font-size:clamp(27px,4vw,40px);letter-spacing:-.035em;margin:8px 0 6px}
+h2{font-size:20px;margin:28px 0 14px}h3{font-size:17px;margin:18px 0 10px}
+p{color:var(--muted);line-height:1.55;margin:10px 0 18px}
+a{color:#066989;text-decoration:none}a:hover{text-decoration:underline}
+.btn{border:1px solid var(--edge);border-radius:11px;background:white;padding:10px 13px;color:var(--navy);font-weight:650;display:inline-block}
+.panel{border:1px solid var(--edge);background:white;border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 3px 14px #142f4810}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:13px;margin:20px 0}
+.card{border:1px solid var(--edge);background:white;border-radius:14px;padding:18px}
+.card .number{font-size:27px;font-weight:750;color:#103b58;margin:7px 0 3px}
+.caption,small{color:var(--muted);font-size:12px}.muted{color:var(--muted)}
+.tablewrap{overflow-x:auto;width:100%}table{border-collapse:collapse;width:100%;white-space:nowrap;font-size:13px}
+th{text-align:left;color:#3b5871;background:#eef3f8;font-weight:800;font-size:12px;letter-spacing:.02em}
+th,td{padding:11px 12px;border-bottom:1px solid #e9edf4}tr:last-child td{border-bottom:0}
+tbody tr:hover{background:#f6fbfe}td.num{text-align:right;font-variant-numeric:tabular-nums}
+.b{font-weight:800;color:#12415d}.bar{height:6px;width:90px;background:#e8edf4;border-radius:4px;overflow:hidden;margin-top:5px}
+.bar span{display:block;background:#3283a4;height:100%;border-radius:4px}
+.badge{display:inline-block;border:1px solid #cddfe9;border-radius:7px;background:#e8f5f9;color:#19637d;padding:3px 8px;font-size:12px;font-weight:750}
+.notice{padding:12px 15px;border-radius:10px;background:#edf5f8;color:#31536c;border:1px solid #d6e5ee;font-size:13px}
+.warn{background:#fff7ec;border-color:#f7e0b6;color:#81521c}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.linkcard{display:block;background:#fff;border:1px solid var(--edge);padding:15px 17px;border-radius:12px}
+.linkcard strong{display:block;color:#204664}.linkcard small{display:block;margin-top:5px}
+.heat{font-variant-numeric:tabular-nums;text-align:center;min-width:52px}
+.mono{font-family:ui-monospace,monospace;font-size:12px;white-space:normal;overflow-wrap:anywhere}
+.footer{border-top:1px solid var(--edge);padding-top:18px;margin-top:32px;font-size:12px;color:#7b8fa2}
+</style></head><body><main class="container">
+<div class="header"><span class="kicker">Clinical NLP · 5-Fold Cross-Validation</span>
+<a class="btn" href="../index.html">← Dashboard</a></div><h1>Keywords + Sample Name · BiRNN + Attention</h1><p>2 completed five-fold experiment(s). Fold mean ± sample standard deviation; pooled OOF is computed over all labelled examples.</p><section class="panel"><h2>Aggregate performance</h2><div class="tablewrap"><table><thead><tr><th>Experiment</th><th>Accuracy<br><small>fold mean ± SD</small></th><th>Macro-F1<br><small>fold mean ± SD</small></th><th>Weighted-F1<br><small>fold mean ± SD</small></th><th>Min class F1<br><small>fold mean ± SD</small></th><th>Macro-F1<br><small>pooled OOF</small></th><th>Pass folds</th><th>Avg. best epoch</th></tr></thead><tbody><tr><td><strong>Normal</strong></td><td class="num"><div class="b">90.3% ± 2.0%</div></td><td class="num"><div class="b">0.887 ± 0.029</div><div class="bar"><span style="width:88.74%"></span></div></td><td class="num"><div class="b">0.904 ± 0.020</div></td><td class="num"><div class="b">0.746 ± 0.085</div></td><td class="num b">0.889</td><td class="num">5/5</td><td class="num">6.400 ± 1.817</td></tr><tr><td><strong>Weighted (sqrt_inv)</strong></td><td class="num"><div class="b">90.2% ± 1.9%</div></td><td class="num"><div class="b">0.884 ± 0.028</div><div class="bar"><span style="width:88.40%"></span></div></td><td class="num"><div class="b">0.904 ± 0.018</div></td><td class="num"><div class="b">0.744 ± 0.077</div></td><td class="num b">0.884</td><td class="num">5/5</td><td class="num">9.600 ± 2.408</td></tr></tbody></table></div></section><section class="panel"><h2>Per-class F1</h2><p>Top line: fold mean ± SD. Second line: pooled out-of-fold F1.</p><div class="tablewrap"><table><thead><tr><th>Medical specialty</th><th>Normal</th><th>Weighted (sqrt_inv)</th></tr></thead><tbody><tr><td>Cardiovascular-Pulmonary</td><td class="num"><div>0.816 ± 0.040</div><small>pooled: 0.815</small></td><td class="num"><div>0.840 ± 0.031</div><small>pooled: 0.840</small></td></tr><tr><td>Dermatology</td><td class="num"><div>0.906 ± 0.103</div><small>pooled: 0.913</small></td><td class="num"><div>0.906 ± 0.103</div><small>pooled: 0.913</small></td></tr><tr><td>Gastroenterology</td><td class="num"><div>0.905 ± 0.023</div><small>pooled: 0.906</small></td><td class="num"><div>0.906 ± 0.023</div><small>pooled: 0.906</small></td></tr><tr><td>General Medicine</td><td class="num"><div>0.862 ± 0.050</div><small>pooled: 0.861</small></td><td class="num"><div>0.838 ± 0.041</div><small>pooled: 0.838</small></td></tr><tr><td>Neurology</td><td class="num"><div>0.812 ± 0.050</div><small>pooled: 0.811</small></td><td class="num"><div>0.784 ± 0.068</div><small>pooled: 0.778</small></td></tr><tr><td>Neurosurgery</td><td class="num"><div>0.895 ± 0.047</div><small>pooled: 0.897</small></td><td class="num"><div>0.880 ± 0.041</div><small>pooled: 0.882</small></td></tr><tr><td>Obstetrics-Gynecology</td><td class="num"><div>0.888 ± 0.077</div><small>pooled: 0.888</small></td><td class="num"><div>0.888 ± 0.081</div><small>pooled: 0.885</small></td></tr><tr><td>Ophthalmology</td><td class="num"><div>0.978 ± 0.034</div><small>pooled: 0.978</small></td><td class="num"><div>0.978 ± 0.034</div><small>pooled: 0.978</small></td></tr><tr><td>Orthopedic</td><td class="num"><div>0.914 ± 0.021</div><small>pooled: 0.914</small></td><td class="num"><div>0.913 ± 0.019</div><small>pooled: 0.913</small></td></tr><tr><td>Psychiatry-Psychology</td><td class="num"><div>0.779 ± 0.126</div><small>pooled: 0.789</small></td><td class="num"><div>0.776 ± 0.105</div><small>pooled: 0.780</small></td></tr><tr><td>Radiology</td><td class="num"><div>0.941 ± 0.038</div><small>pooled: 0.940</small></td><td class="num"><div>0.943 ± 0.036</div><small>pooled: 0.943</small></td></tr><tr><td>Surgery</td><td class="num"><div>0.953 ± 0.009</div><small>pooled: 0.953</small></td><td class="num"><div>0.956 ± 0.002</div><small>pooled: 0.956</small></td></tr></tbody></table></div></section>
+<div class="footer">All evaluations are out-of-fold on labelled development data. The official unlabelled test set is not evaluated.</div>
+</main></body></html>
