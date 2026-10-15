@@ -1,27 +1,27 @@
 {
-  "accuracy": 0.9307875894988067,
-  "macro_f1": 0.9104515095360747,
-  "weighted_f1": 0.9301654294055366,
-  "min_class_f1": 0.7142857142857143,
+  "accuracy": 0.9379474940334129,
+  "macro_f1": 0.9206010947007705,
+  "weighted_f1": 0.9371416504230001,
+  "min_class_f1": 0.7692307692307693,
   "per_class_f1": {
-    "Cardiovascular-Pulmonary": 0.875,
+    "Cardiovascular-Pulmonary": 0.9052631578947369,
     "Dermatology": 1.0,
     "Gastroenterology": 0.9310344827586207,
     "General Medicine": 0.9090909090909091,
-    "Neurology": 0.8363636363636363,
+    "Neurology": 0.8727272727272727,
     "Neurosurgery": 0.9090909090909091,
     "Obstetrics-Gynecology": 0.9130434782608695,
     "Ophthalmology": 0.9523809523809523,
     "Orthopedic": 0.9591836734693877,
-    "Psychiatry-Psychology": 0.7142857142857143,
+    "Psychiatry-Psychology": 0.7692307692307693,
     "Radiology": 0.9577464788732394,
-    "Surgery": 0.9681978798586572
+    "Surgery": 0.968421052631579
   },
   "classification_report": {
     "Cardiovascular-Pulmonary": {
-      "precision": 0.875,
-      "recall": 0.875,
-      "f1-score": 0.875,
+      "precision": 0.9148936170212766,
+      "recall": 0.8958333333333334,
+      "f1-score": 0.9052631578947369,
       "support": 48.0
     },
     "Dermatology": {
@@ -43,9 +43,9 @@
       "support": 33.0
     },
     "Neurology": {
-      "precision": 0.8846153846153846,
-      "recall": 0.7931034482758621,
-      "f1-score": 0.8363636363636363,
+      "precision": 0.9230769230769231,
+      "recall": 0.8275862068965517,
+      "f1-score": 0.8727272727272727,
       "support": 29.0
     },
     "Neurosurgery": {
@@ -73,9 +73,9 @@
       "support": 47.0
     },
     "Psychiatry-Psychology": {
-      "precision": 0.7142857142857143,
+      "precision": 0.8333333333333334,
       "recall": 0.7142857142857143,
-      "f1-score": 0.7142857142857143,
+      "f1-score": 0.7692307692307693,
       "support": 7.0
     },
     "Radiology": {
@@ -85,32 +85,32 @@
       "support": 35.0
     },
     "Surgery": {
-      "precision": 0.958041958041958,
-      "recall": 0.9785714285714285,
-      "f1-score": 0.9681978798586572,
+      "precision": 0.9517241379310345,
+      "recall": 0.9857142857142858,
+      "f1-score": 0.968421052631579,
       "support": 140.0
     },
-    "accuracy": 0.9307875894988067,
+    "accuracy": 0.9379474940334129,
     "macro avg": {
-      "precision": 0.9235039198274492,
-      "recall": 0.9007847925464721,
-      "f1-score": 0.9104515095360747,
+      "precision": 0.9394276660290752,
+      "recall": 0.9059897049712121,
+      "f1-score": 0.9206010947007705,
       "support": 419.0
     },
     "weighted avg": {
-      "precision": 0.9317398599653268,
-      "recall": 0.9307875894988067,
-      "f1-score": 0.9301654294055366,
+      "precision": 0.9388499238083099,
+      "recall": 0.9379474940334129,
+      "f1-score": 0.9371416504230001,
       "support": 419.0
     }
   },
   "confusion_matrix": [
     [
-      42,
+      43,
       0,
       0,
       2,
-      1,
+      0,
       0,
       1,
       0,
@@ -162,18 +162,18 @@
       1
     ],
     [
-      3,
+      1,
       0,
       0,
-      0,
-      23,
+      1,
+      24,
       0,
       0,
       0,
       1,
-      2,
+      1,
       0,
-      0
+      1
     ],
     [
       0,
@@ -207,12 +207,12 @@
       0,
       0,
       0,
-      1,
+      0,
       0,
       0,
       0,
       10,
-      0,
+      1,
       0,
       0,
       0
@@ -268,10 +268,10 @@
       0,
       1,
       0,
-      1,
       0,
       0,
-      137
+      0,
+      138
     ]
   ],
   "passes_accuracy": true,
