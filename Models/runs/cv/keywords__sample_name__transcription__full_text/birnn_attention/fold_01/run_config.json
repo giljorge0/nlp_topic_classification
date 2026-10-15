@@ -1,10 +1,11 @@
 {
-  "model": "bilstm_attention",
+  "model": "birnn_attention",
   "fields": [
     "keywords",
+    "sample_name",
     "transcription"
   ],
-  "strip_keyword_prefix": true,
+  "strip_keyword_prefix": false,
   "keep_keyword_prefix_only": false,
   "embedding_dim": 128,
   "hidden_dim": 128,
@@ -13,7 +14,7 @@
   "max_vocab": 20000,
   "min_freq": 2,
   "batch_size": 16,
-  "epochs": 1,
+  "epochs": 30,
   "lr": 0.001,
   "weight_decay": 0.0,
   "grad_clip": 1.0,
@@ -24,5 +25,5 @@
   "max_length": null,
   "sequence_mode": "full_text",
   "data_fingerprint": "ee93c31475ee6bc7438e467074582fdcc0b52e21705030f45ef5be791ed42a2d",
-  "config_name": "keywords__transcription__prefix_removed__full_text"
+  "config_name": "keywords__sample_name__transcription__full_text"
 }

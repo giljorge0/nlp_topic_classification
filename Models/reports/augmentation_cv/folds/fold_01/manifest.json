@@ -1,0 +1,23 @@
+{
+  "fold": 1,
+  "train_originals": 2084,
+  "validation_originals": 522,
+  "validation_labels": {
+    "Cardiovascular-Pulmonary": 60,
+    "Dermatology": 5,
+    "Gastroenterology": 39,
+    "General Medicine": 41,
+    "Neurology": 36,
+    "Neurosurgery": 15,
+    "Obstetrics-Gynecology": 27,
+    "Ophthalmology": 14,
+    "Orthopedic": 59,
+    "Psychiatry-Psychology": 8,
+    "Radiology": 44,
+    "Surgery": 174
+  },
+  "rwd": {
+    "train_total": 2962,
+    "train_synthetic": 878
+  }
+}

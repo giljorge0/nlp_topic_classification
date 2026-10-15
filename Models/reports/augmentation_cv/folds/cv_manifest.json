@@ -1,0 +1,126 @@
+{
+  "source": "C:\\Users\\ricky\\Documents\\LN\\## Projeto\\nlp_topic_classification\\Models\\train.csv",
+  "source_fingerprint": "d0c3659606ef20eb8c5eafd7a7177212c4423414be14211e776b300879211a18",
+  "folds": 5,
+  "quarantine_rows": 10,
+  "methods": [
+    "rwd"
+  ],
+  "fold_stats": [
+    {
+      "fold": 1,
+      "train_originals": 2084,
+      "validation_originals": 522,
+      "validation_labels": {
+        "Cardiovascular-Pulmonary": 60,
+        "Dermatology": 5,
+        "Gastroenterology": 39,
+        "General Medicine": 41,
+        "Neurology": 36,
+        "Neurosurgery": 15,
+        "Obstetrics-Gynecology": 27,
+        "Ophthalmology": 14,
+        "Orthopedic": 59,
+        "Psychiatry-Psychology": 8,
+        "Radiology": 44,
+        "Surgery": 174
+      },
+      "rwd": {
+        "train_total": 2962,
+        "train_synthetic": 878
+      }
+    },
+    {
+      "fold": 2,
+      "train_originals": 2085,
+      "validation_originals": 521,
+      "validation_labels": {
+        "Cardiovascular-Pulmonary": 60,
+        "Dermatology": 5,
+        "Gastroenterology": 38,
+        "General Medicine": 41,
+        "Neurology": 36,
+        "Neurosurgery": 15,
+        "Obstetrics-Gynecology": 27,
+        "Ophthalmology": 15,
+        "Orthopedic": 58,
+        "Psychiatry-Psychology": 8,
+        "Radiology": 43,
+        "Surgery": 175
+      },
+      "rwd": {
+        "train_total": 2994,
+        "train_synthetic": 909
+      }
+    },
+    {
+      "fold": 3,
+      "train_originals": 2085,
+      "validation_originals": 521,
+      "validation_labels": {
+        "Cardiovascular-Pulmonary": 60,
+        "Dermatology": 5,
+        "Gastroenterology": 38,
+        "General Medicine": 41,
+        "Neurology": 37,
+        "Neurosurgery": 15,
+        "Obstetrics-Gynecology": 27,
+        "Ophthalmology": 14,
+        "Orthopedic": 58,
+        "Psychiatry-Psychology": 8,
+        "Radiology": 43,
+        "Surgery": 175
+      },
+      "rwd": {
+        "train_total": 2969,
+        "train_synthetic": 884
+      }
+    },
+    {
+      "fold": 4,
+      "train_originals": 2085,
+      "validation_originals": 521,
+      "validation_labels": {
+        "Cardiovascular-Pulmonary": 59,
+        "Dermatology": 5,
+        "Gastroenterology": 39,
+        "General Medicine": 42,
+        "Neurology": 36,
+        "Neurosurgery": 16,
+        "Obstetrics-Gynecology": 26,
+        "Ophthalmology": 14,
+        "Orthopedic": 59,
+        "Psychiatry-Psychology": 8,
+        "Radiology": 43,
+        "Surgery": 174
+      },
+      "rwd": {
+        "train_total": 2982,
+        "train_synthetic": 897
+      }
+    },
+    {
+      "fold": 5,
+      "train_originals": 2085,
+      "validation_originals": 521,
+      "validation_labels": {
+        "Cardiovascular-Pulmonary": 59,
+        "Dermatology": 5,
+        "Gastroenterology": 38,
+        "General Medicine": 41,
+        "Neurology": 36,
+        "Neurosurgery": 16,
+        "Obstetrics-Gynecology": 27,
+        "Ophthalmology": 14,
+        "Orthopedic": 58,
+        "Psychiatry-Psychology": 8,
+        "Radiology": 44,
+        "Surgery": 175
+      },
+      "rwd": {
+        "train_total": 2989,
+        "train_synthetic": 904
+      }
+    }
+  ]
+}
