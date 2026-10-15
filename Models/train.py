@@ -540,7 +540,10 @@ def cv_command(args):
     print(f"Valid={len(rows)} | Invalid labels skipped={skipped} | Outer folds={FOLDS}")
     device = get_device(args.device)
     name = configuration_name(args.fields, args.strip_keyword_prefix, args.keep_keyword_prefix_only)
-    folder = runs / "cv" / name / args.model
+    # Separate weighted and unweighted checkpoints while keeping the SAME frozen
+    # outer/inner CV folds and the original field-configuration name.
+    run_model_folder = args.model if args.class_weighting == "none" else f"{args.model}__{args.class_weighting}"
+    folder = runs / "cv" / name / run_model_folder
     settings = config_dict(args, manifest["fingerprint"])
     records = manifest["records"]
     if args.fold is not None:
@@ -548,6 +551,17 @@ def cv_command(args):
     for record in records:
         run_fold(args, rows, manifest, record, folder, device)
     summarize_cv(folder, manifest, rows, settings)
+    # Weighted experiments are automatically added to the unified HTML dashboard
+    # once all five outer folds finish (including previously completed folds).
+    if args.class_weighting != "none" and args.fold is None and (folder / "cv_summary.json").exists():
+        try:
+            from compare_results import generate
+            generate(runs.resolve(), Path("Results").resolve())
+        except Exception as exc:
+            # Model training and its saved predictions are still valid if HTML
+            # generation fails (e.g. an HTML file is open/locked on Windows).
+            print(f"WARNING: Training completed, but dashboard refresh failed: {exc}")
+            print("Refresh manually with: python compare_results.py")
 
 
 def make_folds_command(args):

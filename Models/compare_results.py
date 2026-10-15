@@ -1,6 +1,8 @@
 """Create cross-validation reports from runs/cv/*/*/cv_summary.json.
 
 Usage: python compare_results.py [--runs-dir runs] [--output-dir Results]
+Automatically includes normal and weighted runs stored in the same runs/cv tree,
+as well as earlier weighted runs saved in sibling runs_weighted/cv.
 Only complete five-fold runs are included. No model training or scoring is performed.
 """
 from __future__ import annotations
@@ -149,7 +151,16 @@ def info_box(text: str, warning=False):
     return f'<div class="notice {"warn" if warning else ""}">{esc(text)}</div>'
 
 
-def collect(runs: Path):
+def weighting_label(item: dict) -> str:
+    weighting = item["weighting"]
+    return "Normal" if weighting == "none" else f"Weighted ({weighting})"
+
+
+def stored_model_name(item: dict) -> str:
+    return item["model"] if item["weighting"] == "none" else f'{item["model"]}__{item["weighting"]}'
+
+
+def collect(runs: Path, *, legacy_weighted_dir: bool = False):
     found, warnings = [], []
     cv_dir = runs / "cv"
     if not cv_dir.exists():
@@ -157,12 +168,21 @@ def collect(runs: Path):
     for path in sorted(cv_dir.glob("*/*/cv_summary.json")):
         try:
             data = read_json(path)
-            model = path.parent.name
+            model_dir = path.parent.name
             configuration = path.parent.parent.name
             config = data["configuration"]
+            model = config["model"]
+            weight = config.get("class_weighting", "none")
+            expected_dir = model if weight == "none" else f"{model}__{weight}"
+            # Previous weighted commands used `--runs-dir runs_weighted` and
+            # saved unsuffixed model directory names. Continue recognizing them.
+            legacy_path = legacy_weighted_dir and model_dir == model
             if (data["cv_version"] != 1 or data["n_folds"] != 5 or
-                    config["model"] != model or config["config_name"] != configuration):
-                raise ValueError("Invalid CV schema/model name")
+                    model not in MODELS or weight not in ("none", "sqrt_inv") or
+                    (model == "naive_bayes" and weight != "none") or
+                    (model_dir != expected_dir and not legacy_path) or
+                    config["config_name"] != configuration):
+                raise ValueError("Invalid CV schema/model name/class weighting")
             if not all(metric in data["metrics"] for metric in COLUMNS):
                 raise ValueError("Missing performance metrics")
             if not all(label in data["per_class_f1"] for label in LABELS):
@@ -171,7 +191,7 @@ def collect(runs: Path):
                        for n in range(1, 6)):
                 raise ValueError("Missing outer-fold data")
             found.append({"data": data, "model": model, "configuration": configuration,
-                          "source": path.parent})
+                          "weighting": weight, "source": path.parent, "runs_root": runs})
         except (OSError, ValueError, KeyError, TypeError) as exc:
             warnings.append(f"Skipped {path}: {exc}")
     # Report unfinished experiments without showing misleading incomplete averages.
@@ -181,9 +201,45 @@ def collect(runs: Path):
     return found, warnings
 
 
+def collect_all(runs_dir: Path):
+    # Both `--runs-dir runs` and older `--runs-dir runs_weighted` workflows
+    # generate one unified dashboard. The normal directory always takes precedence
+    # if identical runs were saved in both places.
+    if runs_dir.name.endswith("_weighted"):
+        normal_dir = runs_dir.with_name(runs_dir.name[:-len("_weighted")])
+        roots = [(normal_dir, False), (runs_dir, True)]
+    else:
+        roots = [(runs_dir, False)]
+        legacy_dir = runs_dir.with_name(runs_dir.name + "_weighted")
+        if legacy_dir.is_dir():
+            roots.append((legacy_dir, True))
+    result, warnings, seen = [], [], set()
+    manifests = []
+    for root, legacy in roots:
+        entries, problems = collect(root, legacy_weighted_dir=legacy)
+        warnings.extend(problems)
+        manifest_file = root / "cv_splits.json"
+        if manifest_file.is_file() and entries:
+            manifests.append((manifest_file, read_json(manifest_file)))
+        for entry in entries:
+            # Avoid duplicated Naive Bayes baselines (it has no class weighting)
+            # and duplicate experiments saved in both the old/new directory layout.
+            key = json.dumps(entry["data"]["configuration"], sort_keys=True)
+            if key not in seen:
+                seen.add(key)
+                result.append(entry)
+    if len(manifests) > 1:
+        reference = manifests[0][1]
+        for path, other in manifests[1:]:
+            if (other.get("fingerprint"), other.get("seed"), other.get("records")) != (reference.get("fingerprint"), reference.get("seed"), reference.get("records")):
+                warnings.append(f"WARNING: CV fold assignments in {path} differ from {manifests[0][0]}; weighted/unweighted comparisons are not paired.")
+    return result, warnings
+
+
 def summary_row(item: dict, label: str):
     data = item["data"]
     values = {"name": label, "config": item["configuration"], "model": item["model"],
+              "training": weighting_label(item), "class_weighting": item["weighting"],
               "n": data["n_examples"], "passing_folds": data["folds_passing_both_thresholds"],
               "parameters_mean": round(data["parameter_count"]["mean"]),
               "best_epoch_mean": ("" if item["model"] == "naive_bayes" else data["best_epoch"]["mean"]),
@@ -195,7 +251,7 @@ def summary_row(item: dict, label: str):
     return values
 
 
-MAIN_COLUMNS = ["name", "config", "model", "n"] + [k + suffix for k in COLUMNS
+MAIN_COLUMNS = ["name", "config", "model", "training", "class_weighting", "n"] + [k + suffix for k in COLUMNS
               for suffix in ("_mean", "_sd", "_pooled")] + ["passing_folds", "parameters_mean", "best_epoch_mean", "best_epoch_sd"]
 
 
@@ -262,7 +318,7 @@ def create_comparisons(results: Path, group_name: str, sets: dict, name_fn, titl
 def create_metrics(results: Path, item: dict):
     data = item["data"]
     model, config = item["model"], item["configuration"]
-    out = results / "Metrics" / config / model
+    out = results / "Metrics" / config / stored_model_name(item)
     out.mkdir(parents=True, exist_ok=True)
     pooled_result = data["pooled_oof"]
     report = pooled_result["classification_report"]
@@ -306,14 +362,10 @@ def create_metrics(results: Path, item: dict):
                      f'<td><span class="badge">{"PASS" if value >= .25 else "BELOW"}</span></td></tr>')
     table = ("<tr><th>Specialty</th><th>F1 mean ± SD</th><th>Pooled F1</th>"
              "<th>Pooled precision</th><th>Pooled recall</th><th>Support</th><th>F1 ≥ 0.25</th></tr>")
-    body = (f'<p>{esc(title_config(config))} / {esc(title_model(model))}. '
+    body = (f'<p>{esc(title_config(config))} / {esc(title_model(model))} / {esc(weighting_label(item))}. '
             f'5 outer folds; {data["n_examples"]} held-out predictions, one per example.</p>')
     if model == "naive_bayes":
-        baseline_type = ("Professor-specified baseline" if config == "description_only"
-                         else "Input-matched classical baseline variant")
-        body += info_box(f"{baseline_type}: {title_config(config)}; lowercasing, Porter stemming, TF-IDF word unigrams and Multinomial Naive Bayes (alpha=1). Each fold fits on the full outer-training partition; no epochs or early stopping.")
-        if "keywords" in data["configuration"].get("fields", []) and not data["configuration"].get("strip_keyword_prefix", False):
-            body += info_box("Caution: the keywords field can begin with the true specialty name. Scores that retain this prefix may exploit label-like information and overstate clinical text understanding.", True)
+        body += info_box("Professor-specified baseline: description only, lowercase, Porter stemming, TF-IDF word unigrams, Multinomial Naive Bayes (alpha=1). Each fold fits on the full outer-training partition; no epochs or early stopping.")
     body += '<div class="cards">' + "".join(
         f'<div class="card"><small>{esc(COL_NAMES[field])}</small><div class="number">{f3(val(data,field))}</div>'
         f'<small>SD {f3(sd(data,field))} · pooled {f3(pooled(data,field))}</small></div>'
@@ -332,34 +384,44 @@ def create_metrics(results: Path, item: dict):
             body += f'<td class="heat" style="background:rgba(45,132,164,{ratio*0.58:.3f})">{number}</td>'
         body += '</tr>'
     body += '</tbody></table></div></section>'
-    body += f'<p>Raw predictions and misclassifications are preserved in <span class="mono">runs/cv/{esc(config)}/{esc(model)}/</span>.</p>'
-    write_html(out / "metrics.html", f"{title_model(model)} · {title_config(config)}", body, 3)
-    return (f"{title_config(config)} / {title_model(model)}", f"Metrics/{config}/{model}/metrics.html", 1)
+    body += f'<p>Raw predictions and misclassifications: <span class="mono">{esc(item["source"])}</span>.</p>'
+    write_html(out / "metrics.html", f"{title_model(model)} · {title_config(config)} · {weighting_label(item)}", body, 3)
+    return (f"{title_config(config)} / {title_model(model)} / {weighting_label(item)}",
+            f"Metrics/{config}/{stored_model_name(item)}/metrics.html", 1)
 
 
 def generate(runs_dir: Path, output: Path):
-    runs, warnings = collect(runs_dir)
+    runs, warnings = collect_all(runs_dir)
     if output.exists():
         # Replace only the generated results. Never delete the runs folder.
         shutil.rmtree(output)
     output.mkdir(parents=True)
-    by_config, by_model = defaultdict(list), defaultdict(list)
+    by_config, by_model, by_weighting_pair = defaultdict(list), defaultdict(list), defaultdict(list)
     metric_links = []
     for entry in runs:
         by_config[entry["configuration"]].append(entry)
         by_model[entry["model"]].append(entry)
+        by_weighting_pair[f'{entry["configuration"]}--{entry["model"]}'].append(entry)
         metric_links.append(create_metrics(output, entry))
     by_config_links = create_comparisons(output, "Models_Comparison", by_config,
-                                         lambda item: title_model(item["model"]), title_config)
+                                         lambda item: f'{title_model(item["model"])} · {weighting_label(item)}', title_config)
     by_model_links = create_comparisons(output, "TrainingSet_Comparison", by_model,
-                                        lambda item: title_config(item["configuration"]), title_model)
+                                        lambda item: f'{title_config(item["configuration"])} · {weighting_label(item)}', title_model)
+    paired = {key: items for key, items in by_weighting_pair.items()
+              if {item["weighting"] for item in items} >= {"none", "sqrt_inv"}}
+    pair_links = create_comparisons(
+        output, "Weighting_Comparison", paired,
+        lambda item: weighting_label(item),
+        lambda key: f'{title_config(key.split("--", 1)[0])} · {title_model(key.split("--", 1)[1])}',
+    )
     panels = (('<div class="cards">'
               f'<div class="card"><small>Completed experiments</small><div class="number">{len(runs)}</div><small>Every experiment has 5 outer folds</small></div>'
               f'<div class="card"><small>Input configurations</small><div class="number">{len(by_config)}</div></div>'
               f'<div class="card"><small>Models</small><div class="number">{len(by_model)}</div></div>'
               '</div>'))
-    panels += '<p>Results represent five held-out folds per experiment. Neural models reserve an inner validation partition for early stopping; Naive Bayes uses the full outer-training partition. ± denotes fold-to-fold sample standard deviation, not a confidence interval.</p>'
-    for heading, links in (("Models comparison", by_config_links),
+    panels += '<p>Results represent five independent held-out folds per experiment, with separate inner validation for early stopping. ± denotes fold-to-fold sample standard deviation, not a confidence interval.</p>'
+    for heading, links in (("Normal vs weighted (same model and inputs)", pair_links),
+                           ("Models comparison", by_config_links),
                            ("Training set comparison", by_model_links),
                            ("Per-class metrics", metric_links)):
         panels += f'<h2>{esc(heading)}</h2>'
@@ -378,7 +440,9 @@ def generate(runs_dir: Path, output: Path):
     # Remove same-page link from the index header, optional cosmetic only.
     (output / "index.html").write_text((output / "index.html").read_text(encoding="utf-8").replace(
         '<a class="btn" href="index.html">← Dashboard</a>', ''), encoding="utf-8")
-    print(f"Generated {output / 'index.html'}: {len(runs)} complete CV experiment(s)")
+    normal_count = sum(item["weighting"] == "none" for item in runs)
+    weighted_count = len(runs) - normal_count
+    print(f"Generated {output / 'index.html'}: {normal_count} normal + {weighted_count} weighted complete CV experiment(s)")
     for warning in warnings:
         print("WARNING:", warning)
 
