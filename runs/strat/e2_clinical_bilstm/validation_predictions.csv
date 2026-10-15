@@ -1,0 +1,534 @@
+example_id,source_record_id,true_label,predicted_label,prediction_probability
+TR000002,TR000002,Cardiovascular-Pulmonary,General Medicine,0.532374
+TR000014,TR000014,Cardiovascular-Pulmonary,General Medicine,0.520043
+TR000015,TR000015,Cardiovascular-Pulmonary,Surgery,0.823650
+TR000021,TR000021,Cardiovascular-Pulmonary,General Medicine,0.235274
+TR000022,TR000022,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,0.407443
+TR000035,TR000035,Cardiovascular-Pulmonary,General Medicine,0.690238
+TR000044,TR000044,Cardiovascular-Pulmonary,Surgery,0.802332
+TR000048,TR000048,Cardiovascular-Pulmonary,Surgery,0.904927
+TR000049,TR000049,Cardiovascular-Pulmonary,Radiology,0.373063
+TR000050,TR000050,Cardiovascular-Pulmonary,Surgery,0.878912
+TR000051,TR000051,Cardiovascular-Pulmonary,Surgery,0.836029
+TR000053,TR000053,Cardiovascular-Pulmonary,Radiology,0.702227
+TR000054,TR000054,Cardiovascular-Pulmonary,General Medicine,0.932330
+TR000055,TR000055,Cardiovascular-Pulmonary,Radiology,0.728070
+TR000059,TR000059,Cardiovascular-Pulmonary,Surgery,0.912883
+TR000072,TR000072,Cardiovascular-Pulmonary,Surgery,0.686554
+TR000081,TR000081,Cardiovascular-Pulmonary,General Medicine,0.583887
+TR000088,TR000088,Cardiovascular-Pulmonary,Surgery,0.652365
+TR000089,TR000089,Cardiovascular-Pulmonary,Surgery,0.811698
+TR000092,TR000092,Cardiovascular-Pulmonary,General Medicine,0.535592
+TR000095,TR000095,Cardiovascular-Pulmonary,Surgery,0.829351
+TR000100,TR000100,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,0.822777
+TR000103,TR000103,Cardiovascular-Pulmonary,Surgery,0.604888
+TR000106,TR000106,Cardiovascular-Pulmonary,Surgery,0.884572
+TR000107,TR000107,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,0.514584
+TR000122,TR000122,Cardiovascular-Pulmonary,Surgery,0.756346
+TR000131,TR000131,Cardiovascular-Pulmonary,Surgery,0.777332
+TR000135,TR000135,Cardiovascular-Pulmonary,Surgery,0.860097
+TR000150,TR000150,Cardiovascular-Pulmonary,Surgery,0.881466
+TR000152,TR000152,Cardiovascular-Pulmonary,Surgery,0.820624
+TR000164,TR000164,Cardiovascular-Pulmonary,Surgery,0.553586
+TR000165,TR000165,Cardiovascular-Pulmonary,Surgery,0.904075
+TR000170,TR000170,Cardiovascular-Pulmonary,Radiology,0.804650
+TR000173,TR000173,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,0.651982
+TR000178,TR000178,Cardiovascular-Pulmonary,Radiology,0.545964
+TR000191,TR000191,Cardiovascular-Pulmonary,Surgery,0.704659
+TR000192,TR000192,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,0.504051
+TR000193,TR000193,Cardiovascular-Pulmonary,Surgery,0.871628
+TR000194,TR000194,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,0.348864
+TR000195,TR000195,Cardiovascular-Pulmonary,Radiology,0.809375
+TR000203,TR000203,Cardiovascular-Pulmonary,Surgery,0.751393
+TR000205,TR000205,Cardiovascular-Pulmonary,Surgery,0.878895
+TR000209,TR000209,Cardiovascular-Pulmonary,General Medicine,0.595382
+TR000218,TR000218,Cardiovascular-Pulmonary,Surgery,0.623072
+TR000221,TR000221,Cardiovascular-Pulmonary,Radiology,0.853291
+TR000231,TR000231,Cardiovascular-Pulmonary,General Medicine,0.742680
+TR000239,TR000239,Cardiovascular-Pulmonary,Surgery,0.666552
+TR000245,TR000245,Cardiovascular-Pulmonary,Surgery,0.717244
+TR000247,TR000247,Cardiovascular-Pulmonary,General Medicine,0.886913
+TR000256,TR000256,Cardiovascular-Pulmonary,Surgery,0.859598
+TR000261,TR000261,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,0.425933
+TR000267,TR000267,Cardiovascular-Pulmonary,Surgery,0.869450
+TR000268,TR000268,Cardiovascular-Pulmonary,Surgery,0.858378
+TR000273,TR000273,Cardiovascular-Pulmonary,Surgery,0.662289
+TR000274,TR000274,Cardiovascular-Pulmonary,Radiology,0.593091
+TR000275,TR000275,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,0.553035
+TR000280,TR000280,Cardiovascular-Pulmonary,Surgery,0.839002
+TR000285,TR000285,Cardiovascular-Pulmonary,Surgery,0.783234
+TR000300,TR000300,Dermatology,General Medicine,0.781519
+TR000301,TR000301,Dermatology,General Medicine,0.336246
+TR000314,TR000314,Dermatology,Surgery,0.841808
+TR000316,TR000316,Dermatology,Surgery,0.607334
+TR000319,TR000319,Dermatology,Surgery,0.501514
+TR000329,TR000329,Gastroenterology,Surgery,0.405983
+TR000334,TR000334,Gastroenterology,Surgery,0.683605
+TR000338,TR000338,Gastroenterology,Surgery,0.402933
+TR000339,TR000339,Gastroenterology,General Medicine,0.828713
+TR000341,TR000341,Gastroenterology,General Medicine,0.436918
+TR000345,TR000345,Gastroenterology,Cardiovascular-Pulmonary,0.438377
+TR000346,TR000346,Gastroenterology,Surgery,0.456285
+TR000347,TR000347,Gastroenterology,Surgery,0.767952
+TR000353,TR000353,Gastroenterology,Orthopedic,0.328123
+TR000357,TR000357,Gastroenterology,General Medicine,0.518091
+TR000360,TR000360,Gastroenterology,General Medicine,0.806782
+TR000364,TR000364,Gastroenterology,General Medicine,0.855140
+TR000371,TR000371,Gastroenterology,General Medicine,0.487750
+TR000375,TR000375,Gastroenterology,Surgery,0.674594
+TR000378,TR000378,Gastroenterology,Surgery,0.555731
+TR000379,TR000379,Gastroenterology,Surgery,0.568646
+TR000381,TR000381,Gastroenterology,Surgery,0.570541
+TR000386,TR000386,Gastroenterology,Surgery,0.768248
+TR000388,TR000388,Gastroenterology,Surgery,0.457824
+TR000407,TR000407,Gastroenterology,Radiology,0.894947
+TR000420,TR000420,Gastroenterology,General Medicine,0.771987
+TR000425,TR000425,Gastroenterology,Surgery,0.616999
+TR000435,TR000435,Gastroenterology,Surgery,0.663644
+TR000448,TR000448,Gastroenterology,Surgery,0.502404
+TR000449,TR000449,Gastroenterology,Surgery,0.727400
+TR000451,TR000451,Gastroenterology,Surgery,0.482611
+TR000456,TR000456,Gastroenterology,Surgery,0.768248
+TR000458,TR000458,Gastroenterology,Gastroenterology,0.605421
+TR000465,TR000465,Gastroenterology,Surgery,0.443304
+TR000472,TR000472,Gastroenterology,Obstetrics-Gynecology,0.458768
+TR000473,TR000473,Gastroenterology,Surgery,0.705753
+TR000474,TR000474,Gastroenterology,Obstetrics-Gynecology,0.369165
+TR000476,TR000476,Gastroenterology,Surgery,0.578919
+TR000482,TR000482,Gastroenterology,General Medicine,0.314086
+TR000491,TR000491,Gastroenterology,General Medicine,0.512012
+TR000495,TR000495,Gastroenterology,Surgery,0.360763
+TR000496,TR000496,Gastroenterology,Surgery,0.411394
+TR000509,TR000509,Gastroenterology,Surgery,0.628670
+TR000521,TR000521,General Medicine,General Medicine,0.543568
+TR000524,TR000524,General Medicine,General Medicine,0.741972
+TR000525,TR000525,General Medicine,Neurology,0.283263
+TR000529,TR000529,General Medicine,Orthopedic,0.582558
+TR000531,TR000531,General Medicine,General Medicine,0.932086
+TR000535,TR000535,General Medicine,General Medicine,0.966632
+TR000537,TR000537,General Medicine,Cardiovascular-Pulmonary,0.606470
+TR000540,TR000540,General Medicine,General Medicine,0.560866
+TR000542,TR000542,General Medicine,General Medicine,0.476419
+TR000548,TR000548,General Medicine,General Medicine,0.500906
+TR000549,TR000549,General Medicine,General Medicine,0.839697
+TR000564,TR000564,General Medicine,General Medicine,0.579420
+TR000574,TR000574,General Medicine,General Medicine,0.314106
+TR000581,TR000581,General Medicine,General Medicine,0.675639
+TR000588,TR000588,General Medicine,Cardiovascular-Pulmonary,0.535064
+TR000595,TR000595,General Medicine,General Medicine,0.961965
+TR000596,TR000596,General Medicine,General Medicine,0.716677
+TR000598,TR000598,General Medicine,General Medicine,0.505425
+TR000608,TR000608,General Medicine,General Medicine,0.901739
+TR000611,TR000611,General Medicine,General Medicine,0.400787
+TR000612,TR000612,General Medicine,Cardiovascular-Pulmonary,0.287092
+TR000617,TR000617,General Medicine,General Medicine,0.801754
+TR000623,TR000623,General Medicine,General Medicine,0.919761
+TR000624,TR000624,General Medicine,General Medicine,0.965358
+TR000625,TR000625,General Medicine,General Medicine,0.885654
+TR000629,TR000629,General Medicine,General Medicine,0.705385
+TR000635,TR000635,General Medicine,General Medicine,0.464006
+TR000640,TR000640,General Medicine,Cardiovascular-Pulmonary,0.495561
+TR000652,TR000652,General Medicine,General Medicine,0.659696
+TR000653,TR000653,General Medicine,Neurology,0.208663
+TR000656,TR000656,General Medicine,Cardiovascular-Pulmonary,0.455882
+TR000659,TR000659,General Medicine,Orthopedic,0.771898
+TR000663,TR000663,General Medicine,General Medicine,0.740083
+TR000664,TR000664,General Medicine,General Medicine,0.494897
+TR000689,TR000689,General Medicine,General Medicine,0.353275
+TR000695,TR000695,General Medicine,General Medicine,0.862903
+TR000697,TR000697,General Medicine,General Medicine,0.695262
+TR000699,TR000699,General Medicine,General Medicine,0.956962
+TR000702,TR000702,General Medicine,General Medicine,0.836215
+TR000711,TR000711,General Medicine,Orthopedic,0.471104
+TR000715,TR000715,Neurosurgery,Orthopedic,0.544811
+TR000717,TR000717,Ophthalmology,Ophthalmology,0.755991
+TR000721,TR000721,Cardiovascular-Pulmonary,Surgery,0.927331
+TR000722,TR000722,Surgery,Orthopedic,0.605805
+TR000727,TR000727,General Medicine,Orthopedic,0.310453
+TR000733,TR000733,Neurology,Radiology,0.831970
+TR000742,TR000742,Neurology,Radiology,0.611127
+TR000759,TR000759,Neurology,Neurology,0.378223
+TR000760,TR000760,Neurology,Radiology,0.849177
+TR000768,TR000768,Neurology,Neurology,0.520981
+TR000769,TR000769,Neurology,General Medicine,0.918213
+TR000777,TR000777,Neurology,General Medicine,0.834472
+TR000780,TR000780,Neurology,Radiology,0.631248
+TR000781,TR000781,Neurology,Psychiatry-Psychology,0.382274
+TR000782,TR000782,Neurology,Neurology,0.514747
+TR000784,TR000784,Neurology,Radiology,0.944468
+TR000787,TR000787,Neurology,Neurology,0.368107
+TR000796,TR000796,Neurology,Neurology,0.522739
+TR000802,TR000802,Neurology,Radiology,0.820114
+TR000805,TR000805,Neurology,Neurology,0.358966
+TR000809,TR000809,Neurology,Radiology,0.500607
+TR000811,TR000811,Neurology,Radiology,0.618037
+TR000812,TR000812,Neurology,Orthopedic,0.356341
+TR000815,TR000815,Neurology,General Medicine,0.535063
+TR000821,TR000821,Neurology,Radiology,0.448125
+TR000825,TR000825,Neurology,Obstetrics-Gynecology,0.428021
+TR000828,TR000828,Neurology,Psychiatry-Psychology,0.449311
+TR000833,TR000833,Neurology,Surgery,0.404158
+TR000836,TR000836,Neurology,Surgery,0.769113
+TR000842,TR000842,Neurology,Orthopedic,0.774736
+TR000848,TR000848,Neurology,Psychiatry-Psychology,0.292275
+TR000853,TR000853,Neurology,Neurology,0.432849
+TR000863,TR000863,Neurology,Neurology,0.346090
+TR000872,TR000872,Neurology,Radiology,0.812440
+TR000875,TR000875,Neurology,Neurology,0.226800
+TR000881,TR000881,Neurology,Radiology,0.599118
+TR000884,TR000884,Neurology,Orthopedic,0.813393
+TR000887,TR000887,Neurology,Orthopedic,0.754531
+TR000888,TR000888,Neurology,General Medicine,0.578313
+TR000892,TR000892,Neurology,Radiology,0.868541
+TR000903,TR000903,Neurology,Surgery,0.427701
+TR000906,TR000906,Neurology,Radiology,0.639827
+TR000914,TR000914,Neurosurgery,Surgery,0.747303
+TR000917,TR000917,Neurosurgery,Orthopedic,0.687687
+TR000921,TR000921,Neurosurgery,Orthopedic,0.555516
+TR000928,TR000928,Neurosurgery,Surgery,0.471734
+TR000929,TR000929,Neurosurgery,Orthopedic,0.559204
+TR000935,TR000935,Neurosurgery,Orthopedic,0.613698
+TR000947,TR000947,Orthopedic,Surgery,0.805349
+TR000970,TR000970,Neurosurgery,Orthopedic,0.502010
+TR000971,TR000971,Neurosurgery,Orthopedic,0.587371
+TR000973,TR000973,Neurosurgery,Orthopedic,0.668914
+TR000977,TR000977,Neurosurgery,Orthopedic,0.548951
+TR000994,TR000994,Neurosurgery,Surgery,0.827548
+TR000996,TR000996,Neurosurgery,Orthopedic,0.501877
+TR000997,TR000997,Neurosurgery,Surgery,0.481094
+TR001001,TR001001,Neurosurgery,Psychiatry-Psychology,0.292275
+TR001002,TR001002,Neurosurgery,Surgery,0.492128
+TR001017,TR001017,Obstetrics-Gynecology,Obstetrics-Gynecology,0.799871
+TR001018,TR001018,Obstetrics-Gynecology,Obstetrics-Gynecology,0.742193
+TR001020,TR001020,Obstetrics-Gynecology,Obstetrics-Gynecology,0.718021
+TR001021,TR001021,Obstetrics-Gynecology,Obstetrics-Gynecology,0.558272
+TR001026,TR001026,Obstetrics-Gynecology,Cardiovascular-Pulmonary,0.679874
+TR001028,TR001028,Obstetrics-Gynecology,Obstetrics-Gynecology,0.533583
+TR001035,TR001035,Obstetrics-Gynecology,Obstetrics-Gynecology,0.731656
+TR001041,TR001041,Obstetrics-Gynecology,Surgery,0.689845
+TR001042,TR001042,Obstetrics-Gynecology,Radiology,0.612154
+TR001043,TR001043,Obstetrics-Gynecology,Obstetrics-Gynecology,0.688001
+TR001045,TR001045,Obstetrics-Gynecology,General Medicine,0.941686
+TR001054,TR001054,Obstetrics-Gynecology,Obstetrics-Gynecology,0.640570
+TR001065,TR001065,Obstetrics-Gynecology,Obstetrics-Gynecology,0.471228
+TR001066,TR001066,Obstetrics-Gynecology,Obstetrics-Gynecology,0.791200
+TR001069,TR001069,Obstetrics-Gynecology,General Medicine,0.426456
+TR001075,TR001075,Obstetrics-Gynecology,Obstetrics-Gynecology,0.571518
+TR001081,TR001081,Obstetrics-Gynecology,Radiology,0.329815
+TR001090,TR001090,Surgery,Surgery,0.869346
+TR001091,TR001091,Orthopedic,Surgery,0.474452
+TR001093,TR001093,Surgery,Surgery,0.849225
+TR001095,TR001095,Obstetrics-Gynecology,Obstetrics-Gynecology,0.688019
+TR001101,TR001101,Obstetrics-Gynecology,Surgery,0.471697
+TR001109,TR001109,Obstetrics-Gynecology,Surgery,0.726298
+TR001116,TR001116,Obstetrics-Gynecology,Obstetrics-Gynecology,0.514280
+TR001123,TR001123,Obstetrics-Gynecology,Surgery,0.875303
+TR001127,TR001127,Obstetrics-Gynecology,Obstetrics-Gynecology,0.513451
+TR001131,TR001131,Obstetrics-Gynecology,Obstetrics-Gynecology,0.542213
+TR001135,TR001135,Obstetrics-Gynecology,Obstetrics-Gynecology,0.687630
+TR001143,TR001143,Obstetrics-Gynecology,Obstetrics-Gynecology,0.599798
+TR001149,TR001149,Ophthalmology,Ophthalmology,0.539669
+TR001159,TR001159,Ophthalmology,Ophthalmology,0.642868
+TR001160,TR001160,Ophthalmology,Ophthalmology,0.229718
+TR001167,TR001167,Ophthalmology,Ophthalmology,0.270089
+TR001168,TR001168,Ophthalmology,Ophthalmology,0.359564
+TR001169,TR001169,Ophthalmology,Ophthalmology,0.627104
+TR001176,TR001176,Ophthalmology,Ophthalmology,0.636839
+TR001177,TR001177,Ophthalmology,Surgery,0.455126
+TR001180,TR001180,Ophthalmology,Ophthalmology,0.610491
+TR001183,TR001183,Ophthalmology,Ophthalmology,0.743075
+TR001194,TR001194,Ophthalmology,Ophthalmology,0.473718
+TR001199,TR001199,Ophthalmology,Ophthalmology,0.454231
+TR001204,TR001204,Ophthalmology,Ophthalmology,0.609126
+TR001205,TR001205,Ophthalmology,Surgery,0.498212
+TR001216,TR001216,Orthopedic,Orthopedic,0.536266
+TR001219,TR001219,Orthopedic,Orthopedic,0.510006
+TR001228,TR001228,Orthopedic,Surgery,0.771633
+TR001232,TR001232,Orthopedic,Radiology,0.781292
+TR001244,TR001244,Orthopedic,Surgery,0.600349
+TR001259,TR001259,Orthopedic,Surgery,0.497059
+TR001261,TR001261,Orthopedic,Orthopedic,0.488291
+TR001262,TR001262,Orthopedic,Orthopedic,0.502196
+TR001263,TR001263,Orthopedic,Surgery,0.566683
+TR001267,TR001267,Orthopedic,Orthopedic,0.575172
+TR001275,TR001275,Orthopedic,Surgery,0.596340
+TR001286,TR001286,Orthopedic,Radiology,0.818660
+TR001289,TR001289,Orthopedic,Surgery,0.475820
+TR001290,TR001290,Orthopedic,Radiology,0.819612
+TR001293,TR001293,Orthopedic,Surgery,0.611484
+TR001294,TR001294,Orthopedic,Orthopedic,0.529507
+TR001295,TR001295,Orthopedic,Cardiovascular-Pulmonary,0.637895
+TR001296,TR001296,Orthopedic,Orthopedic,0.472878
+TR001300,TR001300,Orthopedic,Orthopedic,0.393018
+TR001304,TR001304,Orthopedic,Surgery,0.930702
+TR001305,TR001305,Orthopedic,Radiology,0.911042
+TR001307,TR001307,Orthopedic,Orthopedic,0.418466
+TR001316,TR001316,Orthopedic,Orthopedic,0.472783
+TR001320,TR001320,Orthopedic,Radiology,0.471654
+TR001327,TR001327,Orthopedic,Radiology,0.599118
+TR001328,TR001328,Orthopedic,Radiology,0.495888
+TR001336,TR001336,Orthopedic,General Medicine,0.787795
+TR001355,TR001355,Orthopedic,Orthopedic,0.475835
+TR001359,TR001359,Orthopedic,Orthopedic,0.502805
+TR001366,TR001366,Orthopedic,Orthopedic,0.657680
+TR001369,TR001369,Orthopedic,Surgery,0.576173
+TR001370,TR001370,Orthopedic,Radiology,0.463185
+TR001373,TR001373,Orthopedic,Surgery,0.421555
+TR001380,TR001380,Orthopedic,Surgery,0.776704
+TR001386,TR001386,Orthopedic,Surgery,0.466180
+TR001390,TR001390,Orthopedic,Orthopedic,0.385097
+TR001396,TR001396,Orthopedic,Surgery,0.556411
+TR001403,TR001403,Orthopedic,Orthopedic,0.500004
+TR001405,TR001405,Orthopedic,Orthopedic,0.696483
+TR001410,TR001410,Orthopedic,Orthopedic,0.487848
+TR001423,TR001423,Orthopedic,Orthopedic,0.575950
+TR001430,TR001430,Orthopedic,Surgery,0.466246
+TR001431,TR001431,Orthopedic,Surgery,0.535705
+TR001434,TR001434,Orthopedic,Orthopedic,0.457567
+TR001437,TR001437,Orthopedic,Orthopedic,0.556133
+TR001442,TR001442,Orthopedic,Orthopedic,0.432504
+TR001446,TR001446,Orthopedic,Surgery,0.527763
+TR001447,TR001447,Orthopedic,Surgery,0.654047
+TR001452,TR001452,Orthopedic,General Medicine,0.775293
+TR001455,TR001455,Orthopedic,Orthopedic,0.572617
+TR001457,TR001457,Orthopedic,Orthopedic,0.527289
+TR001458,TR001458,Orthopedic,Radiology,0.651016
+TR001463,TR001463,Orthopedic,Orthopedic,0.594321
+TR001464,TR001464,Orthopedic,Surgery,0.615318
+TR001471,TR001471,Orthopedic,Orthopedic,0.413363
+TR001472,TR001472,Orthopedic,Surgery,0.631101
+TR001488,TR001488,Orthopedic,Orthopedic,0.486650
+TR001496,TR001496,Orthopedic,Surgery,0.784224
+TR001508,TR001508,Psychiatry-Psychology,General Medicine,0.918213
+TR001510,TR001510,Psychiatry-Psychology,Neurology,0.232325
+TR001511,TR001511,Psychiatry-Psychology,Neurology,0.387325
+TR001515,TR001515,Psychiatry-Psychology,General Medicine,0.555160
+TR001528,TR001528,Psychiatry-Psychology,Psychiatry-Psychology,0.561045
+TR001531,TR001531,Psychiatry-Psychology,Psychiatry-Psychology,0.404765
+TR001539,TR001539,Psychiatry-Psychology,Psychiatry-Psychology,0.591064
+TR001541,TR001541,Psychiatry-Psychology,Psychiatry-Psychology,0.603193
+TR001548,TR001548,Radiology,Orthopedic,0.413363
+TR001549,TR001549,Radiology,Cardiovascular-Pulmonary,0.416332
+TR001552,TR001552,Radiology,Neurology,0.636039
+TR001568,TR001568,Radiology,Obstetrics-Gynecology,0.673735
+TR001571,TR001571,Radiology,Radiology,0.940728
+TR001576,TR001576,Radiology,Radiology,0.716669
+TR001580,TR001580,Radiology,Surgery,0.539046
+TR001581,TR001581,Radiology,Radiology,0.634286
+TR001583,TR001583,Radiology,Radiology,0.399355
+TR001588,TR001588,Radiology,Surgery,0.919471
+TR001599,TR001599,Radiology,Radiology,0.787417
+TR001603,TR001603,Radiology,Orthopedic,0.813393
+TR001605,TR001605,Radiology,Radiology,0.630915
+TR001610,TR001610,Radiology,Radiology,0.654635
+TR001615,TR001615,Radiology,Radiology,0.373063
+TR001619,TR001619,Radiology,Radiology,0.471546
+TR001623,TR001623,Radiology,Radiology,0.524235
+TR001624,TR001624,Radiology,Radiology,0.913324
+TR001633,TR001633,Radiology,Radiology,0.606972
+TR001634,TR001634,Radiology,Neurology,0.451395
+TR001635,TR001635,Radiology,Radiology,0.788319
+TR001636,TR001636,Radiology,Obstetrics-Gynecology,0.582619
+TR001640,TR001640,Radiology,Orthopedic,0.557800
+TR001641,TR001641,Radiology,Surgery,0.600349
+TR001657,TR001657,Radiology,Radiology,0.480789
+TR001658,TR001658,Radiology,Radiology,0.416092
+TR001667,TR001667,Radiology,Radiology,0.491303
+TR001676,TR001676,Radiology,Obstetrics-Gynecology,0.757362
+TR001682,TR001682,Radiology,Orthopedic,0.621915
+TR001689,TR001689,Radiology,Radiology,0.468309
+TR001690,TR001690,Radiology,Orthopedic,0.532469
+TR001711,TR001711,Radiology,Radiology,0.526071
+TR001713,TR001713,Radiology,Cardiovascular-Pulmonary,0.679304
+TR001719,TR001719,Radiology,Orthopedic,0.617760
+TR001729,TR001729,Radiology,Gastroenterology,0.874848
+TR001730,TR001730,Radiology,Neurology,0.588165
+TR001732,TR001732,Radiology,Obstetrics-Gynecology,0.689394
+TR001740,TR001740,Radiology,Radiology,0.558335
+TR001741,TR001741,Radiology,Radiology,0.526900
+TR001743,TR001743,Radiology,Orthopedic,0.536057
+TR001750,TR001750,Radiology,Radiology,0.561129
+TR001751,TR001751,Radiology,Radiology,0.813851
+TR001761,TR001761,Radiology,Radiology,0.845764
+TR001762,TR001762,Surgery,Obstetrics-Gynecology,0.620455
+TR001764,TR001764,Surgery,Surgery,0.591260
+TR001766,TR001766,Surgery,Surgery,0.499562
+TR001773,TR001773,Surgery,Obstetrics-Gynecology,0.731656
+TR001774,TR001774,Surgery,Cardiovascular-Pulmonary,0.642036
+TR001776,TR001776,Surgery,Surgery,0.766317
+TR001780,TR001780,Surgery,Surgery,0.821138
+TR001787,TR001787,Surgery,Surgery,0.713560
+TR001798,TR001798,Surgery,Surgery,0.778647
+TR001811,TR001811,Surgery,Obstetrics-Gynecology,0.529070
+TR001818,TR001818,Surgery,Surgery,0.846170
+TR001825,TR001825,Surgery,Surgery,0.536763
+TR001836,TR001836,Surgery,Surgery,0.545806
+TR001838,TR001838,Surgery,Orthopedic,0.601455
+TR001839,TR001839,Surgery,Surgery,0.509949
+TR001842,TR001842,Surgery,Surgery,0.719071
+TR001844,TR001844,Surgery,Gastroenterology,0.405105
+TR001845,TR001845,Surgery,Surgery,0.495954
+TR001852,TR001852,Surgery,Surgery,0.908107
+TR001855,TR001855,Surgery,Surgery,0.935590
+TR001858,TR001858,Surgery,Surgery,0.533501
+TR001863,TR001863,Surgery,Surgery,0.414721
+TR001868,TR001868,Surgery,Orthopedic,0.432504
+TR001869,TR001869,Surgery,Surgery,0.623072
+TR001874,TR001874,Surgery,Ophthalmology,0.609126
+TR001879,TR001879,Surgery,Obstetrics-Gynecology,0.491880
+TR001882,TR001882,Surgery,Orthopedic,0.404784
+TR001885,TR001885,Surgery,Surgery,0.466246
+TR001895,TR001895,Surgery,Surgery,0.635495
+TR001897,TR001897,Surgery,Orthopedic,0.484066
+TR001899,TR001899,Surgery,Surgery,0.803121
+TR001904,TR001904,Surgery,Surgery,0.791061
+TR001911,TR001911,Surgery,Obstetrics-Gynecology,0.473918
+TR001915,TR001915,Surgery,Surgery,0.676971
+TR001918,TR001918,Surgery,Orthopedic,0.461783
+TR001938,TR001938,Surgery,Surgery,0.832145
+TR001946,TR001946,Surgery,Ophthalmology,0.676287
+TR001959,TR001959,Surgery,Ophthalmology,0.642868
+TR001960,TR001960,Surgery,Surgery,0.506134
+TR001975,TR001975,Surgery,Obstetrics-Gynecology,0.772610
+TR001977,TR001977,Surgery,Surgery,0.575045
+TR001981,TR001981,Surgery,Surgery,0.457745
+TR001983,TR001983,Surgery,Surgery,0.557572
+TR001989,TR001989,Surgery,Surgery,0.769113
+TR001994,TR001994,Surgery,Surgery,0.891443
+TR001995,TR001995,Surgery,Surgery,0.606383
+TR001998,TR001998,Surgery,Surgery,0.465059
+TR002002,TR002002,Surgery,Surgery,0.604888
+TR002003,TR002003,Surgery,Surgery,0.708303
+TR002009,TR002009,Surgery,Orthopedic,0.736718
+TR002013,TR002013,Surgery,Surgery,0.824005
+TR002016,TR002016,Surgery,Surgery,0.692965
+TR002020,TR002020,Surgery,Ophthalmology,0.755991
+TR002022,TR002022,Surgery,Surgery,0.569530
+TR002028,TR002028,Surgery,Orthopedic,0.523519
+TR002039,TR002039,Surgery,Surgery,0.599554
+TR002040,TR002040,Surgery,Obstetrics-Gynecology,0.714530
+TR002045,TR002045,Surgery,Surgery,0.682012
+TR002047,TR002047,Surgery,Surgery,0.915053
+TR002050,TR002050,Surgery,Gastroenterology,0.711121
+TR002053,TR002053,Surgery,Surgery,0.642302
+TR002055,TR002055,Surgery,Orthopedic,0.513406
+TR002057,TR002057,Surgery,Obstetrics-Gynecology,0.735433
+TR002059,TR002059,Surgery,Obstetrics-Gynecology,0.742193
+TR002061,TR002061,Surgery,Surgery,0.539046
+TR002062,TR002062,Surgery,Surgery,0.481094
+TR002064,TR002064,Surgery,Orthopedic,0.523747
+TR002066,TR002066,Surgery,Orthopedic,0.550114
+TR002069,TR002069,Surgery,Surgery,0.822695
+TR002070,TR002070,Surgery,Surgery,0.523707
+TR002084,TR002084,Surgery,Surgery,0.931529
+TR002086,TR002086,Surgery,Orthopedic,0.472783
+TR002092,TR002092,Surgery,Surgery,0.524634
+TR002094,TR002094,Cardiovascular-Pulmonary,Surgery,0.457745
+TR002096,TR002096,General Medicine,General Medicine,0.869431
+TR002114,TR002114,Surgery,Ophthalmology,0.651603
+TR002115,TR002115,Surgery,Surgery,0.794794
+TR002118,TR002118,Surgery,Obstetrics-Gynecology,0.445506
+TR002121,TR002121,Surgery,Obstetrics-Gynecology,0.553762
+TR002123,TR002123,Surgery,Surgery,0.869450
+TR002126,TR002126,Surgery,Surgery,0.833149
+TR002132,TR002132,Surgery,Orthopedic,0.513798
+TR002133,TR002133,Surgery,Surgery,0.746598
+TR002137,TR002137,Surgery,Surgery,0.881125
+TR002143,TR002143,Surgery,Surgery,0.643019
+TR002144,TR002144,Surgery,Surgery,0.702955
+TR002145,TR002145,Surgery,Orthopedic,0.539421
+TR002152,TR002152,Surgery,Surgery,0.698743
+TR002157,TR002157,Surgery,Orthopedic,0.521159
+TR002166,TR002166,Surgery,Orthopedic,0.582692
+TR002172,TR002172,Surgery,Surgery,0.507847
+TR002178,TR002178,Surgery,Surgery,0.553586
+TR002180,TR002180,Surgery,Orthopedic,0.460194
+TR002182,TR002182,Surgery,Surgery,0.596404
+TR002186,TR002186,Surgery,Surgery,0.404158
+TR002190,TR002190,Surgery,Surgery,0.516450
+TR002207,TR002207,Surgery,Surgery,0.370675
+TR002211,TR002211,Surgery,Surgery,0.512553
+TR002221,TR002221,Surgery,Surgery,0.581882
+TR002222,TR002222,Surgery,Surgery,0.469952
+TR002225,TR002225,Surgery,Surgery,0.464308
+TR002240,TR002240,Surgery,Surgery,0.802358
+TR002264,TR002264,Surgery,Surgery,0.645468
+TR002266,TR002266,Surgery,Surgery,0.649223
+TR002274,TR002274,Surgery,Cardiovascular-Pulmonary,0.660312
+TR002277,TR002277,Surgery,Surgery,0.664287
+TR002278,TR002278,Surgery,Obstetrics-Gynecology,0.471228
+TR002282,TR002282,Surgery,Surgery,0.804211
+TR002286,TR002286,Surgery,Surgery,0.748342
+TR002288,TR002288,Surgery,Surgery,0.747921
+TR002292,TR002292,Surgery,Surgery,0.572122
+TR002294,TR002294,Surgery,Surgery,0.759029
+TR002299,TR002299,Surgery,Obstetrics-Gynecology,0.583603
+TR002311,TR002311,Surgery,Surgery,0.497637
+TR002314,TR002314,Surgery,Obstetrics-Gynecology,0.803269
+TR002315,TR002315,Surgery,Orthopedic,0.500004
+TR002324,TR002324,Surgery,Surgery,0.834113
+TR002330,TR002330,Surgery,Orthopedic,0.610107
+TR002332,TR002332,Radiology,Surgery,0.601497
+TR002335,TR002335,Obstetrics-Gynecology,Obstetrics-Gynecology,0.647693
+TR002343,TR002343,Gastroenterology,Surgery,0.579002
+TR002347,TR002347,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,0.725230
+TR002348,TR002348,Cardiovascular-Pulmonary,General Medicine,0.508892
+TR002355,TR002355,Surgery,Obstetrics-Gynecology,0.702710
+TR002365,TR002365,Surgery,Surgery,0.429746
+TR002366,TR002366,Surgery,Orthopedic,0.558599
+TR002369,TR002369,Surgery,Obstetrics-Gynecology,0.436475
+TR002371,TR002371,Surgery,Surgery,0.875303
+TR002376,TR002376,Surgery,Gastroenterology,0.477547
+TR002382,TR002382,Surgery,Surgery,0.413424
+TR002385,TR002385,Surgery,Surgery,0.878446
+TR002396,TR002396,Surgery,Surgery,0.840252
+TR002402,TR002402,Surgery,Surgery,0.564530
+TR002409,TR002409,Surgery,Orthopedic,0.594321
+TR002410,TR002410,Surgery,Surgery,0.360763
+TR002414,TR002414,Surgery,Surgery,0.681545
+TR002416,TR002416,Surgery,Cardiovascular-Pulmonary,0.511046
+TR002422,TR002422,Surgery,Surgery,0.867514
+TR002439,TR002439,Surgery,Orthopedic,0.527449
+TR002441,TR002441,Surgery,Surgery,0.468676
+TR002445,TR002445,Surgery,Surgery,0.787737
+TR002451,TR002451,Surgery,Orthopedic,0.476201
+TR002452,TR002452,Surgery,Surgery,0.467916
+TR002455,TR002455,Surgery,Surgery,0.686554
+TR002464,TR002464,Surgery,Surgery,0.803505
+TR002465,TR002465,Surgery,Ophthalmology,0.665963
+TR002468,TR002468,Surgery,Surgery,0.835536
+TR002469,TR002469,Surgery,Surgery,0.853534
+TR002474,TR002474,Surgery,Surgery,0.694336
+TR002479,TR002479,Surgery,Obstetrics-Gynecology,0.647693
+TR002486,TR002486,Surgery,Surgery,0.533615
+TR002493,TR002493,Surgery,Surgery,0.875413
+TR002495,TR002495,Surgery,Surgery,0.924674
+TR002502,TR002502,Surgery,Surgery,0.810047
+TR002504,TR002504,Surgery,Obstetrics-Gynecology,0.751426
+TR002511,TR002511,Surgery,Ophthalmology,0.705918
+TR002512,TR002512,Surgery,Ophthalmology,0.468018
+TR002516,TR002516,Surgery,Orthopedic,0.527209
+TR002519,TR002519,Surgery,Surgery,0.507696
+TR002524,TR002524,Surgery,Obstetrics-Gynecology,0.496160
+TR002529,TR002529,Surgery,Orthopedic,0.529282
+TR002531,TR002531,Surgery,Surgery,0.411394
+TR002534,TR002534,Surgery,Surgery,0.742666
+TR002553,TR002553,Surgery,Surgery,0.704659
+TR002578,TR002578,Surgery,Surgery,0.370070
+TR002580,TR002580,Surgery,Obstetrics-Gynecology,0.635675
+TR002588,TR002588,Surgery,Surgery,0.609228
+TR002601,TR002601,Surgery,Orthopedic,0.572938
+TR002606,TR002606,Surgery,Surgery,0.662289
+TR002616,TR002616,Surgery,Obstetrics-Gynecology,0.746434
+TR002619,TR002619,Surgery,Ophthalmology,0.600710
+TR002622,TR002622,Surgery,Surgery,0.436621
+TR002623,TR002623,Surgery,Radiology,0.573675
+TR002624,TR002624,Surgery,Ophthalmology,0.768492
+TR002630,TR002630,Surgery,Orthopedic,0.506532
+TR002643,TR002643,Surgery,Surgery,0.405201
+TR002644,TR002644,Surgery,Surgery,0.738205
+TR002653,TR002653,Surgery,Surgery,0.427541
+TR002655,TR002655,Surgery,Surgery,0.586323
+TR002658,TR002658,Surgery,Surgery,0.802332
+TR002664,TR002664,Surgery,Obstetrics-Gynecology,0.426407
+TR002668,TR002668,Surgery,Surgery,0.471542

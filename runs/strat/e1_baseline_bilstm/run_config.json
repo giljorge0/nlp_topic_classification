@@ -1,0 +1,52 @@
+{
+  "mode": "handoff",
+  "command": "train",
+  "dataset": "baseline_all_fields",
+  "variant": "baseline_all_fields",
+  "augmentation": null,
+  "split": "stratified",
+  "handoff_root": "model_handoff",
+  "train_file": "model_handoff\\datasets\\baseline_all_fields\\train.csv",
+  "max_length": 2048,
+  "max_length_source": "explicit",
+  "model": "bilstm",
+  "seed": 42,
+  "class_weight": "none",
+  "class_weight_alpha": null,
+  "class_weight_source": "handoff_file",
+  "class_weights_by_name": null,
+  "rows": {
+    "train_total": 2129,
+    "train_original": 2129,
+    "train_augmented": 0,
+    "validation": 533,
+    "test": 398
+  },
+  "files": {
+    "model_handoff\\datasets\\baseline_all_fields\\train.csv": {
+      "sha256": "b4cbd651be305121c42a802c38d1e3790c499350610c282f8fbfffe0f44360c7",
+      "in_manifest": true
+    },
+    "model_handoff\\datasets\\baseline_all_fields\\validation.csv": {
+      "sha256": "2748c9713c8e71f3b0a47167796908abd82ca1e719b6eeb660008cdf6c530619",
+      "in_manifest": true
+    },
+    "model_handoff\\datasets\\baseline_all_fields\\test.csv": {
+      "sha256": "756786f4cd41a6a48595622f607a30b6140f28d0dcdbf0c3f8bfd24d2b01260b",
+      "in_manifest": true
+    }
+  },
+  "hyperparameters": {
+    "embedding_dim": 128,
+    "hidden_dim": 128,
+    "num_layers": 1,
+    "dropout": 0.3,
+    "max_vocab": 20000,
+    "min_freq": 2,
+    "batch_size": 16,
+    "epochs": 12,
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "grad_clip": 1.0
+  }
+}
