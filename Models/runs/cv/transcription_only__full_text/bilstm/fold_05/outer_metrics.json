@@ -1,0 +1,287 @@
+{
+  "accuracy": 0.5095785440613027,
+  "macro_f1": 0.4390409398983555,
+  "weighted_f1": 0.49847006414723793,
+  "min_class_f1": 0.0,
+  "per_class_f1": {
+    "Cardiovascular-Pulmonary": 0.46551724137931033,
+    "Dermatology": 0.0,
+    "Gastroenterology": 0.3,
+    "General Medicine": 0.5316455696202531,
+    "Neurology": 0.4307692307692308,
+    "Neurosurgery": 0.19047619047619047,
+    "Obstetrics-Gynecology": 0.5573770491803278,
+    "Ophthalmology": 0.6470588235294118,
+    "Orthopedic": 0.41935483870967744,
+    "Psychiatry-Psychology": 0.6666666666666666,
+    "Radiology": 0.45,
+    "Surgery": 0.6096256684491979
+  },
+  "classification_report": {
+    "Cardiovascular-Pulmonary": {
+      "precision": 0.48214285714285715,
+      "recall": 0.45,
+      "f1-score": 0.46551724137931033,
+      "support": 60.0
+    },
+    "Dermatology": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 5.0
+    },
+    "Gastroenterology": {
+      "precision": 0.42857142857142855,
+      "recall": 0.23076923076923078,
+      "f1-score": 0.3,
+      "support": 39.0
+    },
+    "General Medicine": {
+      "precision": 0.5526315789473685,
+      "recall": 0.5121951219512195,
+      "f1-score": 0.5316455696202531,
+      "support": 41.0
+    },
+    "Neurology": {
+      "precision": 0.4827586206896552,
+      "recall": 0.3888888888888889,
+      "f1-score": 0.4307692307692308,
+      "support": 36.0
+    },
+    "Neurosurgery": {
+      "precision": 0.3333333333333333,
+      "recall": 0.13333333333333333,
+      "f1-score": 0.19047619047619047,
+      "support": 15.0
+    },
+    "Obstetrics-Gynecology": {
+      "precision": 0.5,
+      "recall": 0.6296296296296297,
+      "f1-score": 0.5573770491803278,
+      "support": 27.0
+    },
+    "Ophthalmology": {
+      "precision": 0.55,
+      "recall": 0.7857142857142857,
+      "f1-score": 0.6470588235294118,
+      "support": 14.0
+    },
+    "Orthopedic": {
+      "precision": 0.3939393939393939,
+      "recall": 0.4482758620689655,
+      "f1-score": 0.41935483870967744,
+      "support": 58.0
+    },
+    "Psychiatry-Psychology": {
+      "precision": 0.5384615384615384,
+      "recall": 0.875,
+      "f1-score": 0.6666666666666666,
+      "support": 8.0
+    },
+    "Radiology": {
+      "precision": 0.4864864864864865,
+      "recall": 0.4186046511627907,
+      "f1-score": 0.45,
+      "support": 43.0
+    },
+    "Surgery": {
+      "precision": 0.5757575757575758,
+      "recall": 0.6477272727272727,
+      "f1-score": 0.6096256684491979,
+      "support": 176.0
+    },
+    "accuracy": 0.5095785440613027,
+    "macro avg": {
+      "precision": 0.44367356777746986,
+      "recall": 0.460011523020468,
+      "f1-score": 0.4390409398983555,
+      "support": 522.0
+    },
+    "weighted avg": {
+      "precision": 0.5005526659635178,
+      "recall": 0.5095785440613027,
+      "f1-score": 0.49847006414723793,
+      "support": 522.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      27,
+      0,
+      0,
+      5,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      7,
+      20
+    ],
+    [
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3
+    ],
+    [
+      2,
+      1,
+      9,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      21
+    ],
+    [
+      5,
+      2,
+      4,
+      21,
+      2,
+      0,
+      2,
+      0,
+      2,
+      3,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      14,
+      2,
+      0,
+      0,
+      8,
+      3,
+      4,
+      3
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      5,
+      0,
+      0,
+      8
+    ],
+    [
+      1,
+      0,
+      1,
+      2,
+      0,
+      0,
+      17,
+      0,
+      0,
+      0,
+      1,
+      5
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      11,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      1,
+      2,
+      0,
+      0,
+      0,
+      26,
+      0,
+      6,
+      22
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      7,
+      0,
+      0
+    ],
+    [
+      5,
+      0,
+      1,
+      0,
+      9,
+      0,
+      2,
+      0,
+      7,
+      0,
+      18,
+      1
+    ],
+    [
+      15,
+      0,
+      5,
+      0,
+      0,
+      2,
+      13,
+      9,
+      18,
+      0,
+      0,
+      114
+    ]
+  ],
+  "passes_accuracy": true,
+  "passes_min_class_f1": false,
+  "fold": 5,
+  "best_epoch": 23,
+  "epochs_trained": 29,
+  "outer_samples": 522,
+  "inner_samples": 419,
+  "fit_samples": 1672,
+  "vocabulary_size": 14229,
+  "parameters": 2088588
+}

@@ -16,8 +16,8 @@
     "Radiology": 43,
     "Surgery": 175
   },
-  "rwd": {
-    "train_total": 2969,
-    "train_synthetic": 884
+  "combined": {
+    "train_total": 3406,
+    "train_synthetic": 1321
   }
 }
