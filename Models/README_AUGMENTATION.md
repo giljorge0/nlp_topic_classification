@@ -6,6 +6,8 @@ This package is designed to be **extracted directly into your existing `Models/`
 - ChatGPT paraphrases are generated **in your ChatGPT conversation**, not by a local script. The scripts only export requested clinical descriptions, validate returned paraphrases and combine datasets.
 - **No API keys, external API calls, paid packages or Python installations beyond Python 3.10+** are required.
 - The CSVs consumed by the classifiers always have the original columns: `medical_specialty,description,sample_name,transcription,keywords`.
+- CSV files are automatically read as comma-separated or semicolon-separated (or tab-separated). Generated training and validation CSVs preserve the input delimiter. ChatGPT request and audit CSV files use commas.
+- The `split` command prints a data-quality warning if it detects an unexpected number of classes or suspiciously long labels/descriptions. Such warnings **do not** repair corrupted rows. Prefer an untouched original download over CSVs resaved by Excel.
 - Only `description` is augmented by default. Change `source_column` to `transcription` only if you intentionally want that experiment (full notes are larger and harder to validate).
 
 ## 1. Extract the ZIP into `Models/`
@@ -78,6 +80,10 @@ Models/data/splits/validation.csv
 Models/reports/augmentation/split_manifest.json
 ```
 
+The separator is detected automatically. Your command works for either comma or semicolon CSVs. You **do not** need to edit the CSV in Excel.
+
+**Important when using the October 15 uploaded `train(4).csv`:** It appears to contain corrupted merged records, including three invalid medical specialty labels and several descriptions containing other CSV records. Do not train on that damaged export; retrieve the unchanged original `train.csv` from the project materials first. The scripts can read semicolons but cannot reconstruct missing or merged source rows.
+
 This is a best-effort group-aware stratified split, grouping exact normalized clinical notes. Review its warnings and class distributions, especially for rare labels. It will refuse to overwrite an existing split unless you explicitly pass `--force`. Avoid using `--force` after augmentation because it invalidates previous CSVs.
 
 Without `--train-input`, subsequent commands default to `data/splits/train_base.csv`.
@@ -119,16 +125,12 @@ The `--tag` option appends a suffix to output filenames, e.g. `train_rwd_p10.csv
 python augment_data.py chat-export
 ```
 
-Or for a smaller initial batch:
-
-```bash
-python augment_data.py chat-export --limit 40
-```
+This exports **every row with nonempty `description` in the active training partition**. There is no numerical cap or minority-class selection by default.
 
 Or with your existing training partition:
 
 ```bash
-python augment_data.py chat-export --train-input path/to/your/train_split.csv --limit 40
+python augment_data.py chat-export --train-input path/to/your/train_split.csv
 ```
 
 Outputs:
@@ -220,7 +222,7 @@ When you have selected the augmentation settings using held-out validation, you 
 
 ```bash
 python augment_data.py rwd --train-input ../train.csv --tag final
-python augment_data.py chat-export --train-input ../train.csv --tag final --limit 40
+python augment_data.py chat-export --train-input ../train.csv --tag final
 ```
 
 Upload `data/chat_requests/paraphrase_requests_final.csv` here, receive `llm_paraphrases_final.csv`, then:
@@ -239,9 +241,9 @@ This writes `train_rwd_final.csv`, `train_llm_final.csv` and `train_combined_fin
 - `seed`: 42, for deterministic splitting and RWD.
 - `validation_fraction`: 0.2 when using the optional split command.
 - `source_column`: `description` by default. If changed to `transcription`, exported data is much longer and semantic validation is more difficult.
-- `selection.strategy`: `minority` by default (or `all`).
+- `selection.strategy`: `all` by default (or `minority` for targeted oversampling).
 - `selection.target_quantile`: 0.75, a heuristic class-count target for minority oversampling.
-- `selection.max_source_rows`: 200, the overall default request limit. Override with `--limit N`. `0` means unlimited.
+- `selection.max_source_rows`: 0, meaning unlimited. This exports all records with nonempty source text. An explicit `--limit N` is only for users who choose to impose a cap.
 - `random_dropout.probability`: 0.05, fraction of *eligible* words sampled for deletion per attempt.
 - `random_dropout.mode`: `safe`. `general` is less conservative and not recommended without inspection.
 - `chat_paraphrasing.min_length_ratio`: 0.5 and `max_length_ratio`: 2.0, approximate token-count change bounds.

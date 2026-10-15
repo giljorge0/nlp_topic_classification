@@ -17,7 +17,7 @@ from collections import Counter
 from pathlib import Path
 
 from augmentation_pkg.io_utils import (
-    FIELDS, MODELS_DIR, discover_train_file, load_config, read_records,
+    FIELDS, MODELS_DIR, detect_csv_delimiter, discover_train_file, load_config, read_records,
     report_class_distribution, sha256_text, stable_row_ids, write_records,
     write_table,
 )
@@ -41,8 +41,12 @@ def suffix(tag: str) -> str:
     return f"_{tag}" if tag else ""
 
 
+def base_path(train_input: str | None) -> Path:
+    return Path(train_input).expanduser().resolve() if train_input else SPLITS / "train_base.csv"
+
+
 def read_base(train_input: str | None) -> list[dict[str, str]]:
-    path = Path(train_input).expanduser().resolve() if train_input else SPLITS / "train_base.csv"
+    path = base_path(train_input)
     if not path.is_file():
         raise FileNotFoundError(
             f"Training data not found at {path}. Run split or pass --train-input PATH."
@@ -88,10 +92,10 @@ def selected_sources(base: list[dict[str, str]], config: dict,
 
 def write_augmented(method: str, base: list[dict[str, str]],
                     additions: list[dict[str, str]], audit: list[dict],
-                    settings: dict, tag: str) -> None:
+                    settings: dict, tag: str, delimiter: str = ",") -> None:
     suf = suffix(tag)
     path = AUGMENTED / f"train_{method}{suf}.csv"
-    write_records(path, base + additions)
+    write_records(path, base + additions, delimiter=delimiter)
     write_table(REPORTS / f"{method}{suf}_audit.csv", AUDIT_COLUMNS, audit)
     write_table(REPORTS / f"{method}{suf}_rejected.csv", AUDIT_COLUMNS,
                 [r for r in audit if r["status"] != "accepted"])
@@ -121,14 +125,29 @@ def write_augmented(method: str, base: list[dict[str, str]],
 def cmd_split(args: argparse.Namespace, config: dict) -> None:
     path = discover_train_file(args.input)
     rows = read_records(path)
+    # A CSV can parse to five fields yet still be corrupted by a spreadsheet
+    # re-export: merged cases show up as whole clinical notes in the label.
+    suspicious = [n for n, row in enumerate(rows, 2)
+                  if len(row["medical_specialty"]) > 100
+                  or len(row["description"]) > 2000]
+    classes = {row["medical_specialty"] for row in rows}
+    if len(classes) != 12 or suspicious:
+        print(f"WARNING: Data-quality check found {len(classes)} distinct labels "
+              f"(the project expects 12) and {len(suspicious)} suspicious rows. "
+              "Possible CSV corruption. Use an untouched original export before training.",
+              file=sys.stderr)
+        if suspicious:
+            print(f"WARNING: Suspicious logical CSV row numbers: {suspicious[:30]}",
+                  file=sys.stderr)
     if (SPLITS / "train_base.csv").exists() and not args.force:
         raise ValueError("train_base.csv already exists. To avoid overwriting an existing split, "
                          "use --force only if you intend to recreate it.")
     train, val, warnings = grouped_stratified_split(
         rows, fraction=float(config["validation_fraction"]), seed=int(config["seed"])
     )
-    write_records(SPLITS / "train_base.csv", train)
-    write_records(SPLITS / "validation.csv", val)
+    delimiter = detect_csv_delimiter(path)
+    write_records(SPLITS / "train_base.csv", train, delimiter=delimiter)
+    write_records(SPLITS / "validation.csv", val, delimiter=delimiter)
     REPORTS.mkdir(parents=True, exist_ok=True)
     manifest = {
         "source_path": str(path), "source_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
@@ -188,7 +207,7 @@ def cmd_rwd(args: argparse.Namespace, config: dict) -> None:
     write_augmented("rwd", base, additions, audit, {
         "selected_sources": len(source_indices), "requested": len(source_indices) * copies,
         "source_column": column, "random_dropout": params,
-    }, args.tag)
+    }, args.tag, delimiter=detect_csv_delimiter(base_path(args.train_input)))
 
 
 def _request_paths(tag: str) -> tuple[Path, Path]:
@@ -226,7 +245,7 @@ def _read_paraphrase_input(path: Path) -> list[dict[str, str]]:
     if not path.is_file():
         raise FileNotFoundError(f"Paraphrases file not found: {path}")
     with path.open("r", encoding="utf-8-sig", newline="") as f:
-        reader = csv.DictReader(f)
+        reader = csv.DictReader(f, delimiter=detect_csv_delimiter(path, {"source_row_id", "paraphrase"}))
         if not reader.fieldnames or not {"source_row_id", "paraphrase"}.issubset(reader.fieldnames):
             raise ValueError("LLM response must be a CSV with headers: source_row_id,paraphrase")
         entries = []
@@ -315,7 +334,7 @@ def cmd_chat_import(args: argparse.Namespace, config: dict) -> None:
         "source_column": column, "imported_rows_this_run": len(data),
         "accepted_this_run": accepted_this_run, "append": args.append,
         "automatic_checks_only": True,
-    }, args.tag)
+    }, args.tag, delimiter=detect_csv_delimiter(base_path(args.train_input)))
     rejected = len(data) - accepted_this_run
     print(f"This import: {accepted_this_run} accepted, {rejected} rejected.")
     if rejected:
@@ -342,7 +361,7 @@ def cmd_combined(args: argparse.Namespace, _config: dict) -> None:
                 seen.add(key)
                 additions.append(extra)
     out = AUGMENTED / f"train_combined{suf}.csv"
-    write_records(out, base + additions)
+    write_records(out, base + additions, delimiter=detect_csv_delimiter(base_path(args.train_input)))
     if not args.tag:
         distribution(base)
     print(f"Combined: {len(base)} original + {len(additions)} unique synthetic examples")

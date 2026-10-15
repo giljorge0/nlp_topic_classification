@@ -3,9 +3,9 @@
   "validation_fraction": 0.2,
   "source_column": "description",
   "selection": {
-    "strategy": "minority",
+    "strategy": "all",
     "target_quantile": 0.75,
-    "max_source_rows": 200
+    "max_source_rows": 0
   },
   "random_dropout": {
     "probability": 0.05,

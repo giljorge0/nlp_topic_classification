@@ -74,7 +74,7 @@ def grouped_stratified_split(rows: list[dict[str, str]], *, fraction: float = 0.
         warnings.append("No validation group could be assigned without losing all training examples of a specialty")
     for label in sorted(label_counts):
         if label not in validation_counts:
-            warnings.append(f"Specialty {label!r} has no validation examples; consider cross-validation")
+            warnings.append(f"Specialty {label[:70]!r}{'...' if len(label) > 70 else ''} has no validation examples; consider cross-validation")
         if group_counts[label] < 1:
             raise AssertionError("Specialty missing entirely from training")
     return train, val, warnings

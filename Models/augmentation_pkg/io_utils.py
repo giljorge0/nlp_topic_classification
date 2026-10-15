@@ -64,13 +64,39 @@ def discover_train_file(explicit_path: str | None = None) -> Path:
     )
 
 
-def read_records(path: str | Path, *, require_label: bool = True) -> list[dict[str, str]]:
+def detect_csv_delimiter(path: str | Path, required: set[str] | None = None) -> str:
+    """Identify a CSV separator by parsing the header, not clinical text contents.
+
+    Clinical transcriptions include many commas, so csv.Sniffer on sample data can
+    misidentify semicolon-separated source files. Inspect the *header* instead.
+    Supported: comma, semicolon, tab. Raises on unrecognized/invalid headers.
+    """
     path = Path(path)
     with path.open("r", encoding="utf-8-sig", newline="") as f:
-        reader = csv.DictReader(f)
+        header = f.readline()
+    if not header.strip():
+        raise ValueError(f"Empty CSV or missing header: {path}")
+    expected = set(FIELDS if required is None else required)
+    for delimiter in (",", ";", "\t"):
+        columns = [col.strip() for col in next(csv.reader([header], delimiter=delimiter))]
+        if expected.issubset(columns) and len(columns) == len(set(columns)):
+            return delimiter
+    raise ValueError(
+        f"CSV {path} does not contain the required columns {sorted(expected)} "
+        "with a comma, semicolon or tab delimiter. "
+        f"First header line: {header[:200].strip()!r}"
+    )
+
+
+def read_records(path: str | Path, *, require_label: bool = True) -> list[dict[str, str]]:
+    path = Path(path)
+    required = set(FIELDS if require_label else FIELDS[1:])
+    delimiter = detect_csv_delimiter(path, required)
+    with path.open("r", encoding="utf-8-sig", newline="") as f:
+        reader = csv.DictReader(f, delimiter=delimiter)
         if reader.fieldnames is None:
             raise ValueError(f"CSV has no header: {path}")
-        required = set(FIELDS if require_label else FIELDS[1:])
+        reader.fieldnames = [name.strip() for name in reader.fieldnames]
         missing = required - set(reader.fieldnames)
         if missing:
             raise ValueError(f"CSV {path} missing required columns: {sorted(missing)}")
@@ -85,14 +111,16 @@ def read_records(path: str | Path, *, require_label: bool = True) -> list[dict[s
     return rows
 
 
-def write_records(path: str | Path, rows: list[dict[str, str]]) -> None:
+def write_records(path: str | Path, rows: list[dict[str, str]], *, delimiter: str = ",") -> None:
+    if delimiter not in (",", ";", "\t"):
+        raise ValueError(f"Unsupported output CSV delimiter: {delimiter!r}")
     target = Path(path)
     target.parent.mkdir(parents=True, exist_ok=True)
     tmp = tempfile.NamedTemporaryFile(mode="w", newline="", encoding="utf-8", dir=target.parent,
                                       prefix=f".{target.name}.", suffix=".tmp", delete=False)
     try:
         with tmp as f:
-            writer = csv.DictWriter(f, fieldnames=FIELDS, extrasaction="ignore", lineterminator="\n")
+            writer = csv.DictWriter(f, fieldnames=FIELDS, extrasaction="ignore", delimiter=delimiter, lineterminator="\n")
             writer.writeheader()
             for row in rows:
                 writer.writerow({column: row.get(column, "") for column in FIELDS})
