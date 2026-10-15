@@ -108,11 +108,14 @@ def title_config(slug: str) -> str:
     elif base.endswith("_only"):
         title = base[:-5].replace("_", " ").title() + " only"
     else:
-        title = " + ".join(word.replace("_", " ").title() for word in tokens if not word.startswith("prefix_"))
+        title = " + ".join(word.replace("_", " ").title() for word in tokens
+                           if not word.startswith("prefix_") and word != "full_text")
     if "prefix_removed" in tokens:
         title += " · Prefix removed"
     elif "prefix_only" in tokens:
         title += " · Specialty prefix only*"
+    if "full_text" in tokens:
+        title += " · Full text (no truncation)"
     return title
 
 

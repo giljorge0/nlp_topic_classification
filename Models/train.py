@@ -1,7 +1,8 @@
-"""Five-fold grouped CV, final fitting, and inference for four PyTorch RNN classifiers.
+"""Full-text five-fold grouped CV, final fitting, and inference for four PyTorch RNN classifiers.
 
 Use `python train.py --help` and README.md for commands.
 The official unlabelled test set is only read by the `predict` subcommand.
+No sequence-length truncation is used; batches are padded dynamically.
 """
 from __future__ import annotations
 
@@ -127,7 +128,9 @@ def configuration_name(fields: list[str], strip: bool, keep: bool) -> str:
     else:
         base = "__".join(fields)
     suffix = "__prefix_removed" if strip else ("__prefix_only" if keep else "")
-    return base + suffix
+    # Keep unlimited-length experiments separate from older 512-token runs.
+    # Existing runs/cv/* folders and frozen fold assignments remain unchanged.
+    return base + suffix + "__full_text"
 
 
 def make_text(row: dict, fields: list[str], strip: bool = False, keep: bool = False) -> str:
@@ -153,8 +156,10 @@ def tokenize(text: str) -> list[str]:
     return TOKEN_REGEX.findall(text.casefold())
 
 
-def build_vocab(texts: list[str], max_vocab: int, min_freq: int, max_length: int) -> dict[str, int]:
-    counter = Counter(token for text in texts for token in tokenize(text)[:max_length])
+def build_vocab(texts: list[str], max_vocab: int, min_freq: int) -> dict[str, int]:
+    # Count tokens from entire documents, including positions beyond 512.
+    # max_vocab limits distinct tokens, not the number of tokens in an input.
+    counter = Counter(token for text in texts for token in tokenize(text))
     vocab = {"<pad>": 0, "<unk>": 1}
     for token, frequency in sorted(counter.items(), key=lambda item: (-item[1], item[0])):
         if frequency < min_freq or len(vocab) >= max_vocab:
@@ -169,7 +174,7 @@ class ClinicalDataset(Dataset):
         self.tokens = []
         for row in rows:
             text = make_text(row, args.fields, args.strip_keyword_prefix, args.keep_keyword_prefix_only)
-            values = [vocab.get(token, 1) for token in tokenize(text)[:args.max_length]]
+            values = [vocab.get(token, 1) for token in tokenize(text)]
             self.tokens.append(torch.tensor(values or [1], dtype=torch.long))
         self.labels = ([LABELS.index(row["medical_specialty"]) for row in rows]
                        if labelled else [-1] * len(rows))
@@ -359,7 +364,8 @@ def save_checkpoint(path: Path, model, args, vocab, model_kwargs, extra: dict):
         "vocab": vocab, "labels": list(LABELS), "fields": args.fields,
         "strip_keyword_prefix": args.strip_keyword_prefix,
         "keep_keyword_prefix_only": args.keep_keyword_prefix_only,
-        "max_length": args.max_length, "seed": args.seed, "extra": extra,
+        "max_length": None, "sequence_mode": "full_text",
+        "seed": args.seed, "extra": extra,
     }, path)
 
 
@@ -374,10 +380,12 @@ def open_checkpoint(path: Path, device: torch.device):
 
 def config_dict(args, fingerprint: str) -> dict:
     keys = ("model", "fields", "strip_keyword_prefix", "keep_keyword_prefix_only",
-            "embedding_dim", "hidden_dim", "num_layers", "dropout", "max_length",
+            "embedding_dim", "hidden_dim", "num_layers", "dropout",
             "max_vocab", "min_freq", "batch_size", "epochs", "lr", "weight_decay",
             "grad_clip", "class_weighting", "select_metric", "patience", "seed")
-    return {**{k: getattr(args, k) for k in keys}, "data_fingerprint": fingerprint,
+    return {**{k: getattr(args, k) for k in keys},
+            "max_length": None, "sequence_mode": "full_text",
+            "data_fingerprint": fingerprint,
             "config_name": configuration_name(args.fields, args.strip_keyword_prefix,
                                                args.keep_keyword_prefix_only)}
 
@@ -424,7 +432,7 @@ def run_fold(args, rows: list[dict], manifest: dict, record: dict, run_root: Pat
     inner_val = [rows[i] for i in record["inner_validation"]]
     outer_test = [rows[i] for i in record["outer_test"]]
     texts = [make_text(r, args.fields, args.strip_keyword_prefix, args.keep_keyword_prefix_only) for r in fit]
-    vocab = build_vocab(texts, args.max_vocab, args.min_freq, args.max_length)
+    vocab = build_vocab(texts, args.max_vocab, args.min_freq)
     kwargs = model_config(args, len(vocab))
     model = MODELS[args.model](**kwargs).to(device)
     print(f"Fold {fold}/5 | device={device} | fit={len(fit)} | inner_val={len(inner_val)} "
@@ -551,9 +559,9 @@ def cv_command(args):
     for record in records:
         run_fold(args, rows, manifest, record, folder, device)
     summarize_cv(folder, manifest, rows, settings)
-    # Weighted experiments are automatically added to the unified HTML dashboard
-    # once all five outer folds finish (including previously completed folds).
-    if args.class_weighting != "none" and args.fold is None and (folder / "cv_summary.json").exists():
+    # Full-text experiments, normal or weighted, automatically appear in the
+    # unified HTML dashboard when all five folds have completed.
+    if args.fold is None and (folder / "cv_summary.json").exists():
         try:
             from compare_results import generate
             generate(runs.resolve(), Path("Results").resolve())
@@ -579,7 +587,7 @@ def final_command(args):
     set_seed(args.seed)
     vocab = build_vocab([make_text(r, args.fields, args.strip_keyword_prefix,
                                    args.keep_keyword_prefix_only) for r in rows],
-                        args.max_vocab, args.min_freq, args.max_length)
+                        args.max_vocab, args.min_freq)
     kwargs = model_config(args, len(vocab))
     model = MODELS[args.model](**kwargs).to(device)
     loss_fn = loss_function(args, rows, device)
@@ -597,11 +605,15 @@ def final_command(args):
 def predict_command(args):
     device = get_device(args.device)
     model, checkpoint = open_checkpoint(Path(args.checkpoint), device)
+    if checkpoint.get("max_length") is not None:
+        print("WARNING: This checkpoint was trained with a sequence-length limit. "
+              "Prediction now uses full text; retrain without truncation for "
+              "matching training and prediction conditions.")
     rows = read_unlabelled_csv(args.test_csv)
     settings = argparse.Namespace(
         fields=checkpoint["fields"], strip_keyword_prefix=checkpoint["strip_keyword_prefix"],
         keep_keyword_prefix_only=checkpoint.get("keep_keyword_prefix_only", False),
-        max_length=checkpoint["max_length"], batch_size=args.batch_size,
+        batch_size=args.batch_size,
     )
     predictions, _, positions, _ = infer(model, loader(rows, checkpoint["vocab"], settings, False, False), device)
     if list(positions) != list(range(len(rows))):
@@ -629,7 +641,6 @@ def get_args():
         p.add_argument("--hidden-dim", type=int, default=128)
         p.add_argument("--num-layers", type=int, default=1)
         p.add_argument("--dropout", type=float, default=0.3)
-        p.add_argument("--max-length", type=int, default=512)
         p.add_argument("--max-vocab", type=int, default=20000)
         p.add_argument("--min-freq", type=int, default=2)
         p.add_argument("--batch-size", type=int, default=16)
@@ -659,7 +670,7 @@ def get_args():
 
     final = commands.add_parser("train-final", help="Fit on all labelled rows after selecting settings by CV")
     common(final)
-    final.add_argument("--output-dir", default="runs/final")
+    final.add_argument("--output-dir", default="runs/final_full_text")
     final.set_defaults(run=final_command)
 
     pred = commands.add_parser("predict", help="Predict official unlabelled CSV in original order")
@@ -675,7 +686,7 @@ def get_args():
             parser.error("--fields cannot include duplicates")
         if (args.strip_keyword_prefix or args.keep_keyword_prefix_only) and "keywords" not in args.fields:
             parser.error("Keyword-prefix options require --fields to include keywords")
-        for name in ("max_length", "max_vocab", "min_freq", "batch_size", "epochs"):
+        for name in ("max_vocab", "min_freq", "batch_size", "epochs"):
             if getattr(args, name) <= 0:
                 parser.error(f"--{name.replace('_', '-')} must be positive")
         if args.max_vocab < 2 or not 0 <= args.dropout < 1 or args.num_layers < 1:
