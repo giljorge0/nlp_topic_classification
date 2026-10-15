@@ -1,0 +1,24 @@
+{
+  "model": "birnn_attention",
+  "fields": [
+    "description",
+    "keywords",
+    "transcription"
+  ],
+  "strip_keyword_prefix": false,
+  "folds": 5,
+  "seed": 42,
+  "epochs": 5,
+  "batch_size": 32,
+  "max_tokens": 256,
+  "max_vocab": 30000,
+  "embedding_dim": 96,
+  "hidden_dim": 96,
+  "learning_rate": 0.002,
+  "device": "auto",
+  "quarantined_originals": 10,
+  "methods": [
+    "rwd"
+  ],
+  "note": "BiLSTM attention is a stand-alone reference implementation, NOT the existing train.py model."
+}

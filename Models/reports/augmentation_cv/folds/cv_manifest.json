@@ -4,7 +4,7 @@
   "folds": 5,
   "quarantine_rows": 10,
   "methods": [
-    "combined"
+    "llm"
   ],
   "fold_stats": [
     {
@@ -25,9 +25,9 @@
         "Radiology": 44,
         "Surgery": 174
       },
-      "combined": {
-        "train_total": 3402,
-        "train_synthetic": 1318
+      "llm": {
+        "train_total": 2524,
+        "train_synthetic": 440
       }
     },
     {
@@ -48,9 +48,9 @@
         "Radiology": 43,
         "Surgery": 175
       },
-      "combined": {
-        "train_total": 3438,
-        "train_synthetic": 1353
+      "llm": {
+        "train_total": 2529,
+        "train_synthetic": 444
       }
     },
     {
@@ -71,9 +71,9 @@
         "Radiology": 43,
         "Surgery": 175
       },
-      "combined": {
-        "train_total": 3406,
-        "train_synthetic": 1321
+      "llm": {
+        "train_total": 2522,
+        "train_synthetic": 437
       }
     },
     {
@@ -94,9 +94,9 @@
         "Radiology": 43,
         "Surgery": 174
       },
-      "combined": {
-        "train_total": 3423,
-        "train_synthetic": 1338
+      "llm": {
+        "train_total": 2526,
+        "train_synthetic": 441
       }
     },
     {
@@ -117,9 +117,9 @@
         "Radiology": 44,
         "Surgery": 175
       },
-      "combined": {
-        "train_total": 3431,
-        "train_synthetic": 1346
+      "llm": {
+        "train_total": 2527,
+        "train_synthetic": 442
       }
     }
   ]

@@ -1,0 +1,2 @@
+method,accuracy,macro_f1,weighted_f1,minimum_class_f1,above_49pct_accuracy,all_class_f1_at_least_25pct,validation_originals
+rwd,0.9048349961627015,0.8809269740901469,0.9056597467393686,0.7563805104408353,True,True,2606
