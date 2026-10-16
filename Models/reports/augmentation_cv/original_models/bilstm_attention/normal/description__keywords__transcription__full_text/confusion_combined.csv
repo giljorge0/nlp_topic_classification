@@ -1,0 +1,13 @@
+true_label,Cardiovascular-Pulmonary,Dermatology,Gastroenterology,General Medicine,Neurology,Neurosurgery,Obstetrics-Gynecology,Ophthalmology,Orthopedic,Psychiatry-Psychology,Radiology,Surgery
+Cardiovascular-Pulmonary,246,0,0,30,4,0,1,0,1,1,0,15
+Dermatology,0,18,0,2,3,0,1,0,0,1,0,0
+Gastroenterology,1,0,165,22,0,0,1,0,0,1,0,2
+General Medicine,12,0,2,173,14,0,0,0,1,1,0,3
+Neurology,1,0,1,10,160,0,0,0,3,3,0,3
+Neurosurgery,0,0,0,0,1,66,0,0,2,0,0,8
+Obstetrics-Gynecology,1,0,1,8,2,0,112,0,0,0,3,7
+Ophthalmology,0,0,0,1,1,0,0,68,0,0,0,1
+Orthopedic,1,0,0,9,8,0,0,0,257,2,0,15
+Psychiatry-Psychology,1,0,0,1,12,0,0,0,0,25,0,1
+Radiology,2,0,0,0,11,0,1,0,0,0,200,3
+Surgery,13,0,1,2,0,1,2,0,8,0,0,846

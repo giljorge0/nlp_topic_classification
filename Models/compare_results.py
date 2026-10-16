@@ -393,6 +393,243 @@ def create_metrics(results: Path, item: dict):
             f"Metrics/{config}/{stored_model_name(item)}/metrics.html", 1)
 
 
+
+def augmentation_runs(augmentation_root: Path):
+    """Read only complete method results from the existing augmentation runner.
+
+    No model is trained and no predictions are recomputed. Unlike the normal
+    dashboard, these runs may quarantine source rows and use different folds.
+    """
+    groups, warnings = [], []
+    base = augmentation_root / "original_models"
+    if not base.is_dir():
+        return groups, warnings
+    for cfg in sorted(base.glob("*/*/*/run_config.json")):
+        folder = cfg.parent
+        try:
+            config = read_json(cfg)
+            model = config["model"]
+            weight = config.get("class_weighting", "none")
+            if model not in (*MODELS, "linear_svm") or weight not in ("none", "sqrt_inv"):
+                raise ValueError("Unknown model or weighting")
+            if folder.parent.parent.parent != base or folder.parent.parent.name != model:
+                raise ValueError("Unexpected output folder")
+            if folder.parent.name != ("weighted_sqrt_inv" if weight == "sqrt_inv" else "normal"):
+                raise ValueError("Weighting and folder disagree")
+            if not isinstance(config.get("fields"), list) or not config["fields"]:
+                raise ValueError("Missing input fields")
+            comparison = folder / "comparison.csv"
+            if not comparison.is_file():
+                continue
+            with comparison.open(encoding="utf-8-sig", newline="") as stream:
+                summary = list(csv.DictReader(stream))
+            with (folder / "fold_metrics.csv").open(encoding="utf-8-sig", newline="") as stream:
+                fold_rows = list(csv.DictReader(stream))
+            methods, seen = [], set()
+            for record in summary:
+                method = record.get("method", "")
+                if method not in ("baseline", "rwd", "llm", "combined") or method in seen:
+                    warnings.append(f"Skipped invalid augmentation method in {comparison}: {method}")
+                    continue
+                seen.add(method)
+                try:
+                    perclass_file = folder / f"per_class_{method}.csv"
+                    confusion_file = folder / f"confusion_{method}.csv"
+                    oof_file = folder / f"oof_{method}.csv"
+                    if not all(path.exists() for path in (perclass_file, confusion_file, oof_file)):
+                        raise ValueError("Missing method-specific metrics/predictions")
+                    with perclass_file.open(encoding="utf-8-sig", newline="") as stream:
+                        classes = list(csv.DictReader(stream))
+                    with confusion_file.open(encoding="utf-8-sig", newline="") as stream:
+                        confusion = list(csv.DictReader(stream))
+                    with oof_file.open(encoding="utf-8-sig", newline="") as stream:
+                        oof = list(csv.DictReader(stream))
+                    folds = sorted((r for r in fold_rows if r.get("method") == method),
+                                   key=lambda row: int(row["fold"]))
+                    if ([int(f["fold"]) for f in folds] != [1, 2, 3, 4, 5]
+                            or sorted(set(int(r["fold"]) for r in oof)) != [1, 2, 3, 4, 5]):
+                        raise ValueError("Missing or duplicated fold metrics")
+                    if (len(classes) != len(LABELS) or {r["specialty"] for r in classes} != set(LABELS)
+                            or len(confusion) != len(LABELS) or {r["true_label"] for r in confusion} != set(LABELS)):
+                        raise ValueError("Missing or repeated medical specialties")
+                    if (not oof or len(oof) != int(record["validation_originals"])
+                            or len({r["source_row_id"] for r in oof}) != len(oof)):
+                        raise ValueError("Incomplete or duplicated out-of-fold predictions")
+                    for key in ("accuracy", "macro_f1", "weighted_f1", "minimum_class_f1"):
+                        number = float(record[key])
+                        if not 0 <= number <= 1:
+                            raise ValueError(f"Metric out of bounds: {key}")
+                    if abs(min(float(row["f1"]) for row in classes)
+                           - float(record["minimum_class_f1"])) > 0.00001:
+                        raise ValueError("Per-class F1 does not match aggregate")
+                    summaries = []
+                    if model not in ("naive_bayes", "linear_svm"):
+                        for i in range(1, 6):
+                            path = folder / method / f"fold_{i:02d}" / "training_summary.json"
+                            if not path.is_file():
+                                raise ValueError(f"Missing best-epoch summary for fold {i}")
+                            summaries.append(read_json(path))
+                    methods.append({"method": method, "summary": record, "classes": classes,
+                                    "confusion": confusion, "folds": folds,
+                                    "best_epochs": [int(v["best_epoch"]) for v in summaries],
+                                    "count": len(oof)})
+                except (KeyError, ValueError, TypeError, OSError) as exc:
+                    warnings.append(f"Incomplete augmentation {folder.name}/{method}: {exc}")
+            if methods:
+                groups.append({"config": config, "folder": folder, "methods": methods})
+        except (KeyError, ValueError, TypeError, OSError) as exc:
+            warnings.append(f"Skipped augmentation run {folder}: {exc}")
+    return groups, warnings
+
+
+AUGMENTATION_NAMES = {
+    "baseline": "Original data", "rwd": "Random Word Dropout",
+    "llm": "LLM paraphrasing", "combined": "Combined (RWD + LLM)",
+}
+
+
+def augmentation_title(group):
+    config = group["config"]
+    fields = " + ".join(f.replace("_", " ").title() for f in config["fields"])
+    if config.get("strip_keyword_prefix"):
+        fields += " · Prefix removed"
+    fields += " · Full text"
+    weighting = config.get("class_weighting", "none")
+    model = config["model"]
+    label = title_model(model) if model != "linear_svm" else "Linear SVM"
+    label += " · Normal" if weighting == "none" else f" · Weighted ({weighting})"
+    return f"{label} · {fields}"
+
+
+def augmentation_table(rows, *, link_prefix=None):
+    head = ("<tr><th>Augmentation</th><th>Accuracy</th><th>Macro-F1</th>"
+            "<th>Weighted-F1</th><th>Minimum class F1</th><th>Records evaluated</th>"
+            "<th>Mean best epoch</th></tr>")
+    cells = []
+    for item in sorted(rows, key=lambda i: -float(i["summary"]["macro_f1"])):
+        values = item["summary"]
+        name = AUGMENTATION_NAMES[item["method"]]
+        if link_prefix is not None:
+            name = f'<a href="{esc(link_prefix + "/" + item["method"] + ".html")}">{esc(name)}</a>'
+        else:
+            name = esc(name)
+        epochs = item["best_epochs"]
+        average = f3(sum(epochs) / len(epochs)) if epochs else "—"
+        cells.append("<tr>" + f"<td>{name}</td>" + "".join(
+            f'<td class="num">{f3(values[key])}</td>'
+            for key in ("accuracy", "macro_f1", "weighted_f1", "minimum_class_f1")
+        ) + f'<td class="num">{item["count"]}</td><td class="num">{average}</td></tr>')
+    return '<div class="tablewrap"><table><thead>' + head + '</thead><tbody>' + "".join(cells) + '</tbody></table></div>'
+
+
+def create_augmentation_dashboard(output: Path, augmentation_root: Path):
+    """Generate Reports/Augmentation only after normal reports are regenerated."""
+    groups, warnings = augmentation_runs(augmentation_root)
+    if not groups:
+        return 0, warnings
+    aug_output = output / "Augmentation"
+    aug_output.mkdir(parents=True, exist_ok=True)
+    links, flat_summary = [], []
+    for group in groups:
+        config = group["config"]
+        # Names use input-configuration slugs generated by the training script.
+        key = (group["folder"].parent.parent.name + "__" + group["folder"].parent.name + "__"
+               + group["folder"].name)
+        title = augmentation_title(group)
+        methods = group["methods"]
+        for item in methods:
+            r = item["summary"]
+            epochs = item["best_epochs"]
+            flat_summary.append({
+                "model": config["model"], "class_weighting": config.get("class_weighting", "none"),
+                "fields": " ".join(config["fields"]),
+                "prefix_removed": bool(config.get("strip_keyword_prefix")),
+                "augmentation": item["method"], "n": item["count"],
+                **{k: r[k] for k in ("accuracy", "macro_f1", "weighted_f1", "minimum_class_f1")},
+                "mean_best_epoch": (sum(epochs) / len(epochs) if epochs else ""),
+            })
+            classes = {r["specialty"]: r for r in item["classes"]}
+            lines = []
+            for label in LABELS:
+                entry = classes[label]
+                lines.append("<tr>" + f"<td>{esc(label)}</td>" + "".join(
+                    f'<td class="num">{f3(entry[metric])}</td>'
+                    for metric in ("precision", "recall", "f1")
+                ) + f'<td class="num">{int(entry["support"])}</td></tr>')
+            detail = (f'<p>{esc(title)} · {esc(AUGMENTATION_NAMES[item["method"]])}. '
+                      'Five held-out outer folds; synthetic rows were excluded from evaluation.</p>'
+                      '<p><a class="btn" href="../../index.html">← Augmentation overview</a></p>'
+                      '<section class="panel"><h2>Aggregate performance</h2>'
+                      + augmentation_table([item]) + '</section>'
+                      '<section class="panel"><h2>All 12 medical specialities</h2>'
+                      '<div class="tablewrap"><table><thead><tr><th>Speciality</th>'
+                      '<th>Precision</th><th>Recall</th><th>F1</th><th>Support</th></tr></thead>'
+                      '<tbody>' + "".join(lines) + '</tbody></table></div></section>')
+            detail += '<section class="panel"><h2>Individual folds</h2><div class="tablewrap"><table><thead>'
+            detail += '<tr><th>Fold</th><th>Accuracy</th><th>Macro-F1</th><th>Held-out originals</th><th>Best epoch</th></tr></thead><tbody>'
+            for fold in item["folds"]:
+                i = int(fold["fold"])
+                best = str(item["best_epochs"][i - 1]) if item["best_epochs"] else "—"
+                detail += (f'<tr><td>{i}</td><td class="num">{f3(fold["accuracy"])}</td>'
+                           f'<td class="num">{f3(fold["macro_f1"])}</td>'
+                           f'<td class="num">{int(fold["validation_originals"])}</td>'
+                           f'<td class="num">{best}</td></tr>')
+            detail += '</tbody></table></div></section>'
+            detail += '<section class="panel"><h2>Confusion matrix</h2>'
+            detail += '<p>Rows are actual specialities; columns are predicted specialities. Counts aggregate all five folds.</p>'
+            detail += '<div class="tablewrap"><table><thead><tr><th>Actual / Predicted</th>'
+            detail += "".join(f"<th>{esc(label)}</th>" for label in LABELS) + '</tr></thead><tbody>'
+            matrix = {r["true_label"]: r for r in item["confusion"]}
+            for label in LABELS:
+                line = matrix[label]
+                numbers = [int(line[col]) for col in LABELS]
+                maximum = sum(numbers)
+                detail += f'<tr><td>{esc(label)}</td>'
+                for number in numbers:
+                    frac = number / maximum if maximum else 0
+                    detail += f'<td class="heat" style="background:rgba(45,132,164,{frac*0.58:.3f})">{number}</td>'
+                detail += '</tr>'
+            detail += '</tbody></table></div></section>'
+            detail += f'<p>Original outputs: <span class="mono">{esc(group["folder"])}</span></p>'
+            write_html(aug_output / "Details" / key / (item["method"] + ".html"),
+                       f"{AUGMENTATION_NAMES[item['method']]} · {title}", detail, 3)
+        body = (f'<p>{esc(title)}. All metrics are pooled out-of-fold results on original labelled records. '
+                'Each augmentation uses the same five outer fold assignments within this configuration.</p>'
+                '<section class="panel"><h2>Augmentation comparison</h2>'
+                + augmentation_table(methods, link_prefix="Details/" + key) + '</section>')
+        body += ('<section class="panel"><h2>Per-speciality F1</h2><div class="tablewrap">'
+                 '<table><thead><tr><th>Speciality</th>'
+                 + "".join(f'<th>{esc(AUGMENTATION_NAMES[m["method"]])}</th>' for m in methods)
+                 + '</tr></thead><tbody>')
+        class_dicts = [{r["specialty"]: r for r in method["classes"]} for method in methods]
+        for label in LABELS:
+            body += '<tr><td>' + esc(label) + '</td>' + ''.join(
+                f'<td class="num">{f3(d[label]["f1"])}</td>' for d in class_dicts) + '</tr>'
+        body += '</tbody></table></div></section>'
+        if config.get("quarantine_suspicious"):
+            body += info_box("This experiment excluded suspicious original records, so its scores are not directly comparable to the main dashboard's unquarantined experiments.", True)
+        write_html(aug_output / (key + ".html"), title, body, 1)
+        links.append((title, key + ".html", len(methods)))
+    columns = ["model", "class_weighting", "fields", "prefix_removed", "augmentation", "n",
+               "accuracy", "macro_f1", "weighted_f1", "minimum_class_f1", "mean_best_epoch"]
+    write_csv(aug_output / "summary.csv", flat_summary, columns)
+    panel = (f'<div class="cards"><div class="card"><small>Completed augmentation results</small>'
+             f'<div class="number">{len(flat_summary)}</div></div>'
+             f'<div class="card"><small>Model/input configurations</small>'
+             f'<div class="number">{len(groups)}</div></div></div>'
+             '<p>Performance uses only held-out original records. Augmented records are used only for training. '
+             'Do not compare directly with main CV scores if datasets, exclusions or fold assignments differ.</p>'
+             '<p><a class="btn" href="summary.csv">Download summary CSV</a></p>'
+             '<h2>Model and input comparisons</h2><div class="links">')
+    panel += "".join(f'<a class="linkcard" href="{esc(path)}"><strong>{esc(label)}</strong>'
+                     f'<small>{count} augmentation methods · Detailed tables</small></a>'
+                     for label, path, count in links)
+    panel += '</div>'
+    if warnings:
+        panel += '<h2>Incomplete entries</h2>' + ''.join(info_box(message, True) for message in warnings)
+    write_html(aug_output / "index.html", "Augmentation experiment dashboard", panel, 1)
+    return len(flat_summary), warnings
+
 def generate(runs_dir: Path, output: Path):
     runs, warnings = collect_all(runs_dir)
     if output.exists():
@@ -417,12 +654,20 @@ def generate(runs_dir: Path, output: Path):
         lambda item: weighting_label(item),
         lambda key: f'{title_config(key.split("--", 1)[0])} · {title_model(key.split("--", 1)[1])}',
     )
+    augmentation_count, augmentation_warnings = create_augmentation_dashboard(
+        output, runs_dir.parent / "reports" / "augmentation_cv")
     panels = (('<div class="cards">'
               f'<div class="card"><small>Completed experiments</small><div class="number">{len(runs)}</div><small>Every experiment has 5 outer folds</small></div>'
               f'<div class="card"><small>Input configurations</small><div class="number">{len(by_config)}</div></div>'
               f'<div class="card"><small>Models</small><div class="number">{len(by_model)}</div></div>'
               '</div>'))
     panels += '<p>Results represent five independent held-out folds per experiment, with separate inner validation for early stopping. ± denotes fold-to-fold sample standard deviation, not a confidence interval.</p>'
+    if augmentation_count:
+        panels += '<h2>Data augmentation experiments</h2>'
+        panels += ('<div class="links"><a class="linkcard" href="Augmentation/index.html">'
+                   '<strong>RWD, LLM and combined augmentation</strong>'
+                   f'<small>{augmentation_count} completed method result(s) · View HTML report</small>'
+                   '</a></div>')
     for heading, links in (("Normal vs weighted (same model and inputs)", pair_links),
                            ("Models comparison", by_config_links),
                            ("Training set comparison", by_model_links),
@@ -435,10 +680,11 @@ def generate(runs_dir: Path, output: Path):
                 for title, href, count in links) + '</div>'
         else:
             panels += '<p>No complete cross-validation data available for this section.</p>'
+    warnings.extend(augmentation_warnings)
     if warnings:
         panels += '<h2>Warnings</h2>' + "".join(info_box(w, True) for w in warnings)
     if not runs:
-        panels += info_box("No completed five-fold runs found. Train a model with 'python train.py cv ...' first.")
+        panels += info_box("No completed main-model cross-validation runs found. Augmentation results, if available, are shown above.")
     write_html(output / "index.html", "Model evaluation dashboard", panels, 0)
     # Remove same-page link from the index header, optional cosmetic only.
     (output / "index.html").write_text((output / "index.html").read_text(encoding="utf-8").replace(

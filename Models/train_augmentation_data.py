@@ -478,6 +478,16 @@ def run(args):
         print(f"RESULT {method}: acc={accuracy:.4f}, macro_F1={macro_f1:.4f}, "
               f"min_class_F1={minimum_f1:.4f}", flush=True)
     print(f"Saved results to {model_dir}")
+    # Rebuild the unified dashboard after successful augmentation evaluation.
+    # Reuse the main report generator so Results/index.html links to
+    # Results/Augmentation/index.html. Never delete or overwrite training runs.
+    try:
+        from compare_results import generate
+        runs_dir = Path("runs").resolve()
+        generate(runs_dir, Path("Results").resolve())
+    except Exception as exc:
+        print(f"WARNING: Saved training results, but HTML dashboard refresh failed: {exc}")
+        print("Refresh manually with: python compare_results.py")
 
 
 def main(argv=None):

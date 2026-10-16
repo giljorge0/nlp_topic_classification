@@ -1,10 +1,13 @@
 {
-  "source": "C:\\Users\\ricky\\Documents\\LN\\## Projeto\\nlp_topic_classification\\Models\\train.csv",
+  "source": "C:\\Users\\berna\\Ambiente de Trabalho\\LN\\nlp_topic_classification\\Models\\train.csv",
   "source_fingerprint": "d0c3659606ef20eb8c5eafd7a7177212c4423414be14211e776b300879211a18",
   "folds": 5,
   "quarantine_rows": 10,
   "methods": [
-    "llm"
+    "baseline",
+    "rwd",
+    "llm",
+    "combined"
   ],
   "fold_stats": [
     {
@@ -25,9 +28,21 @@
         "Radiology": 44,
         "Surgery": 174
       },
+      "baseline": {
+        "train_total": 2084,
+        "train_synthetic": 0
+      },
+      "rwd": {
+        "train_total": 2962,
+        "train_synthetic": 878
+      },
       "llm": {
         "train_total": 2524,
         "train_synthetic": 440
+      },
+      "combined": {
+        "train_total": 3402,
+        "train_synthetic": 1318
       }
     },
     {
@@ -48,9 +63,21 @@
         "Radiology": 43,
         "Surgery": 175
       },
+      "baseline": {
+        "train_total": 2085,
+        "train_synthetic": 0
+      },
+      "rwd": {
+        "train_total": 2994,
+        "train_synthetic": 909
+      },
       "llm": {
         "train_total": 2529,
         "train_synthetic": 444
+      },
+      "combined": {
+        "train_total": 3438,
+        "train_synthetic": 1353
       }
     },
     {
@@ -71,9 +98,21 @@
         "Radiology": 43,
         "Surgery": 175
       },
+      "baseline": {
+        "train_total": 2085,
+        "train_synthetic": 0
+      },
+      "rwd": {
+        "train_total": 2969,
+        "train_synthetic": 884
+      },
       "llm": {
         "train_total": 2522,
         "train_synthetic": 437
+      },
+      "combined": {
+        "train_total": 3406,
+        "train_synthetic": 1321
       }
     },
     {
@@ -94,9 +133,21 @@
         "Radiology": 43,
         "Surgery": 174
       },
+      "baseline": {
+        "train_total": 2085,
+        "train_synthetic": 0
+      },
+      "rwd": {
+        "train_total": 2982,
+        "train_synthetic": 897
+      },
       "llm": {
         "train_total": 2526,
         "train_synthetic": 441
+      },
+      "combined": {
+        "train_total": 3423,
+        "train_synthetic": 1338
       }
     },
     {
@@ -117,9 +168,21 @@
         "Radiology": 44,
         "Surgery": 175
       },
+      "baseline": {
+        "train_total": 2085,
+        "train_synthetic": 0
+      },
+      "rwd": {
+        "train_total": 2989,
+        "train_synthetic": 904
+      },
       "llm": {
         "train_total": 2527,
         "train_synthetic": 442
+      },
+      "combined": {
+        "train_total": 3431,
+        "train_synthetic": 1346
       }
     }
   ]

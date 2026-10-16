@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>BiLSTM + Attention · Normal · Description + Keywords + Transcription · Full text · Clinical NLP</title>
+<style>
+:root{color-scheme:light;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+--text:#13233a;--muted:#64748b;--bg:#f3f6fb;--edge:#dbe3ef;--navy:#163451;--cyan:#1c8eaa}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}
+.container{max-width:1250px;margin:auto;padding:32px 28px 70px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.kicker{text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:800;color:#527189}
+h1{font-size:clamp(27px,4vw,40px);letter-spacing:-.035em;margin:8px 0 6px}
+h2{font-size:20px;margin:28px 0 14px}h3{font-size:17px;margin:18px 0 10px}
+p{color:var(--muted);line-height:1.55;margin:10px 0 18px}
+a{color:#066989;text-decoration:none}a:hover{text-decoration:underline}
+.btn{border:1px solid var(--edge);border-radius:11px;background:white;padding:10px 13px;color:var(--navy);font-weight:650;display:inline-block}
+.panel{border:1px solid var(--edge);background:white;border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 3px 14px #142f4810}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:13px;margin:20px 0}
+.card{border:1px solid var(--edge);background:white;border-radius:14px;padding:18px}
+.card .number{font-size:27px;font-weight:750;color:#103b58;margin:7px 0 3px}
+.caption,small{color:var(--muted);font-size:12px}.muted{color:var(--muted)}
+.tablewrap{overflow-x:auto;width:100%}table{border-collapse:collapse;width:100%;white-space:nowrap;font-size:13px}
+th{text-align:left;color:#3b5871;background:#eef3f8;font-weight:800;font-size:12px;letter-spacing:.02em}
+th,td{padding:11px 12px;border-bottom:1px solid #e9edf4}tr:last-child td{border-bottom:0}
+tbody tr:hover{background:#f6fbfe}td.num{text-align:right;font-variant-numeric:tabular-nums}
+.b{font-weight:800;color:#12415d}.bar{height:6px;width:90px;background:#e8edf4;border-radius:4px;overflow:hidden;margin-top:5px}
+.bar span{display:block;background:#3283a4;height:100%;border-radius:4px}
+.badge{display:inline-block;border:1px solid #cddfe9;border-radius:7px;background:#e8f5f9;color:#19637d;padding:3px 8px;font-size:12px;font-weight:750}
+.notice{padding:12px 15px;border-radius:10px;background:#edf5f8;color:#31536c;border:1px solid #d6e5ee;font-size:13px}
+.warn{background:#fff7ec;border-color:#f7e0b6;color:#81521c}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.linkcard{display:block;background:#fff;border:1px solid var(--edge);padding:15px 17px;border-radius:12px}
+.linkcard strong{display:block;color:#204664}.linkcard small{display:block;margin-top:5px}
+.heat{font-variant-numeric:tabular-nums;text-align:center;min-width:52px}
+.mono{font-family:ui-monospace,monospace;font-size:12px;white-space:normal;overflow-wrap:anywhere}
+.footer{border-top:1px solid var(--edge);padding-top:18px;margin-top:32px;font-size:12px;color:#7b8fa2}
+</style></head><body><main class="container">
+<div class="header"><span class="kicker">Clinical NLP · 5-Fold Cross-Validation</span>
+<a class="btn" href="../index.html">← Dashboard</a></div><h1>BiLSTM + Attention · Normal · Description + Keywords + Transcription · Full text</h1><p>BiLSTM + Attention · Normal · Description + Keywords + Transcription · Full text. All metrics are pooled out-of-fold results on original labelled records. Each augmentation uses the same five outer fold assignments within this configuration.</p><section class="panel"><h2>Augmentation comparison</h2><div class="tablewrap"><table><thead><tr><th>Augmentation</th><th>Accuracy</th><th>Macro-F1</th><th>Weighted-F1</th><th>Minimum class F1</th><th>Records evaluated</th><th>Mean best epoch</th></tr></thead><tbody><tr><td><a href="Details/bilstm_attention__normal__description__keywords__transcription__full_text/llm.html">LLM paraphrasing</a></td><td class="num">0.909</td><td class="num">0.888</td><td class="num">0.910</td><td class="num">0.737</td><td class="num">2606</td><td class="num">8.800</td></tr><tr><td><a href="Details/bilstm_attention__normal__description__keywords__transcription__full_text/rwd.html">Random Word Dropout</a></td><td class="num">0.905</td><td class="num">0.886</td><td class="num">0.906</td><td class="num">0.753</td><td class="num">2606</td><td class="num">12.200</td></tr><tr><td><a href="Details/bilstm_attention__normal__description__keywords__transcription__full_text/combined.html">Combined (RWD + LLM)</a></td><td class="num">0.896</td><td class="num">0.869</td><td class="num">0.898</td><td class="num">0.676</td><td class="num">2606</td><td class="num">9.800</td></tr></tbody></table></div></section><section class="panel"><h2>Per-speciality F1</h2><div class="tablewrap"><table><thead><tr><th>Speciality</th><th>Random Word Dropout</th><th>LLM paraphrasing</th><th>Combined (RWD + LLM)</th></tr></thead><tbody><tr><td>Cardiovascular-Pulmonary</td><td class="num">0.856</td><td class="num">0.870</td><td class="num">0.854</td></tr><tr><td>Dermatology</td><td class="num">0.889</td><td class="num">0.889</td><td class="num">0.837</td></tr><tr><td>Gastroenterology</td><td class="num">0.901</td><td class="num">0.919</td><td class="num">0.912</td></tr><tr><td>General Medicine</td><td class="num">0.792</td><td class="num">0.785</td><td class="num">0.746</td></tr><tr><td>Neurology</td><td class="num">0.868</td><td class="num">0.847</td><td class="num">0.806</td></tr><tr><td>Neurosurgery</td><td class="num">0.904</td><td class="num">0.910</td><td class="num">0.917</td></tr><tr><td>Obstetrics-Gynecology</td><td class="num">0.884</td><td class="num">0.904</td><td class="num">0.889</td></tr><tr><td>Ophthalmology</td><td class="num">0.978</td><td class="num">0.978</td><td class="num">0.978</td></tr><tr><td>Orthopedic</td><td class="num">0.904</td><td class="num">0.917</td><td class="num">0.911</td></tr><tr><td>Psychiatry-Psychology</td><td class="num">0.753</td><td class="num">0.737</td><td class="num">0.676</td></tr><tr><td>Radiology</td><td class="num">0.952</td><td class="num">0.943</td><td class="num">0.952</td></tr><tr><td>Surgery</td><td class="num">0.952</td><td class="num">0.956</td><td class="num">0.952</td></tr></tbody></table></div></section><div class="notice warn">This experiment excluded suspicious original records, so its scores are not directly comparable to the main dashboard&#x27;s unquarantined experiments.</div>
+<div class="footer">All evaluations are out-of-fold on labelled development data. The official unlabelled test set is not evaluated.</div>
+</main></body></html>

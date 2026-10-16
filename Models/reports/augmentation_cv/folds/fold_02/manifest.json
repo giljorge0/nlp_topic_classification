@@ -16,8 +16,20 @@
     "Radiology": 43,
     "Surgery": 175
   },
+  "baseline": {
+    "train_total": 2085,
+    "train_synthetic": 0
+  },
+  "rwd": {
+    "train_total": 2994,
+    "train_synthetic": 909
+  },
   "llm": {
     "train_total": 2529,
     "train_synthetic": 444
+  },
+  "combined": {
+    "train_total": 3438,
+    "train_synthetic": 1353
   }
 }

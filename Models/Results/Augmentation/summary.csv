@@ -1,0 +1,8 @@
+﻿model,class_weighting,fields,prefix_removed,augmentation,n,accuracy,macro_f1,weighted_f1,minimum_class_f1,mean_best_epoch
+bilstm_attention,none,description keywords transcription,False,rwd,2606,0.9048349961627015,0.8860863768853774,0.9055675695291332,0.7529411764705882,12.2
+bilstm_attention,none,description keywords transcription,False,llm,2606,0.908672294704528,0.8880458161209407,0.9095279231152821,0.7368421052631579,8.8
+bilstm_attention,none,description keywords transcription,False,combined,2606,0.896392939370683,0.8691880595470963,0.8980109195640773,0.6756756756756757,9.8
+bilstm_attention,sqrt_inv,description keywords transcription,False,rwd,2606,0.9071373752877974,0.8806115793518705,0.9085610490425756,0.7157894736842105,10.8
+bilstm_attention,sqrt_inv,description keywords transcription,False,llm,2606,0.9040675364543361,0.8827458496830133,0.9049124392639267,0.746268656716418,14.6
+bilstm_attention,sqrt_inv,description keywords transcription,False,combined,2606,0.896392939370683,0.8649968140040176,0.8979785976176966,0.7126436781609196,10.2
+birnn_attention,sqrt_inv,description keywords transcription,False,rwd,2606,0.8979278587874137,0.874373347661679,0.8989948257151855,0.7228915662650602,7.8

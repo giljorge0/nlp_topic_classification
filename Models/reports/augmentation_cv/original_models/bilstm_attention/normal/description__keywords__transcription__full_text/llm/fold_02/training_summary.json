@@ -1,0 +1,12 @@
+{
+  "best_epoch": 5,
+  "trained_epochs": 11,
+  "best_inner_macro_f1": 0.8566751073477242,
+  "outer_accuracy": 0.8944337811900192,
+  "outer_macro_f1": 0.8770628909852101,
+  "fit_rows": 2033,
+  "inner_val_rows": 416,
+  "outer_rows": 521,
+  "class_weighting": "none",
+  "max_length": null
+}

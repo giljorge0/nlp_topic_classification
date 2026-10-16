@@ -1,0 +1,30 @@
+{
+  "model": "bilstm_attention",
+  "fields": [
+    "description",
+    "keywords",
+    "transcription"
+  ],
+  "strip_keyword_prefix": false,
+  "seed": 42,
+  "folds": 5,
+  "class_weighting": "sqrt_inv",
+  "max_length": null,
+  "sequence_mode": "full_text",
+  "quarantine_suspicious": true,
+  "max_description_chars": 2000,
+  "original_data_hash": "028a886eca5f26ff61d9cf59ed087efd91d2689e879eac844be44b222f582dc1",
+  "epochs": 30,
+  "patience": 6,
+  "batch_size": 16,
+  "max_vocab": 20000,
+  "min_freq": 2,
+  "embedding_dim": 128,
+  "hidden_dim": 128,
+  "num_layers": 1,
+  "dropout": 0.3,
+  "lr": 0.001,
+  "weight_decay": 0.0,
+  "grad_clip": 1.0,
+  "validation_metric": "inner_macro_f1"
+}

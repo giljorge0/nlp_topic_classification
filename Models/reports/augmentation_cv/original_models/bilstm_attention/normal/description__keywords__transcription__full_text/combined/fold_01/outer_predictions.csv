@@ -1,0 +1,523 @@
+source_row_id,original_row_index,fold,true_label,predicted_label,method
+48eeeabed395155343d5-1,9,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+b56f830111273fd51416-1,12,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+de20914f72c4ad236ad1-1,14,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+1cc681b94ae6bff1fa7e-1,25,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+4eaf285f4d81bc499a71-1,28,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+a1852fe43856449dc93c-1,30,1,Cardiovascular-Pulmonary,General Medicine,combined
+e887de9d34fad349b037-1,31,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+112cf096883101bb05d3-1,34,1,Cardiovascular-Pulmonary,General Medicine,combined
+8f8e6fa7a0b9dba5e474-1,38,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+468c0053ae745a8a8923-1,42,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+caa8dfc188e727be2c82-1,45,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+aaa9e250d4e0993d6e93-1,46,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+e58a89f9f58948b5a4ae-1,55,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+347709d214c1500f01b1-1,60,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+e3cf2f1f97f17f6c5a35-1,61,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+c2b7464ab66000278b08-1,68,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+0f28676fc5bc9aa9ff61-1,69,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+63877febf80a7aa57876-1,70,1,Cardiovascular-Pulmonary,General Medicine,combined
+b0aad86cbafe519ae78d-1,72,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+77d69ccec22e39143ef7-1,74,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+b638a6b819d02048b761-1,79,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+e73ab43803b84ef76e90-1,80,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+7f93e0d6babba9f0d6d1-1,92,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+6450e39928b908b049f8-1,96,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+a29d4590e95f0557c360-1,102,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+985bd3d85d5fed641420-1,104,1,Cardiovascular-Pulmonary,Surgery,combined
+a56eef4c06272d60a288-1,105,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+b34bed9321d145193cdf-1,107,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+4c5389c58bd81f763957-1,108,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+d4932ec6ac96836311ad-1,113,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+6cc24a1d8dcdc4825d2b-1,114,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+16cd7d246a5761d0d11b-1,116,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+a25eb3ba06313a1b438c-1,127,1,Cardiovascular-Pulmonary,General Medicine,combined
+a9316b672549e5082ae6-1,129,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+72cffa3f2904789e1eeb-1,130,1,Cardiovascular-Pulmonary,Surgery,combined
+746fe0d8ff00862eb6ab-1,148,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+be26f7170da75629a0cf-1,151,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+3e0f071217ae12caad5d-1,158,1,Cardiovascular-Pulmonary,General Medicine,combined
+bb8429a1c694d6e09c75-1,163,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+ab8624c944f6f3323ef5-1,164,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+2de1659519a18a3cf966-1,178,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+9afe8aca77d4761d8476-1,181,1,Cardiovascular-Pulmonary,Orthopedic,combined
+be4a8ec108b6ab82f3e2-1,184,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+336e18a07eeae77f2235-1,191,1,Cardiovascular-Pulmonary,Surgery,combined
+42fbff57ed0f4966747b-1,202,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+25ff695cd36fddea06fb-1,215,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+ab70c5b345a1aedcd79d-1,218,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+c769dc01b41341b5fb75-1,224,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+c5fc5502cc35166db5b1-1,226,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+72009b5a84c8981b6991-1,231,1,Cardiovascular-Pulmonary,Neurology,combined
+594c686c975c09f0221c-1,245,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+8163ba910c937c7f926c-1,256,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+b8c18d35bbed9ac86fcd-1,263,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+48d6b59b53dbcb22957c-1,268,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+e3ef48476b82cb434a9f-1,276,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+454d81784627005d5d12-1,281,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+7b444e3b4f7c2a5704c2-1,282,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+4f05f5e82c92ccde64d0-1,286,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+3b1065f9c1fcab3fa714-1,294,1,Cardiovascular-Pulmonary,Cardiovascular-Pulmonary,combined
+7a8f9fa2470795d813af-1,297,1,Dermatology,General Medicine,combined
+dbba44a1f2c4d9789689-1,301,1,Dermatology,Dermatology,combined
+c2709898eac30c00fad9-1,313,1,Dermatology,Dermatology,combined
+4574b3b5eb4898d33de6-1,316,1,Dermatology,Dermatology,combined
+f03ec1c2e29396731208-1,319,1,Dermatology,Dermatology,combined
+63f3098d46e1b6f00003-1,321,1,Gastroenterology,Gastroenterology,combined
+1c0e9f6087ddadcc6ba8-1,326,1,Gastroenterology,Gastroenterology,combined
+42c3317ebdefdd63a74d-1,327,1,Gastroenterology,Gastroenterology,combined
+0d5250c8bf21dec463a5-1,333,1,Gastroenterology,Gastroenterology,combined
+c9994c107e863da8b4eb-1,338,1,Gastroenterology,Gastroenterology,combined
+0ce96ae7ced64ddc5d9a-1,341,1,Gastroenterology,Psychiatry-Psychology,combined
+c0288ab47b45c1db49af-1,344,1,Gastroenterology,Gastroenterology,combined
+43e429b90636f8fe9ca6-1,346,1,Gastroenterology,Gastroenterology,combined
+e0499185e216fb60fd5f-1,352,1,Gastroenterology,Gastroenterology,combined
+247be89aa923903a4f0d-1,367,1,Gastroenterology,Gastroenterology,combined
+67a9edffffe44287cd4f-1,368,1,Gastroenterology,Cardiovascular-Pulmonary,combined
+164ebb2e18e0b2778394-1,390,1,Gastroenterology,Gastroenterology,combined
+be48753b9da37a5b819e-1,402,1,Gastroenterology,General Medicine,combined
+cad0030c39f125e8d094-1,403,1,Gastroenterology,Gastroenterology,combined
+861dfe894e4e5523678f-1,409,1,Gastroenterology,Gastroenterology,combined
+d78502b496bfad4ff736-1,421,1,Gastroenterology,Gastroenterology,combined
+daf08cf825ea92c86ae1-1,434,1,Gastroenterology,Gastroenterology,combined
+7a34a5c8a3a4409d0502-1,435,1,Gastroenterology,Gastroenterology,combined
+05c94a8af08d9cb2ebdd-1,441,1,Gastroenterology,Gastroenterology,combined
+12f5418d786340ce530b-1,444,1,Gastroenterology,Gastroenterology,combined
+0f09a3ffade60a30b2a7-1,447,1,Gastroenterology,General Medicine,combined
+682f3e0e52ea919841ff-1,450,1,Gastroenterology,Gastroenterology,combined
+ee7f40583b55e655e3c0-1,451,1,Gastroenterology,Gastroenterology,combined
+03e7efb06881865a390c-1,452,1,Gastroenterology,Gastroenterology,combined
+cd8974e01c0c95427b76-1,456,1,Gastroenterology,Gastroenterology,combined
+20a93ed32e63f551d983-1,457,1,Gastroenterology,Gastroenterology,combined
+fe0abcb38c9ff5ee5c06-1,458,1,Gastroenterology,Gastroenterology,combined
+5e454e8a10890c32d341-1,460,1,Gastroenterology,General Medicine,combined
+518653eb98f6e652161d-1,471,1,Gastroenterology,Gastroenterology,combined
+6c546e09d5f10a033c64-1,474,1,Gastroenterology,Gastroenterology,combined
+353697ac60e208d69def-1,478,1,Gastroenterology,Gastroenterology,combined
+73eeec09ec2062afc11a-1,480,1,Gastroenterology,Gastroenterology,combined
+79ac0cdf8f1b80eff137-1,482,1,Gastroenterology,Gastroenterology,combined
+fb7d8e82c2f7611e558a-1,484,1,Gastroenterology,Gastroenterology,combined
+de6e82e48f55d6fe0e0e-1,490,1,Gastroenterology,Gastroenterology,combined
+8df55c3305886928e6ef-1,493,1,Gastroenterology,Gastroenterology,combined
+37108861b094571bdd19-1,501,1,Gastroenterology,Gastroenterology,combined
+81363a0ddcf2f609a357-1,503,1,Gastroenterology,Gastroenterology,combined
+acd6381275a08d3d2cfa-1,506,1,Gastroenterology,Gastroenterology,combined
+b65314e68d103b6bfc1c-1,511,1,General Medicine,Cardiovascular-Pulmonary,combined
+6076f4f6777a5900deac-1,513,1,General Medicine,Orthopedic,combined
+d78aa687ae76f12d128b-1,522,1,General Medicine,General Medicine,combined
+af8b738f9bd3a3e855f0-1,526,1,General Medicine,General Medicine,combined
+b3a168e3b6ff2157c29f-1,530,1,General Medicine,Cardiovascular-Pulmonary,combined
+285b03b3d11b16b53dfa-1,540,1,General Medicine,Surgery,combined
+791a1ee4ddfa8f7b6618-1,547,1,General Medicine,General Medicine,combined
+392856882a03f3b0f457-1,555,1,General Medicine,General Medicine,combined
+896c93245b9ab884e8dc-1,558,1,General Medicine,Cardiovascular-Pulmonary,combined
+883eb4e3bc92050799c0-1,572,1,General Medicine,General Medicine,combined
+5dce79a010a58f14635f-1,578,1,General Medicine,General Medicine,combined
+30aa9764aca19b41aa13-1,586,1,General Medicine,General Medicine,combined
+23114b321dcad6809e46-1,587,1,General Medicine,General Medicine,combined
+1a65140aea6b308ef2be-1,589,1,General Medicine,General Medicine,combined
+382dc468f93c67db424f-1,592,1,General Medicine,General Medicine,combined
+06149325006d98713ced-1,604,1,General Medicine,General Medicine,combined
+66b12c529505e2cb9db2-1,607,1,General Medicine,General Medicine,combined
+7b1d218d98528df80940-1,613,1,General Medicine,General Medicine,combined
+b6cf972de6b4b0ec1ffe-1,618,1,General Medicine,General Medicine,combined
+26894c6d54a57dfb872b-1,619,1,General Medicine,Neurology,combined
+fe1e19796499c8a6c0f2-1,626,1,General Medicine,General Medicine,combined
+787e5eb247cf491410ff-1,628,1,General Medicine,General Medicine,combined
+50659d36f0ae569d79e4-1,630,1,General Medicine,General Medicine,combined
+215b01d8c7b0ff76f456-1,633,1,General Medicine,General Medicine,combined
+e5b61ca6844498b7a49f-1,634,1,General Medicine,General Medicine,combined
+a508de63dc882fc1cea9-1,648,1,General Medicine,General Medicine,combined
+f453a2c699e886c4d806-1,650,1,General Medicine,General Medicine,combined
+5097453179a3caab6a67-1,653,1,General Medicine,General Medicine,combined
+71668bcf2bcb441e8f1a-1,658,1,General Medicine,Gastroenterology,combined
+366265050efc193c6073-1,661,1,General Medicine,General Medicine,combined
+e105f5207fb478b90980-1,665,1,General Medicine,General Medicine,combined
+3772944b33503b42eb01-1,666,1,General Medicine,General Medicine,combined
+9f8ee1fae4fae6df2907-1,668,1,General Medicine,Cardiovascular-Pulmonary,combined
+62566c4dcbe9fadfed01-1,669,1,General Medicine,General Medicine,combined
+18edea2f7423b45a56f1-1,682,1,General Medicine,General Medicine,combined
+3492963d6c698bb8b204-1,684,1,General Medicine,General Medicine,combined
+08405b33a44be27ddfce-1,685,1,General Medicine,General Medicine,combined
+8e95d8b2e7906efc0c52-1,692,1,General Medicine,General Medicine,combined
+73bde1901ea9b52d6e02-1,699,1,General Medicine,General Medicine,combined
+7c07ae9c8fc143a20e3c-1,709,1,General Medicine,General Medicine,combined
+f31da8152cf3f4a2f1fc-1,712,1,General Medicine,General Medicine,combined
+c0b3bef0c2fdfcfefa80-1,722,1,Neurology,Neurology,combined
+5b17d2f35001d85121c2-1,750,1,Neurology,Neurology,combined
+91c98375aeba2aea21a1-1,751,1,Neurology,General Medicine,combined
+988b4be64ad4be2cac13-1,752,1,Neurology,Surgery,combined
+e0725daf5cd7bf667351-1,753,1,Neurology,Neurology,combined
+c8851605f1e2929d61af-1,756,1,Neurology,Neurology,combined
+10719fc70ad5b99e7b81-1,757,1,Neurology,General Medicine,combined
+3049622f38e5c2319ba2-1,760,1,Neurology,Neurology,combined
+189f47266b5251e1b432-1,764,1,Neurology,Neurology,combined
+699d09a10ad9a3e85142-1,789,1,Neurology,Neurology,combined
+c0b288de7a822f2cee35-1,793,1,Neurology,Neurology,combined
+6071e7554d0aab6eba9c-1,795,1,Neurology,Psychiatry-Psychology,combined
+7a4ba3d965900529f29f-1,806,1,Neurology,Neurology,combined
+c1fb5fd39dac87f5cbb3-1,807,1,Neurology,Neurology,combined
+5352defd406442082487-1,808,1,Neurology,Neurology,combined
+deb427aa2177214509c6-1,813,1,Neurology,Neurology,combined
+da7f65583997329979b0-1,814,1,Neurology,Neurology,combined
+b790d96c705da8182f3b-1,817,1,Neurology,Neurology,combined
+1e3bcc0fde9966f3e24c-1,818,1,Neurology,Neurology,combined
+d16aa1d18d1ceb606d14-1,825,1,Neurology,Neurology,combined
+3b6cfee393c609fdeb83-1,829,1,Neurology,Neurology,combined
+9dc2d349c93763568691-1,834,1,Neurology,Neurology,combined
+bc3d5399b02da99e7b84-1,836,1,Neurology,Neurology,combined
+ad7d781decd612e74247-1,844,1,Neurology,Neurology,combined
+3a2951901475d8ef35b3-1,845,1,Neurology,Neurology,combined
+e3dc90e6abe282de8f9b-1,852,1,Neurology,Neurology,combined
+bc14e2a13c552705c30e-1,857,1,Neurology,Neurology,combined
+561f86255e85929ecf64-1,871,1,Neurology,Neurology,combined
+0c78201945019cc9119f-1,880,1,Neurology,Neurology,combined
+b2aa34fec2fe582470f2-1,884,1,Neurology,Neurology,combined
+7faa9aea84a7c0c3a79c-1,886,1,Neurology,Neurology,combined
+8cd4a3e4b1c1e0107abd-1,889,1,Neurology,Surgery,combined
+c93d5278738698ff71c1-1,892,1,Neurology,Neurology,combined
+c0bdc061afb43ff6d7e1-1,893,1,Neurology,Neurology,combined
+6a3fc5c84df35001c0e4-1,894,1,Neurology,Neurology,combined
+6d40cebc453c255b7949-1,895,1,Neurology,Neurology,combined
+18033646f710f5ab97e4-1,900,1,Neurosurgery,Neurosurgery,combined
+9c880519bf8f81023d5e-1,903,1,Neurosurgery,Neurosurgery,combined
+ac4ac8fcdb881f805267-1,906,1,Neurosurgery,Neurosurgery,combined
+2760fdb791336feb829c-1,908,1,Neurosurgery,Neurosurgery,combined
+85f6432c4cef7e0954cc-1,909,1,Neurosurgery,Surgery,combined
+934fb0d7aeeb65c853b9-1,914,1,Neurosurgery,Neurosurgery,combined
+e79929ca4e28e5581a0c-1,917,1,Neurosurgery,Surgery,combined
+43e9358b9158df38d3a0-1,924,1,Neurosurgery,Neurosurgery,combined
+5fb515a8c2277bb13caf-1,926,1,Neurosurgery,Neurosurgery,combined
+b99484a7eb3bbc1b5da0-1,927,1,Neurosurgery,Neurosurgery,combined
+448a997f2c439ba5f453-1,929,1,Neurosurgery,Neurosurgery,combined
+daceb7444644f480761e-1,961,1,Neurosurgery,Neurosurgery,combined
+cce28e8d701536595cd6-1,965,1,Neurosurgery,Neurosurgery,combined
+24ad85551b304a28986e-1,975,1,Neurosurgery,Neurosurgery,combined
+7386076dbd1e4e9380f9-1,976,1,Neurosurgery,Neurosurgery,combined
+7ad24d1c51229deb2ff6-1,980,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+1ccd1995606486d7f531-1,986,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+ea02fdd57a570a5ceedb-1,997,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+660402d0f61918de7de0-1,999,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+cca67b34769ec7933db1-1,1002,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+c82caa55bb57c5889155-1,1005,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+cab69fd77ed07c288726-1,1006,1,Obstetrics-Gynecology,General Medicine,combined
+c08900513ad65e4dd891-1,1009,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+93c4db94530ffda880d7-1,1019,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+2700e28a7cb5c032432c-1,1021,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+b3c65548b095e39a064b-1,1027,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+26f74019a776eb074e1a-1,1032,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+831414ada9a1e67341b4-1,1033,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+6b9087473c2f710bcfb8-1,1038,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+88536dfd9970594d0a82-1,1043,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+6332235d4c3eada6b420-1,1048,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+173bbbf95a415df4332e-1,1062,1,Obstetrics-Gynecology,Radiology,combined
+6d1ec3f2f80cdff6fa55-1,1065,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+b2f04e982a65a59b5880-1,1066,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+878b0971e65e2c8e3529-1,1073,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+75d59fff8143900ad19a-1,1076,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+99185fc8746e09fbb48e-1,1082,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+ea5219a578804d9c34bb-1,1085,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+a57980f713d780614234-1,1087,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+8578684879025d760751-1,1091,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+9444981eed04a1c86052-1,1095,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+96e1cdbb69a5bb18015d-1,1109,1,Ophthalmology,Ophthalmology,combined
+e7856109ab07f336ce28-1,1110,1,Ophthalmology,Ophthalmology,combined
+0272d2fbe0b292f8c637-1,1112,1,Ophthalmology,Ophthalmology,combined
+323f9170a9cd61db3349-1,1114,1,Ophthalmology,Ophthalmology,combined
+c011438a37604ac2407c-1,1115,1,Ophthalmology,Ophthalmology,combined
+b7e44e0434a408292bc1-1,1116,1,Ophthalmology,Ophthalmology,combined
+5ff476cafa7febe30f99-1,1123,1,Ophthalmology,Ophthalmology,combined
+f39d5b81295e4d5e2244-1,1130,1,Ophthalmology,Ophthalmology,combined
+443846e05adb2c2f3202-1,1141,1,Ophthalmology,Surgery,combined
+2dd1dfcf55edacd5ca65-1,1145,1,Ophthalmology,General Medicine,combined
+c05bd393f3fc58863d01-1,1161,1,Ophthalmology,Ophthalmology,combined
+8fc9c4b9194bebc5a54f-1,1170,1,Ophthalmology,Ophthalmology,combined
+9e06eac2385884a8b03e-1,1171,1,Ophthalmology,Ophthalmology,combined
+ee953d1e0cd35b57e833-1,1178,1,Ophthalmology,Ophthalmology,combined
+c2436d2296761b54dc97-1,1181,1,Orthopedic,Orthopedic,combined
+87433baac2278b3eb606-1,1189,1,Orthopedic,Orthopedic,combined
+0e514f64c4a93f86b79f-1,1192,1,Orthopedic,Orthopedic,combined
+8235d39653793e22da64-1,1214,1,Orthopedic,Orthopedic,combined
+2953aeb90ba159d0fada-1,1219,1,Orthopedic,Surgery,combined
+1dc905f9ccb57ec605df-1,1222,1,Orthopedic,Orthopedic,combined
+12585a08dd8bccea7fb9-1,1231,1,Orthopedic,Orthopedic,combined
+5a5710ad3c7945ed1f9d-1,1238,1,Orthopedic,Orthopedic,combined
+d070f058cfa3a7847f8f-1,1242,1,Orthopedic,Orthopedic,combined
+edd96ad007107cb48a59-1,1245,1,Orthopedic,Orthopedic,combined
+de5442f7c468dd5723e0-1,1246,1,Orthopedic,Orthopedic,combined
+1dc12a00a23b39ea79eb-1,1249,1,Orthopedic,Orthopedic,combined
+a4713454ef410cd03608-1,1253,1,Orthopedic,Orthopedic,combined
+b0f77026f680c3230d45-1,1259,1,Orthopedic,Orthopedic,combined
+be75edaa1b96135b5eab-1,1260,1,Orthopedic,Orthopedic,combined
+23618a95d32e295c99e1-1,1261,1,Orthopedic,Orthopedic,combined
+d5ee1d491c1f82a0c6b4-1,1267,1,Orthopedic,Orthopedic,combined
+7f68e17130ed675f7f2a-1,1268,1,Orthopedic,Orthopedic,combined
+95b99115695c37b36331-1,1279,1,Orthopedic,Orthopedic,combined
+fbd4fb6775587ff4c65f-1,1283,1,Orthopedic,Orthopedic,combined
+de65cc8add10188ed20b-1,1289,1,Orthopedic,Orthopedic,combined
+089a2f065e6cdafb752c-1,1299,1,Orthopedic,Orthopedic,combined
+b354f17a2b214221fa99-1,1302,1,Orthopedic,Orthopedic,combined
+a531eb6a2c33b35f41e6-1,1305,1,Orthopedic,Orthopedic,combined
+0af28a826fafa16dbdd2-1,1308,1,Orthopedic,Orthopedic,combined
+4bca97390f009aa7c905-1,1311,1,Orthopedic,Surgery,combined
+230e0cbcf4c38b8cf4ae-1,1312,1,Orthopedic,Orthopedic,combined
+5bd86f41399075d88f29-1,1314,1,Orthopedic,Orthopedic,combined
+646f4a86a9bd9b96e04e-1,1317,1,Orthopedic,Orthopedic,combined
+030fdf9b0255125a2cc8-1,1318,1,Orthopedic,Orthopedic,combined
+150235160b29c7e75d86-1,1319,1,Orthopedic,Orthopedic,combined
+90e085f96b6294047643-1,1341,1,Orthopedic,Orthopedic,combined
+e00f4f3cad5a54e676ea-1,1342,1,Orthopedic,Orthopedic,combined
+f82f25b0deec137fcae6-1,1345,1,Orthopedic,Orthopedic,combined
+78264da7934d913f6d8b-1,1347,1,Orthopedic,Orthopedic,combined
+c80421158a905473439d-1,1349,1,Orthopedic,Orthopedic,combined
+320d4f3d2e26a5a9b1eb-1,1350,1,Orthopedic,Orthopedic,combined
+4522490d596925bb2fa5-1,1354,1,Orthopedic,Orthopedic,combined
+be9c7b37409a79487200-1,1371,1,Orthopedic,Orthopedic,combined
+54697dec1c3391c31ebd-1,1372,1,Orthopedic,Surgery,combined
+e10d2e353077f093ac9e-1,1373,1,Orthopedic,Orthopedic,combined
+310bc3b421166f79348d-1,1375,1,Orthopedic,Orthopedic,combined
+717d1b9d3846ff7eb98e-1,1381,1,Orthopedic,Orthopedic,combined
+be08266ec3908d87c5c7-1,1383,1,Orthopedic,Orthopedic,combined
+0d724c75d42f93488bd5-1,1388,1,Orthopedic,Orthopedic,combined
+e4b96b53e756f9693609-1,1401,1,Orthopedic,Neurology,combined
+99bb1498d29b8d0b8068-1,1402,1,Orthopedic,Orthopedic,combined
+86605ec7df08c496f0d9-1,1406,1,Orthopedic,Orthopedic,combined
+ef38365076fda9cb5efc-1,1409,1,Orthopedic,Orthopedic,combined
+499a524c8ef8ffe5b4f8-1,1415,1,Orthopedic,Orthopedic,combined
+3bdbed7bbd47983ccfae-1,1422,1,Orthopedic,Orthopedic,combined
+1205d4a2d55d4389f103-1,1426,1,Orthopedic,Orthopedic,combined
+b71451556a1d282964fa-1,1435,1,Orthopedic,Orthopedic,combined
+0f8b712183bdc39a0fdf-1,1439,1,Orthopedic,Orthopedic,combined
+5646a75f56d69b14276f-1,1440,1,Orthopedic,Orthopedic,combined
+a618d618677094b4c0f7-1,1448,1,Orthopedic,Orthopedic,combined
+a723b02a9d161dfe2855-1,1452,1,Orthopedic,Orthopedic,combined
+93c0945d67906d4ec973-1,1454,1,Orthopedic,Orthopedic,combined
+f65ab3a9973f5b273dda-1,1467,1,Orthopedic,Orthopedic,combined
+bed21e1591c29180cb4b-1,1474,1,Psychiatry-Psychology,Psychiatry-Psychology,combined
+06025906f8ce7c01a177-1,1479,1,Psychiatry-Psychology,Psychiatry-Psychology,combined
+a40f9a8c6eaf5c4c2cf4-1,1484,1,Psychiatry-Psychology,Neurology,combined
+4ead986789c3bd0c649e-1,1485,1,Psychiatry-Psychology,Neurology,combined
+868c470691246f97f7e9-1,1489,1,Psychiatry-Psychology,Neurology,combined
+6ad0e51ebd583e02b328-1,1496,1,Psychiatry-Psychology,Surgery,combined
+c10ba8e3289dfdb61a52-1,1499,1,Psychiatry-Psychology,Neurology,combined
+e69f02f50542e88b276c-1,1500,1,Psychiatry-Psychology,Neurology,combined
+29ae971a3b2be465b8c1-1,1512,1,Radiology,Radiology,combined
+931fcbd6a257fb2f7cc6-1,1514,1,Radiology,Neurology,combined
+92167e206bfa933adba5-1,1520,1,Radiology,Radiology,combined
+51b0491fa0949ff61bbb-1,1526,1,Radiology,Cardiovascular-Pulmonary,combined
+dd5702f6e0e54888ab90-1,1542,1,Radiology,Radiology,combined
+210cc1ec7e99bd5be74b-1,1543,1,Radiology,Radiology,combined
+ad2b9c54f31b272c5e9e-1,1546,1,Radiology,Radiology,combined
+872fe2b2e28d7d29dfb0-1,1548,1,Radiology,Radiology,combined
+4c260936c35f9e185ea6-1,1549,1,Radiology,Radiology,combined
+e2e798058937a76c21ed-1,1553,1,Radiology,Radiology,combined
+99e6897016ed87ba69ca-1,1559,1,Radiology,Radiology,combined
+47e2e5bbd33cd3b3e04e-1,1563,1,Radiology,Radiology,combined
+5c7d4288262c4cf9f802-1,1571,1,Radiology,Radiology,combined
+fa6165c628c99a833032-1,1574,1,Radiology,Radiology,combined
+4fbb7338de8b0ab74d40-1,1581,1,Radiology,Radiology,combined
+fea2ec70fd44dec658b4-1,1586,1,Radiology,Radiology,combined
+15ba6de57f3cb250c244-1,1599,1,Radiology,Radiology,combined
+2c27100a80c3fbdd6ea4-1,1608,1,Radiology,Radiology,combined
+8ee0858d8115c6a932bd-1,1610,1,Radiology,Radiology,combined
+fe08013772b3f6a6348f-1,1613,1,Radiology,Radiology,combined
+f042b6e1c48bc1157f0c-1,1616,1,Radiology,Radiology,combined
+8719ce047aa2dcb164e9-1,1620,1,Radiology,Radiology,combined
+225be48e757a01f91747-1,1624,1,Radiology,Radiology,combined
+0db549e9331e9789de48-1,1633,1,Radiology,Radiology,combined
+58470a37458590eff07f-1,1649,1,Radiology,Surgery,combined
+91f461e721753eba18d3-1,1652,1,Radiology,Radiology,combined
+69e4e5ca29575d3b7b2a-1,1654,1,Radiology,Radiology,combined
+85f03967b73870547cf5-1,1655,1,Radiology,Radiology,combined
+ab4f3a974f63aaaccc9e-1,1656,1,Radiology,Radiology,combined
+b2fe85b5d9f42db9417f-1,1663,1,Radiology,Radiology,combined
+f0edfe8a23d94c4ddbf1-1,1664,1,Radiology,Radiology,combined
+7ff9561cefddb7f02781-1,1666,1,Radiology,Radiology,combined
+620733ebcf70ca3038ec-1,1667,1,Radiology,Radiology,combined
+d3e3c0de715668865f47-1,1670,1,Radiology,Radiology,combined
+15ec9e7832ed154c636a-1,1671,1,Radiology,Radiology,combined
+ad86e50cdea0e32088ad-1,1677,1,Radiology,Radiology,combined
+ec831e3d59ae5b30410c-1,1687,1,Radiology,Radiology,combined
+f1c0c631ee30e6d91f37-1,1689,1,Radiology,Radiology,combined
+343a9a1968443626ff31-1,1690,1,Radiology,Radiology,combined
+63deb5651044ff28f073-1,1700,1,Radiology,Radiology,combined
+076bd940443457a84fc5-1,1711,1,Radiology,Radiology,combined
+7b37377d8fc54b22282f-1,1713,1,Radiology,Radiology,combined
+16e11ecb1eb5ea7681bc-1,1717,1,Radiology,Radiology,combined
+b2a00f89bbd12b886309-1,1723,1,Radiology,Radiology,combined
+5ac65a46020ead55fe9e-1,1727,1,Surgery,Surgery,combined
+e622d8fcabb7108e25be-1,1728,1,Surgery,Surgery,combined
+08d343ca6ae4f25b7faa-1,1729,1,Surgery,Surgery,combined
+f42a8e0400c8626d066e-1,1734,1,Surgery,Surgery,combined
+76d4236e58f9f4418458-1,1738,1,Surgery,Surgery,combined
+7918920db3084aa95a1d-1,1743,1,Surgery,Surgery,combined
+7db8a03d3aded1c85463-1,1762,1,Surgery,Surgery,combined
+e97fb92ace3e29a1e013-1,1763,1,Surgery,Surgery,combined
+b4515916883746454c4d-1,1782,1,Surgery,Surgery,combined
+119022b73ddd34779c27-1,1788,1,Surgery,Surgery,combined
+c41cfb8321e6bfceb5ca-1,1792,1,Surgery,Surgery,combined
+f8540d84ce59a873d061-1,1797,1,Surgery,Surgery,combined
+b4cab83b067307e254ea-1,1801,1,Surgery,Surgery,combined
+fe8a6de040adf2ebe68c-1,1803,1,Surgery,Surgery,combined
+c98608dcbdd35954a709-1,1807,1,Surgery,Surgery,combined
+f8a385a2ceed4cf71b22-1,1808,1,Surgery,Surgery,combined
+1863a8578bc3b3163d67-1,1820,1,Surgery,Surgery,combined
+9b852b8244e8f9a4a457-1,1821,1,Surgery,Surgery,combined
+75e0c36a9871e377729a-1,1823,1,Surgery,Surgery,combined
+f21d2036a2563da3e45b-1,1832,1,Surgery,Surgery,combined
+94a9dbd8c8aa4689aada-1,1833,1,Surgery,Surgery,combined
+6289aea65be18baa7b5e-1,1835,1,Surgery,Surgery,combined
+4822e4b63adf1f13ca69-1,1839,1,Surgery,Surgery,combined
+867b9f2beac935b548e6-1,1844,1,Surgery,Surgery,combined
+bd098d74e1d21152e08f-1,1854,1,Surgery,Surgery,combined
+b851fd7bac4c74b9e96d-1,1861,1,Surgery,Surgery,combined
+19a76ee535363681deea-1,1866,1,Surgery,Surgery,combined
+b8a0f59c3744fbb50241-1,1870,1,Surgery,Surgery,combined
+0c65e0b2c955c5a52d0b-1,1874,1,Surgery,Surgery,combined
+3f3d62ac9413a089a6c9-1,1888,1,Surgery,Surgery,combined
+ee9dadba5fe323350c4b-1,1890,1,Surgery,Surgery,combined
+31c295ac7c97baf823aa-1,1892,1,Surgery,Surgery,combined
+8bfca25a2f47fa9eedbd-1,1897,1,Surgery,Surgery,combined
+b9d55bbf6173e541c2d4-1,1900,1,Surgery,Surgery,combined
+bb6a17b579d790e6c815-1,1905,1,Surgery,Surgery,combined
+3b31a3a0ced63aaa65cf-1,1912,1,Surgery,Surgery,combined
+d80398653a6622b43cef-1,1915,1,Surgery,Surgery,combined
+3e242ec067cf211c3b34-1,1922,1,Surgery,Surgery,combined
+672d9e0ce2c2990db304-1,1923,1,Surgery,Surgery,combined
+0699f7cdb7dc7c8dcd23-1,1929,1,Surgery,Surgery,combined
+4e5692756287ccc9940a-1,1931,1,Surgery,Surgery,combined
+625f11f01d0069fd9033-1,1944,1,Surgery,Surgery,combined
+a0a9b7b0a48809229afa-1,1946,1,Surgery,Surgery,combined
+56aaa461c4c1025a3ad5-1,1949,1,Surgery,Surgery,combined
+f7266c443a907ba6b996-1,1951,1,Surgery,Surgery,combined
+3f69d4a06154d8f2e013-1,1952,1,Surgery,Surgery,combined
+3f5ec58d3633b6522101-1,1958,1,Surgery,Surgery,combined
+20eea062036b0a10ce4d-1,1964,1,Surgery,Surgery,combined
+413e3e42ee4fd304bfbf-1,1966,1,Surgery,Surgery,combined
+6ca6f011f27ee7409282-1,1971,1,Surgery,Surgery,combined
+ba22483f66eb8ef021c1-1,1989,1,Surgery,Cardiovascular-Pulmonary,combined
+20c6f0bfb34e421b4aa9-1,1992,1,Surgery,Orthopedic,combined
+c9e08bc3793e9a2c9671-1,2001,1,Surgery,Surgery,combined
+8e96cff9d0a5161af7c0-1,2006,1,Surgery,Neurosurgery,combined
+53236300c38914ec2cc5-1,2008,1,Surgery,Surgery,combined
+5c11e01ff73ad6941050-1,2009,1,Surgery,Surgery,combined
+289cce28741658ffa3e7-1,2016,1,Surgery,Surgery,combined
+794dc773d067dff82b07-1,2030,1,Surgery,Surgery,combined
+804d907afaecb05d754b-1,2034,1,Surgery,Surgery,combined
+8849bfe12016caae662b-1,2035,1,Surgery,Surgery,combined
+41a952db6d341f13cd23-1,2040,1,Surgery,Surgery,combined
+fbb36cab5afc4d7a4adc-1,2044,1,Surgery,Surgery,combined
+b8e132538d8cb04e34ba-1,2045,1,Surgery,Surgery,combined
+6f0a3f1ece87b5bd8249-1,2048,1,Surgery,Surgery,combined
+3b6a5276cb512091d260-1,2057,1,Surgery,Surgery,combined
+cd3bc3e373e376dcbffc-1,2059,1,Surgery,Surgery,combined
+f55b114d240e8b7abf18-1,2069,1,Surgery,Surgery,combined
+3e2453423f48b1a00287-1,2078,1,Surgery,Surgery,combined
+8ea3ade131fd40f72588-1,2079,1,Surgery,Surgery,combined
+8e51c62974f9f0acfc75-1,2083,1,Surgery,Surgery,combined
+a30ca5584d6f92450792-1,2087,1,Surgery,Cardiovascular-Pulmonary,combined
+1e50595e3647bd45bc65-1,2089,1,Surgery,Surgery,combined
+58a7d3f3ab47d28779c7-1,2093,1,Surgery,Surgery,combined
+728d14a3ebe6cb815609-1,2094,1,Surgery,Surgery,combined
+33f0031e2f08165b2cec-1,2097,1,Surgery,Surgery,combined
+762f6f05e962c8a2fe11-1,2107,1,Surgery,Surgery,combined
+b2649d7341b6ab0bef22-1,2110,1,Surgery,Surgery,combined
+cf29ee2862321950e8e5-1,2112,1,Surgery,Surgery,combined
+9e5b3832ab3d6c6c103b-1,2117,1,Surgery,Surgery,combined
+0581cfd62bb5cbb63d89-1,2118,1,Surgery,Surgery,combined
+3c1fc965cf875d2cbb28-1,2119,1,Surgery,Surgery,combined
+f3a099fb53a6f40460b8-1,2125,1,Surgery,Cardiovascular-Pulmonary,combined
+43fd8d7b2216e402b201-1,2139,1,Surgery,Surgery,combined
+ea154f38e5e52fb3d51b-1,2140,1,Surgery,Surgery,combined
+b6f0b7c18288c7435a5e-1,2143,1,Surgery,Surgery,combined
+3e4573eaf4706de16392-1,2157,1,Surgery,Surgery,combined
+8bc5e8854960faddfcef-1,2163,1,Surgery,Surgery,combined
+bd047e1cafe50d8b7f09-1,2164,1,Surgery,Surgery,combined
+d6dcb9f6e0c0be912333-1,2170,1,Surgery,Surgery,combined
+7379ffa95daeffb3946a-1,2183,1,Surgery,Surgery,combined
+8fb8b6e22f0b7f51a1fb-1,2188,1,Surgery,Surgery,combined
+2498654e138480bc5be0-1,2191,1,Surgery,Surgery,combined
+b191a786d7df4108ee68-1,2202,1,Surgery,Surgery,combined
+b0e470de5ce77559e6a4-1,2208,1,Surgery,Surgery,combined
+f1204ca601eddd2fb0d3-1,2211,1,Surgery,Surgery,combined
+13cdc665031d5027228b-1,2213,1,Surgery,Surgery,combined
+a736c868665207692b69-1,2216,1,Surgery,Surgery,combined
+5ca72811e31bc0aabe58-1,2221,1,Surgery,Surgery,combined
+82248988a8601b52cdf6-1,2233,1,Surgery,Surgery,combined
+564f87bb99d0e39b754b-1,2235,1,Surgery,Surgery,combined
+50c1cf82719968a97405-1,2249,1,Surgery,Surgery,combined
+524f5ee19c8382057139-1,2256,1,Surgery,Surgery,combined
+ed615a259064a0411fec-1,2271,1,Surgery,Surgery,combined
+aff666d4e308493917a3-1,2276,1,Surgery,Surgery,combined
+c8ff0f99ecb751ee0968-1,2285,1,Obstetrics-Gynecology,Obstetrics-Gynecology,combined
+7d35f69fb09a3f7e72a5-1,2292,1,Surgery,Surgery,combined
+3dd676bc2ee7b0b5d187-1,2294,1,Cardiovascular-Pulmonary,General Medicine,combined
+af8e84b37e00a82bae94-1,2301,1,Surgery,Surgery,combined
+b353cead167f12e27dae-1,2302,1,Surgery,Surgery,combined
+f25b2a3b2ab85572b68b-1,2307,1,Surgery,Surgery,combined
+75b839b44677d4ebbd79-1,2311,1,Surgery,Surgery,combined
+d9aaaff7c62c7e8b87c0-1,2315,1,Surgery,Surgery,combined
+d1957ace75cfdcf5a63d-1,2318,1,Surgery,Surgery,combined
+c065aadf4d23fb6388ff-1,2319,1,Surgery,Surgery,combined
+6624caa19f3f19087b0e-1,2320,1,Surgery,Surgery,combined
+dc4427027230027294c8-1,2323,1,Surgery,Surgery,combined
+8bf1f1f3de9a3165200b-1,2331,1,Surgery,Surgery,combined
+f0f2b1a128d91b9b0529-1,2336,1,Surgery,Surgery,combined
+ddd2cafa946b8923790a-1,2341,1,Surgery,Surgery,combined
+1327ff785f490c905a8c-1,2342,1,Surgery,Surgery,combined
+a416c94d483cc7a4731b-1,2351,1,Surgery,Surgery,combined
+ebe52c4728b787f98b9a-1,2354,1,Surgery,Surgery,combined
+af363fd13ff9ad200cc0-1,2357,1,Surgery,Surgery,combined
+8dfdd9e6bfa7a6915f8e-1,2368,1,Surgery,Surgery,combined
+f6e3e29204cbb1a60b40-1,2371,1,Surgery,Surgery,combined
+cbeecc8d9b368e95eeae-1,2373,1,Surgery,Surgery,combined
+333228476251803b46cf-1,2376,1,Surgery,Surgery,combined
+104bb2f6214e02615348-1,2379,1,Surgery,Surgery,combined
+71ca37d8a4d99d40fb5c-1,2381,1,Surgery,Surgery,combined
+4992d80d1ec7e2cc8545-1,2383,1,Surgery,Surgery,combined
+2e1adb928e40f2677634-1,2384,1,Surgery,Surgery,combined
+29bb12ee1ac6e1a519a1-1,2385,1,Surgery,Surgery,combined
+68d652ea4b37ff06965d-1,2388,1,Surgery,Surgery,combined
+423f6523d960edd8231f-1,2392,1,Surgery,Surgery,combined
+1a7d69a11fd57e9d86b2-1,2396,1,Surgery,Surgery,combined
+84fd9f27f11da8720ed4-1,2404,1,Surgery,Surgery,combined
+470cdb0230762c7bb8f8-1,2408,1,Surgery,Surgery,combined
+d59dced48ac67907aa18-1,2409,1,Surgery,Surgery,combined
+ba471462d2ae3ac7fa15-1,2411,1,Surgery,Surgery,combined
+4ab2b6147b25e79df17c-1,2426,1,Surgery,Surgery,combined
+2478776a687eaf8d8eb7-1,2427,1,Surgery,Surgery,combined
+2f6e1741e91b643a898e-1,2433,1,Surgery,Surgery,combined
+bc65e9d8ae414cfe9191-1,2434,1,Surgery,Surgery,combined
+c405f681cbf9bc0bca90-1,2438,1,Surgery,Surgery,combined
+e1363e240abc86189fb7-1,2446,1,Surgery,Surgery,combined
+83c4200fe9b26dd961ec-1,2469,1,Surgery,Surgery,combined
+d7e56594be1c35a77191-1,2472,1,Surgery,Surgery,combined
+b071cd329ddc3beba02e-1,2474,1,Surgery,Surgery,combined
+fe49cb409c03f87d9797-1,2477,1,Surgery,Surgery,combined
+989147cfc34063152d7a-1,2484,1,Surgery,Surgery,combined
+65bab53834a53506473e-1,2485,1,Surgery,Cardiovascular-Pulmonary,combined
+7c8ed573aef1cfd9aa5a-1,2486,1,Surgery,Surgery,combined
+1f2ed528037a225d94ec-1,2497,1,Surgery,Surgery,combined
+5801f938259ffb9a2671-1,2502,1,Surgery,Surgery,combined
+5e0e9a6b57f7f95ecec6-1,2507,1,Surgery,Surgery,combined
+71e2bc1bb21e6d299afa-1,2510,1,Surgery,Surgery,combined
+b653f4b1267b0224ffbe-1,2511,1,Surgery,Surgery,combined
+2711d75b88e7070ca601-1,2513,1,Surgery,Surgery,combined
+bd0e600e8d8b1a4097c4-1,2516,1,Surgery,Surgery,combined
+c44feaf9e42d2ef6ee82-1,2519,1,Surgery,Surgery,combined
+508b8ceb0433d9299618-1,2523,1,Surgery,Surgery,combined
+9d904aae305ea91d87be-1,2525,1,Surgery,Surgery,combined
+0632ba7a24bcefcda5fe-1,2528,1,Surgery,Surgery,combined
+6b08349b4545b2f958aa-1,2532,1,Surgery,Surgery,combined
+24bc5168be71e9f2bc07-1,2560,1,Surgery,Surgery,combined
+d6befe1c6101eaec1291-1,2563,1,Surgery,Surgery,combined
+b1d739c6be2f98486970-1,2567,1,Surgery,Surgery,combined
+8d4d0348d5b4af4be9a3-1,2570,1,Surgery,Surgery,combined
+64e5ef85c05c85a4b6e3-1,2573,1,Surgery,Surgery,combined
+86ebd8d64adbf27355db-1,2576,1,Surgery,Surgery,combined
+f42966cc3b3698bc8b7e-1,2591,1,Surgery,Surgery,combined
+44322e9daa99e632622b-1,2598,1,Surgery,Surgery,combined
+ed5763e96e0523a6e791-1,2600,1,Surgery,Surgery,combined
+63d805b716c8fa26af51-1,2601,1,Surgery,Surgery,combined
+d8fd0516c99c17801516-1,2607,1,Surgery,Surgery,combined
+c7d330a0de7c212c83c4-1,2610,1,Surgery,Surgery,combined
