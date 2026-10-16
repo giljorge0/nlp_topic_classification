@@ -1,0 +1,28 @@
+{
+  "method": "rwd",
+  "base_fingerprint": "bbff7e52f30c0993df30e1bb60469d223f987d2511e17b1b4e2ad1b4d9c6b6d6",
+  "original_rows": 2093,
+  "accepted_synthetic_rows": 87,
+  "augmented_rows": 2180,
+  "accepted_by_specialty": {
+    "Dermatology": 9,
+    "Gastroenterology": 8,
+    "General Medicine": 4,
+    "Neurology": 12,
+    "Neurosurgery": 7,
+    "Obstetrics-Gynecology": 13,
+    "Ophthalmology": 12,
+    "Psychiatry-Psychology": 22
+  },
+  "settings": {
+    "selected_sources": 200,
+    "requested": 200,
+    "source_column": "description",
+    "random_dropout": {
+      "probability": 0.05,
+      "mode": "safe",
+      "copies_per_original": 1,
+      "max_attempts_per_copy": 20
+    }
+  }
+}

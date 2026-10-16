@@ -1,0 +1,28 @@
+{
+  "method": "llm",
+  "base_fingerprint": "d0c3659606ef20eb8c5eafd7a7177212c4423414be14211e776b300879211a18",
+  "original_rows": 2616,
+  "accepted_synthetic_rows": 551,
+  "augmented_rows": 3167,
+  "accepted_by_specialty": {
+    "Cardiovascular-Pulmonary": 36,
+    "Dermatology": 25,
+    "Gastroenterology": 34,
+    "General Medicine": 37,
+    "Neurology": 50,
+    "Neurosurgery": 31,
+    "Obstetrics-Gynecology": 33,
+    "Ophthalmology": 32,
+    "Orthopedic": 56,
+    "Psychiatry-Psychology": 30,
+    "Radiology": 51,
+    "Surgery": 136
+  },
+  "settings": {
+    "source_column": "description",
+    "imported_rows_this_run": 121,
+    "accepted_this_run": 121,
+    "append": true,
+    "automatic_checks_only": true
+  }
+}

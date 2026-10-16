@@ -1,0 +1,114 @@
+source_row_id,copy_index,specialty,method,target_column,status,reason,original,augmented,details,attempts
+7a8f9fa2470795d813af-1,0,Dermatology,rwd,description,rejected,no_valid_change_after_retries,Methicillin-resistant Staphylococcus aureus (MRSA) infection.  A 14-day-old was seen by private doctor because of blister.,,,20
+6ad0e51ebd583e02b328-1,0,Psychiatry-Psychology,rwd,description,rejected,no_eligible_words, Psychological Testing for ADHD,,,0
+34208e4fd492d25fdbdc-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words, Left temporal craniotomy and removal of brain tumor.,,,0
+698b1c6117c1351a8dbc-1,0,Ophthalmology,rwd,description,rejected,no_valid_change_after_retries, One-week history of decreased vision in the left eye.  Past ocular history includes cataract extraction with lens implants in both eyes.,,,20
+e240b016b97726bd6692-1,0,Gastroenterology,rwd,description,rejected,no_eligible_words," Incision and drainage (I&D) of abdominal abscess, excisional debridement of nonviable and viable skin, subcutaneous tissue and muscle, then removal of foreign body.",,,0
+a5b9615c08142ee78388-1,0,Dermatology,rwd,description,rejected,no_eligible_words, Evaluation and recommendations regarding facial rhytids.,,,0
+e79929ca4e28e5581a0c-1,0,Neurosurgery,rwd,description,rejected,no_valid_change_after_retries, Endoscopic-assisted transsphenoidal exploration and radical excision of pituitary adenoma.  Endoscopic exposure of sphenoid sinus with removal of tissue from within the sinus.,,,20
+b3864cd068aa043989cf-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words,"Intrauterine pregnancy at 37 plus weeks, nonreassuring fetal heart rate.",,,0
+83811e5cb0e748fdb066-1,0,Neurology,rwd,description,rejected,no_eligible_words, MRI Brain and Brainstem - Falling (Multiple System Atrophy),,,0
+ac4ac8fcdb881f805267-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words,"Anterior cervical discectomy with decompression, anterior cervical fusion, anterior cervical instrumentation, and Allograft C5-C6.",,,0
+cff17708ab98dcec0d03-1,0,Gastroenterology,rwd,description,rejected,no_eligible_words," Chronic abdominal pain and heme positive stool, antral gastritis, and duodenal polyp.  Esophagogastroduodenoscopy with photos and antral biopsy.",,,0
+b7c37666e31a46398d5e-1,0,Dermatology,rwd,description,rejected,no_valid_change_after_retries, Excision of the left upper cheek actinic neoplasm and left lower cheek upper neck skin neoplasm with two-layer plastic closures,,,20
+aecf355da29699c4787e-1,0,Psychiatry-Psychology,rwd,description,rejected,no_eligible_words," Bipolar disorder, apparently stable on medications.  Mild organic brain syndrome, presumably secondary to her chronic inhalant, paint, abuse.",,,0
+012b017226e81ad8b5a5-1,0,Neurosurgery,rwd,description,rejected,no_valid_change_after_retries, CT-guided frameless stereotactic radiosurgery for the right occipital arteriovenous malformation using dynamic tracking.,,,20
+94d79a233454bcc48305-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words,"Short flap trabeculectomy with lysis of conjunctival scarring, tenonectomy, peripheral iridectomy, paracentesis, watertight conjunctival closure, and 0.5 mg/mL mitomycin x2 minutes, left eye.  Uncontrolled open angle glaucoma and conjunctival scarring, left eye.",,,0
+5f06db1977eb789c0bb7-1,0,Gastroenterology,rwd,description,rejected,no_eligible_words,Right upper quadrant pain.  Nuclear medicine hepatobiliary scan.  Radiopharmaceutical 6.9 mCi of Technetium-99m Choletec.,,,0
+82ef17c4ab254d28d544-1,0,Dermatology,rwd,description,rejected,no_valid_change_after_retries, A simple note on Acne Vulgaris.,,,20
+c9c01a1c8dc6edeb1410-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words,"Anterior cervical discectomy at C5-C6 and C6-C7 for neural decompression and anterior interbody fusion at C5-C6 and C6-C7 utilizing Bengal cages x2.  Anterior instrumentation by Uniplate construction C5, C6, and C7 with intraoperative x-ray x2.",,,0
+03bd04d1339e9f7b5216-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words," Total abdominal hysterectomy, right salpingoophorectomy, and extensive adhesiolysis and enterolysis.",,,0
+02b442202cff85fa91bb-1,0,Gastroenterology,rwd,description,rejected,no_valid_change_after_retries, Patient with complaint of symptomatic cholelithiasis.,,,20
+41370ee599cab4820f05-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words, Fractional dilatation and curettage,,,0
+078c9604f5d49a4f63d2-1,0,Neurology,rwd,description,rejected,no_eligible_words, Bilateral temporal artery biopsy.  Rule out temporal arteritis.,,,0
+62ef9bd323d29a204f6b-1,0,Gastroenterology,rwd,description,rejected,no_eligible_words, Ruptured appendicitis.,,,0
+026d4b755e9ab8ddf9a4-1,0,Dermatology,rwd,description,rejected,no_valid_change_after_retries, Excision of the left temple keratotic neoplasm and left nasolabial fold defect and right temple keratotic neoplasm.,,,20
+5ab151a3a88b3ed6b89d-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words," Herniated nucleus pulposus.  Anterior cervical decompression, anterior spine instrumentation, anterior cervical spine fusion, and application of machined allograft.",,,0
+3bc1a3293923aa3ff6d6-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words, Complex right lower quadrant mass with possible ectopic pregnancy.  Right ruptured tubal pregnancy and pelvic adhesions. Dilatation and curettage and laparoscopy with removal of tubal pregnancy and right partial salpingectomy.,,,0
+b9d23f21bd85bc11da91-1,0,Gastroenterology,rwd,description,rejected,no_eligible_words, Normal upper GI endoscopy.,,,0
+515aaed75d23a5b68fb2-1,0,Psychiatry-Psychology,rwd,description,rejected,no_valid_change_after_retries, Psychiatric Consultation of patient with anxiety.,,,20
+cc3a935158c22873b4a9-1,0,Neurosurgery,rwd,description,rejected,no_valid_change_after_retries,Right suboccipital craniectomy for resection of tumor using the microscope modifier 22 and cranioplasty.,,,20
+e7856109ab07f336ce28-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words," Repair of entropion, left upper lid, with excision of anterior lamella and cryotherapy.  Repairs of blepharon, entropion, right lower lid with mucous membrane graft.",,,0
+f0bdd8fc8c8904648661-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_valid_change_after_retries, Artificial rupture of membrane was performed for clear fluid.  She did receive epidural anesthesia.  She progressed to complete and pushing.,,,20
+cfb0800307a13ddcd316-1,0,Neurology,rwd,description,rejected,no_eligible_words, Encephalopathy related to normal-pressure hydrocephalus.,,,0
+7ad24d1c51229deb2ff6-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words, Intrauterine pregnancy at term with previous cesarean.   Desired sterilization.  Status post repeat low transverse cesarean and bilateral tubal ligation.,,,0
+75c42e7f95a0e5879c3f-1,0,Neurology,rwd,description,rejected,no_eligible_words, Right side craniotomy for temporal lobe intracerebral hematoma evacuation and resection of temporal lobe lesion.  Biopsy of dura.,,,0
+735e7d1c807e4f31ba79-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words, Right side craniotomy for temporal lobe intracerebral hematoma evacuation and resection of temporal lobe lesion.  Biopsy of dura.,,,0
+9f8fed81d3cfb9e59760-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words, Quad blepharoplasty for blepharochalasia and lower lid large primary and secondary bagging.,,,0
+99185fc8746e09fbb48e-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words," Radical vulvectomy (complete), bilateral inguinal lymphadenectomy (superficial and deep).",,,0
+8ff8f3d6123c95494d1e-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words," Right frontotemporal craniotomy and evacuation of hematoma, biopsy of membranes, microtechniques.",,,0
+6e36172c1fb057c60f01-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words, Vitrectomy under local anesthesia.,,,0
+bed458d28d5a8629243a-1,0,Neurology,rwd,description,rejected,no_eligible_words, Cerebral Angiogram for avascular mass - cavernous angioma (with hematoma on MRI and Bx).,,,0
+e7fc3dd8703eb45faf9c-1,0,Gastroenterology,rwd,description,rejected,no_eligible_words, CT Abdomen and Pelvis with contrast ,,,0
+7386076dbd1e4e9380f9-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words," Right frontotemporoparietal craniotomy, evacuation of acute subdural hematoma.   Acute subdural hematoma, right, with herniation syndrome.",,,0
+7c3195e81798e9186822-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words," Enlarged fibroid uterus, infertility, pelvic pain, and probable bilateral tubal occlusion.  Dilatation and curettage and laparoscopy and injection of indigo carmine dye.",,,0
+c839b31466ccf6662c8c-1,0,Neurology,rwd,description,rejected,no_valid_change_after_retries, A middle-aged female with memory loss.,,,20
+63ae1ab99662f720ee10-1,0,Dermatology,rwd,description,rejected,no_eligible_words, Acne with folliculitis.,,,0
+120c9ccae4bda90f64ca-1,0,Neurosurgery,rwd,description,rejected,no_valid_change_after_retries," Bilateral orbital frontal zygomatic craniotomy (skull base approach), bilateral orbital advancement with (C-shaped osteotomies down to the inferior orbital rim) with bilateral orbital advancement with bone grafts, bilateral forehead reconstruction with autologous graft.",,,20
+0c27b919c3791581d817-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words," Combined closed vitrectomy with membrane peeling, fluid-air exchange, and endolaser, right eye.",,,0
+6fcdf5f97220476fde12-1,0,Neurology,rwd,description,rejected,no_eligible_words, Sellar HCT - Pituitary mass,,,0
+aeb46c55e6ed6c13c5e9-1,0,Gastroenterology,rwd,description,rejected,no_eligible_words, Upper gastrointestinal endoscopy.,,,0
+dbba44a1f2c4d9789689-1,0,Dermatology,rwd,description,rejected,no_eligible_words,Excisional biopsy of skin nevus and two-layer plastic closure.  Trichloroacetic acid treatment to left lateral nasal skin 2.5 cm to treat actinic keratosis.,,,0
+607ac6160f37a64edac8-1,0,Neurosurgery,rwd,description,rejected,no_valid_change_after_retries,"Bifrontal cranioplasty, cranial defect greater than 10 cm in diameter in the frontal region.",,,20
+216b9af2cd61a45e35f1-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words," Right phacoemulsification of cataract with intraocular lens implantation - Cataract, right eye.",,,0
+633df1a3e37bc1cab9bb-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words, Excision of right breast mass.  Right breast mass with atypical proliferative cells on fine-needle aspiration.,,,0
+6277f025e910898cde6c-1,0,Neurology,rwd,description,rejected,no_eligible_words, Chest CT - Thymoma and history of ocular myasthenia gravis.,,,0
+cc2d07e599e2ec6d36c2-1,0,Dermatology,rwd,description,rejected,no_eligible_words, Incision and drainage (I&D) of buttock abscess.  ,,,0
+022d109e68bee19c7fd2-1,0,Psychiatry-Psychology,rwd,description,rejected,no_eligible_words, Psychosocial evaluation of kidney donor.  Questions - Answers,,,0
+f39d5b81295e4d5e2244-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words, Normal cataract surgery.  ,,,0
+5b2252b20ad638c6e67b-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words," Dilation and curettage (D&C), hysteroscopy, and laparoscopy with right salpingooophorectomy and aspiration of cyst fluid.  Thickened endometrium and tamoxifen therapy, adnexal cyst, endometrial polyp, and right ovarian cyst.",,,0
+09a6f90953aa4de67ae6-1,0,Neurology,rwd,description,rejected,no_eligible_words, Dysarthria.  Probable brainstem glioma.,,,0
+94c09ed2fb69d6b4cc33-1,0,Gastroenterology,rwd,description,rejected,no_eligible_words," Colonoscopy - Diarrhea, suspected irritable bowel",,,0
+4574b3b5eb4898d33de6-1,0,Dermatology,rwd,description,rejected,no_eligible_words," Skin biopsy, scalp mole.  Darkened mole status post punch biopsy, scalp lesion.  Rule out malignant melanoma with pulmonary metastasis.",,,0
+01ba530ce461cf9103c0-1,0,Ophthalmology,rwd,description,rejected,no_valid_change_after_retries, Endoscopic subperiosteal midface lift using the endotine midface suspension device.  Transconjunctival lower lid blepharoplasty with removal of a portion of the medial and middle fat pad.,,,20
+4b27a7ef53ed1786e742-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words, Laparoscopic tubal fulguration.,,,0
+038a8e9414a1a1a644ef-1,0,Neurology,rwd,description,rejected,no_eligible_words, Left third digit numbness and wrist pain.,,,0
+32e28ad1a63920a2921a-1,0,Dermatology,rwd,description,rejected,no_eligible_words," Excisional biopsy of actinic keratosis and skin nevus, two-layer and one-layer plastic closures, ",,,0
+48762d02fdd5df3853dd-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words," Bilateral nasolacrimal probing.   Tearing, eyelash encrustation with probable tear duct obstruction bilateral.  Distal nasolacrimal duct stenosis with obstruction, left and right eye",,,0
+9730ba3653020a3e462f-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words," Primary low-transverse C-section.  Postdates pregnancy, failure to progress, meconium stained amniotic fluid.",,,0
+f9ce3e9adce211e577d6-1,0,Dermatology,rwd,description,rejected,no_eligible_words, Punch biopsy of right upper chest skin lesion.,,,0
+e69f02f50542e88b276c-1,0,Psychiatry-Psychology,rwd,description,rejected,no_eligible_words, Admission Psychiatric Evaluation,,,0
+df3e31fde4dfd934869c-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words," Placement of Scott cannula, right lateral ventricle",,,0
+4e96611083a0095ef0fb-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words, Placement of right new ventriculoperitoneal (VP) shunts Strata valve and to removal of right frontal Ommaya reservoir.,,,0
+1410f729e25b78f7e2f7-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words," Nuclear sclerotic cataract, right eye.  Kelman phacoemulsification with posterior chamber intraocular lens, right eye.",,,0
+d438c7a2d5ba0fa266f1-1,0,Neurology,rwd,description,rejected,no_eligible_words, MRI - Right temporal lobe astrocytoma.,,,0
+3353078654cfdca5f53f-1,0,Psychiatry-Psychology,rwd,description,rejected,no_eligible_words," Psychiatric evaluation for ADHD, combined type.",,,0
+b5e72710e510ea36f14e-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words, Right pterional craniotomy with obliteration of medial temporal arteriovenous malformation and associated aneurysm and evacuation of frontotemporal intracerebral hematoma.,,,0
+f1e0c4b3e2acc2762d89-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words, Repair of one-half full-thickness left lower lid defect by tarsoconjunctival pedicle flap from left upper lid to left lower lid and repair of left upper and lateral canthal defect by primary approximation to lateral canthal tendon remnant.,,,0
+c21aa51ae851dbf1a869-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words, Total abdominal hysterectomy (TAH) with bilateral salpingooophorectomy and uterosacral ligament vault suspension.  Cervical intraepithelial neoplasia grade-III postconization.  Recurrent dysplasia.  Uterine procidentia grade II-III.  Mild vaginal vault prolapse.,,,0
+7faa9aea84a7c0c3a79c-1,0,Neurology,rwd,description,rejected,no_eligible_words, Fall/loss of consciousness.,,,0
+54075ab273e876937533-1,0,Psychiatry-Psychology,rwd,description,rejected,no_eligible_words, Psychiatric consultation for management of pain medications.,,,0
+5c54b30a9941f952f547-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words,"Postoperative day #1, total abdominal hysterectomy.  Normal postoperative course.",,,0
+a5a786686727741d9e4a-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words, Anterior cranial vault reconstruction with fronto-orbital bar advancement.,,,0
+f580ee97bea178849957-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words, Lower lid blepharoplasty.,,,0
+5b17d2f35001d85121c2-1,0,Neurology,rwd,description,rejected,no_eligible_words," Woman with adult hydrocephalus, routine evaluation.  ",,,0
+a40f9a8c6eaf5c4c2cf4-1,0,Psychiatry-Psychology,rwd,description,rejected,no_valid_change_after_retries, Psychiatric Consultation of patient with major depression disorder.,,,20
+c5c68731fa07cc4956ca-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words, Right burr hole craniotomy for evacuation of subdural hematoma and placement of subdural drain.,,,0
+068dcb12081e8a5aff46-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words," Phacoemulsification and extracapsular cataract extraction with intraocular lens implantation, right eye.",,,0
+ceb18e46ed1c5da795f4-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words,"Herniated nucleus pulposus, C5-C6, with spinal stenosis.  Anterior cervical discectomy with fusion C5-C6.",,,0
+a9dd7bf96608d7f8d0d7-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words, Initial obstetrical examination - Normal first pregnancy.  Inadequate naternal nutrition.,,,0
+ea0a5bc54ef51a2344fa-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words, Left retrosigmoid craniotomy and excision of acoustic neuroma.,,,0
+2f6a323363bc9c9cec99-1,0,Ophthalmology,rwd,description,rejected,no_valid_change_after_retries, She is sent for evaluation of ocular manifestations of systemic connective tissue disorders.  Denies any eye problems and history includes myopia with astigmatism.,,,20
+c24e153d4f6487249530-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words," Total vaginal hysterectomy.   Menometrorrhagia, dysmenorrhea, and small uterine fibroids.",,,0
+0df9eba73800aaddc042-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words," Anterior cervical discectomy, osteophytectomy, foraminotomies, spinal cord decompression, fusion with machined allografts, Eagle titanium plate, Jackson-Pratt drain placement, and intraoperative monitoring with EMGs and SSEPs",,,0
+7a57672f59c3736bf6f5-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words, Pelvic Pain and vaginal discharge,,,0
+472c6c63610d63b20bdb-1,0,Neurology,rwd,description,rejected,no_valid_change_after_retries, Patient with stable expressive aphasia and decreased vision.,,,20
+f9b6706edf6da3255174-1,0,Psychiatry-Psychology,rwd,description,rejected,no_eligible_words, Bender-Gestalt Neurological Battery and Beck testing.,,,0
+368ec9302699eaa81d29-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words,"Bilateral C3-C4, C4-C5, C5-C6, and C6-C7 medial facetectomy and foraminotomy with technical difficulty, total laminectomy C3, C4, C5, and C6, excision of scar tissue, and repair of dural tear with Prolene 6-0 and Tisseel.",,,0
+b1b99d0c9c88f43fb9c2-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words, Repair of upper lid canalicular laceration - Sample/Template.,,,0
+224c5fe78b4d4d808fe3-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_valid_change_after_retries," Dilation and curettage (D&C), laparoscopy, enterolysis, lysis of the pelvic adhesions, and left salpingo-oophorectomy.  Complex left ovarian cyst, bilateral complex adnexae, bilateral hydrosalpinx, chronic pelvic inflammatory disease, and massive pelvic adhesions.",,,20
+c68777627df689814fa8-1,0,Neurology,rwd,description,rejected,no_eligible_words, Headache.  Right frontal lobe glioma.,,,0
+f28c51d84e0fce008298-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words," Visually significant nuclear sclerotic cataract, right eye.  Phacoemulsification with posterior chamber intraocular lens implantation, right eye.",,,0
+9c880519bf8f81023d5e-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words,"Anterior cervical discectomy with decompression, C5-C6, arthrodesis with anterior interbody fusion, C5-C6, spinal instrumentation, C5-C6 using Pioneer 18-mm plate and four 14 x 4.0 mm screws (all titanium), implant using PEEK 7 mm, and Allograft using Vitoss.",,,0
+6eeee791bb91571281a3-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words, Ruptured globe with full-thickness corneal laceration repair - Sample/Template.,,,0
+a568b6004f0ff7490cc2-1,0,Psychiatry-Psychology,rwd,description,rejected,no_eligible_words, Psychiatric consultation for substance abuse.,,,0
+3345612e2b6e4f872cd8-1,0,Neurosurgery,rwd,description,rejected,no_valid_change_after_retries, Patient returns for his first followup after shunt surgery.,,,20
+7525c643057425bd6289-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words, Scleral Buckle opening under general anesthesia.,,,0
+1ccd1995606486d7f531-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_eligible_words," Desires permanent sterilization.  Laparoscopic tubal ligation, Falope ring method.  Normal appearing uterus and adnexa bilaterally.",,,0
+e8342d96d744eb074ed9-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words, Bilateral temporal artery biopsy.  Rule out temporal arteritis.,,,0
+e48c5f32e3a451c47d3a-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words," Phacoemulsification of cataract and posterior chamber lens implant, right eye.",,,0
+33931ac8946d22ee7a48-1,0,Obstetrics-Gynecology,rwd,description,rejected,no_valid_change_after_retries, A white female presents for exam and Pap.,,,20
+273629510b055d34ea85-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words,"Right L4 and L5 transpedicular decompression of distal right L4 and L5 nerve roots.  Right L4-L5 and right L5-S1 laminotomies, medial facetectomies, and foraminotomies, decompression of right L5 and S1 nerve roots.  Right L4-S1 posterolateral fusion with local bone graft.  Left L4 through S1 segmental pedicle screw instrumentation.  Preparation harvesting of local bone graft.",,,0
+24ad85551b304a28986e-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words,"C5-C6 anterior cervical discectomy, bone bank allograft, and anterior cervical plate.   Left cervical radiculopathy.",,,0
+ee953d1e0cd35b57e833-1,0,Ophthalmology,rwd,description,rejected,no_eligible_words," Visually significant posterior capsule opacity, right eye.  YAG laser posterior capsulotomy, right eye.",,,0
+9d61b7d0a228a514a6d9-1,0,Neurosurgery,rwd,description,rejected,no_eligible_words, Frontal craniotomy for placement of deep brain stimulator electrode.  Microelectrode recording of deep brain structures. Intraoperative programming and assessment of device.,,,0

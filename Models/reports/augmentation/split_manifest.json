@@ -1,0 +1,15 @@
+{
+  "source_path": "C:\\Users\\ricky\\Documents\\LN\\## Projeto\\nlp_topic_classification\\train.csv",
+  "source_sha256": "028a886eca5f26ff61d9cf59ed087efd91d2689e879eac844be44b222f582dc1",
+  "train_fingerprint": "bbff7e52f30c0993df30e1bb60469d223f987d2511e17b1b4e2ad1b4d9c6b6d6",
+  "seed": 42,
+  "validation_fraction": 0.2,
+  "original_count": 2616,
+  "train_count": 2093,
+  "validation_count": 523,
+  "warnings": [
+    "Specialty 'd is open about may be roughly a centimeter in the inside of the flap.'... has no validation examples; consider cross-validation",
+    "Specialty 'ted and this was used to aspirate approximately 30 cc of serosanguineo'... has no validation examples; consider cross-validation",
+    "Specialty 'ypothyroidism secondary to hyperthyroidism and irradiation, possible l'... has no validation examples; consider cross-validation"
+  ]
+}
