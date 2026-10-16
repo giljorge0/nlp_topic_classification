@@ -1,4 +1,0 @@
-numpy>=1.24
-scikit-learn>=1.3
-# For --model birnn_attention only, install an appropriate PyTorch build:
-# torch (follow https://pytorch.org/get-started/locally/ for your GPU/CPU)

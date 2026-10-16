@@ -1,1 +1,0 @@
-# Python 3.10+ standard library only. No pip install, API key or local LLM required.
