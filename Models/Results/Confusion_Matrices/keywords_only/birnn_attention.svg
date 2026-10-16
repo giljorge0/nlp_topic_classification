@@ -1,0 +1,319 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1004 920" width="1004" height="920" role="img" aria-label="Confusion matrix for BiRNN + Attention · Keywords only · Normal">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="268" y="28" font-size="17" fill="#13233a" font-family="Arial,sans-serif">BiRNN + Attention · Keywords only · Normal</text>
+<text x="268" y="68" font-size="12" fill="#64748b" font-family="Arial,sans-serif">Counts from all five held-out folds. Color intensity is normalized within each actual class.</text>
+<text x="556.0" y="903" text-anchor="middle" font-size="14" fill="#34536d" font-family="Arial,sans-serif">Predicted speciality →</text>
+<text transform="translate(20 544.0) rotate(-90)" text-anchor="middle" font-size="14" fill="#34536d" font-family="Arial,sans-serif">Actual speciality →</text>
+<text transform="translate(292.0 244) rotate(-52)" font-size="11" text-anchor="start" fill="#34536d" font-family="Arial,sans-serif">Cardiovascular-Pulmonary</text>
+<text transform="translate(340.0 244) rotate(-52)" font-size="11" text-anchor="start" fill="#34536d" font-family="Arial,sans-serif">Dermatology</text>
+<text transform="translate(388.0 244) rotate(-52)" font-size="11" text-anchor="start" fill="#34536d" font-family="Arial,sans-serif">Gastroenterology</text>
+<text transform="translate(436.0 244) rotate(-52)" font-size="11" text-anchor="start" fill="#34536d" font-family="Arial,sans-serif">General Medicine</text>
+<text transform="translate(484.0 244) rotate(-52)" font-size="11" text-anchor="start" fill="#34536d" font-family="Arial,sans-serif">Neurology</text>
+<text transform="translate(532.0 244) rotate(-52)" font-size="11" text-anchor="start" fill="#34536d" font-family="Arial,sans-serif">Neurosurgery</text>
+<text transform="translate(580.0 244) rotate(-52)" font-size="11" text-anchor="start" fill="#34536d" font-family="Arial,sans-serif">Obstetrics-Gynecology</text>
+<text transform="translate(628.0 244) rotate(-52)" font-size="11" text-anchor="start" fill="#34536d" font-family="Arial,sans-serif">Ophthalmology</text>
+<text transform="translate(676.0 244) rotate(-52)" font-size="11" text-anchor="start" fill="#34536d" font-family="Arial,sans-serif">Orthopedic</text>
+<text transform="translate(724.0 244) rotate(-52)" font-size="11" text-anchor="start" fill="#34536d" font-family="Arial,sans-serif">Psychiatry-Psychology</text>
+<text transform="translate(772.0 244) rotate(-52)" font-size="11" text-anchor="start" fill="#34536d" font-family="Arial,sans-serif">Radiology</text>
+<text transform="translate(820.0 244) rotate(-52)" font-size="11" text-anchor="start" fill="#34536d" font-family="Arial,sans-serif">Surgery</text>
+<text x="255" y="284.0" text-anchor="end" font-size="11" fill="#34536d" font-family="Arial,sans-serif">Cardiovascular-Pulmonary</text>
+<rect x="268" y="256" width="48" height="48" fill="#5096b3" stroke="#d7e4ed" stroke-width="1"/>
+<text x="292.0" y="284.0" text-anchor="middle" font-size="12" fill="#ffffff" font-family="Arial,sans-serif">222</text>
+<rect x="316" y="256" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="340.0" y="284.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="364" y="256" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="388.0" y="284.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="412" y="256" width="48" height="48" fill="#cde3ec" stroke="#d7e4ed" stroke-width="1"/>
+<text x="436.0" y="284.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">47</text>
+<rect x="460" y="256" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="484.0" y="284.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="508" y="256" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="532.0" y="284.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="556" y="256" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="580.0" y="284.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="604" y="256" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="628.0" y="284.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="652" y="256" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="676.0" y="284.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="700" y="256" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="724.0" y="284.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="748" y="256" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="772.0" y="284.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="796" y="256" width="48" height="48" fill="#daeaf1" stroke="#d7e4ed" stroke-width="1"/>
+<text x="820.0" y="284.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">30</text>
+<text x="255" y="332.0" text-anchor="end" font-size="11" fill="#34536d" font-family="Arial,sans-serif">Dermatology</text>
+<rect x="268" y="304" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="292.0" y="332.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="316" y="304" width="48" height="48" fill="#448fad" stroke="#d7e4ed" stroke-width="1"/>
+<text x="340.0" y="332.0" text-anchor="middle" font-size="12" fill="#ffffff" font-family="Arial,sans-serif">20</text>
+<rect x="364" y="304" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="388.0" y="332.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="412" y="304" width="48" height="48" fill="#d5e7ef" stroke="#d7e4ed" stroke-width="1"/>
+<text x="436.0" y="332.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">3</text>
+<rect x="460" y="304" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="484.0" y="332.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="508" y="304" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="532.0" y="332.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="556" y="304" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="580.0" y="332.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="604" y="304" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="628.0" y="332.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="652" y="304" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="676.0" y="332.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="700" y="304" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="724.0" y="332.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="748" y="304" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="772.0" y="332.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="796" y="304" width="48" height="48" fill="#deedf3" stroke="#d7e4ed" stroke-width="1"/>
+<text x="820.0" y="332.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">2</text>
+<text x="255" y="380.0" text-anchor="end" font-size="11" fill="#34536d" font-family="Arial,sans-serif">Gastroenterology</text>
+<rect x="268" y="352" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="292.0" y="380.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="316" y="352" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="340.0" y="380.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="364" y="352" width="48" height="48" fill="#3989a9" stroke="#d7e4ed" stroke-width="1"/>
+<text x="388.0" y="380.0" text-anchor="middle" font-size="12" fill="#ffffff" font-family="Arial,sans-serif">163</text>
+<rect x="412" y="352" width="48" height="48" fill="#dbebf2" stroke="#d7e4ed" stroke-width="1"/>
+<text x="436.0" y="380.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">18</text>
+<rect x="460" y="352" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="484.0" y="380.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="508" y="352" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="532.0" y="380.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="556" y="352" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="580.0" y="380.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="604" y="352" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="628.0" y="380.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="652" y="352" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="676.0" y="380.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="700" y="352" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="724.0" y="380.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="748" y="352" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="772.0" y="380.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="796" y="352" width="48" height="48" fill="#e3f0f5" stroke="#d7e4ed" stroke-width="1"/>
+<text x="820.0" y="380.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">11</text>
+<text x="255" y="428.0" text-anchor="end" font-size="11" fill="#34536d" font-family="Arial,sans-serif">General Medicine</text>
+<rect x="268" y="400" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="292.0" y="428.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="316" y="400" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="340.0" y="428.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="364" y="400" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="388.0" y="428.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="412" y="400" width="48" height="48" fill="#3f8cab" stroke="#d7e4ed" stroke-width="1"/>
+<text x="436.0" y="428.0" text-anchor="middle" font-size="12" fill="#ffffff" font-family="Arial,sans-serif">170</text>
+<rect x="460" y="400" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="484.0" y="428.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="508" y="400" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="532.0" y="428.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="556" y="400" width="48" height="48" fill="#eef6fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="580.0" y="428.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">1</text>
+<rect x="604" y="400" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="628.0" y="428.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="652" y="400" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="676.0" y="428.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="700" y="400" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="724.0" y="428.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="748" y="400" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="772.0" y="428.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="796" y="400" width="48" height="48" fill="#cae0ea" stroke="#d7e4ed" stroke-width="1"/>
+<text x="820.0" y="428.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">36</text>
+<text x="255" y="476.0" text-anchor="end" font-size="11" fill="#34536d" font-family="Arial,sans-serif">Neurology</text>
+<rect x="268" y="448" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="292.0" y="476.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="316" y="448" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="340.0" y="476.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="364" y="448" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="388.0" y="476.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="412" y="448" width="48" height="48" fill="#d1e5ee" stroke="#d7e4ed" stroke-width="1"/>
+<text x="436.0" y="476.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">25</text>
+<rect x="460" y="448" width="48" height="48" fill="#5297b4" stroke="#d7e4ed" stroke-width="1"/>
+<text x="484.0" y="476.0" text-anchor="middle" font-size="12" fill="#ffffff" font-family="Arial,sans-serif">133</text>
+<rect x="508" y="448" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="532.0" y="476.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="556" y="448" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="580.0" y="476.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="604" y="448" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="628.0" y="476.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="652" y="448" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="676.0" y="476.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="700" y="448" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="724.0" y="476.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="748" y="448" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="772.0" y="476.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="796" y="448" width="48" height="48" fill="#d4e6ef" stroke="#d7e4ed" stroke-width="1"/>
+<text x="820.0" y="476.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">23</text>
+<text x="255" y="524.0" text-anchor="end" font-size="11" fill="#34536d" font-family="Arial,sans-serif">Neurosurgery</text>
+<rect x="268" y="496" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="292.0" y="524.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="316" y="496" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="340.0" y="524.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="364" y="496" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="388.0" y="524.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="412" y="496" width="48" height="48" fill="#d6e8f0" stroke="#d7e4ed" stroke-width="1"/>
+<text x="436.0" y="524.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">9</text>
+<rect x="460" y="496" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="484.0" y="524.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="508" y="496" width="48" height="48" fill="#3d8baa" stroke="#d7e4ed" stroke-width="1"/>
+<text x="532.0" y="524.0" text-anchor="middle" font-size="12" fill="#ffffff" font-family="Arial,sans-serif">65</text>
+<rect x="556" y="496" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="580.0" y="524.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="604" y="496" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="628.0" y="524.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="652" y="496" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="676.0" y="524.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="700" y="496" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="724.0" y="524.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="748" y="496" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="772.0" y="524.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="796" y="496" width="48" height="48" fill="#e4f0f6" stroke="#d7e4ed" stroke-width="1"/>
+<text x="820.0" y="524.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">4</text>
+<text x="255" y="572.0" text-anchor="end" font-size="11" fill="#34536d" font-family="Arial,sans-serif">Obstetrics-Gynecology</text>
+<rect x="268" y="544" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="292.0" y="572.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="316" y="544" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="340.0" y="572.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="364" y="544" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="388.0" y="572.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="412" y="544" width="48" height="48" fill="#dcebf2" stroke="#d7e4ed" stroke-width="1"/>
+<text x="436.0" y="572.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">12</text>
+<rect x="460" y="544" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="484.0" y="572.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="508" y="544" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="532.0" y="572.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="556" y="544" width="48" height="48" fill="#3f8cab" stroke="#d7e4ed" stroke-width="1"/>
+<text x="580.0" y="572.0" text-anchor="middle" font-size="12" fill="#ffffff" font-family="Arial,sans-serif">111</text>
+<rect x="604" y="544" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="628.0" y="572.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="652" y="544" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="676.0" y="572.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="700" y="544" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="724.0" y="572.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="748" y="544" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="772.0" y="572.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="796" y="544" width="48" height="48" fill="#dcebf2" stroke="#d7e4ed" stroke-width="1"/>
+<text x="820.0" y="572.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">12</text>
+<text x="255" y="620.0" text-anchor="end" font-size="11" fill="#34536d" font-family="Arial,sans-serif">Ophthalmology</text>
+<rect x="268" y="592" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="292.0" y="620.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="316" y="592" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="340.0" y="620.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="364" y="592" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="388.0" y="620.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="412" y="592" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="436.0" y="620.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="460" y="592" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="484.0" y="620.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="508" y="592" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="532.0" y="620.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="556" y="592" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="580.0" y="620.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="604" y="592" width="48" height="48" fill="#227a9e" stroke="#d7e4ed" stroke-width="1"/>
+<text x="628.0" y="620.0" text-anchor="middle" font-size="12" fill="#ffffff" font-family="Arial,sans-serif">68</text>
+<rect x="652" y="592" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="676.0" y="620.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="700" y="592" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="724.0" y="620.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="748" y="592" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="772.0" y="620.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="796" y="592" width="48" height="48" fill="#e6f2f7" stroke="#d7e4ed" stroke-width="1"/>
+<text x="820.0" y="620.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">3</text>
+<text x="255" y="668.0" text-anchor="end" font-size="11" fill="#34536d" font-family="Arial,sans-serif">Orthopedic</text>
+<rect x="268" y="640" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="292.0" y="668.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="316" y="640" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="340.0" y="668.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="364" y="640" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="388.0" y="668.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="412" y="640" width="48" height="48" fill="#d8e9f1" stroke="#d7e4ed" stroke-width="1"/>
+<text x="436.0" y="668.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">31</text>
+<rect x="460" y="640" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="484.0" y="668.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="508" y="640" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="532.0" y="668.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="556" y="640" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="580.0" y="668.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="604" y="640" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="628.0" y="668.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="652" y="640" width="48" height="48" fill="#3c8aaa" stroke="#d7e4ed" stroke-width="1"/>
+<text x="676.0" y="668.0" text-anchor="middle" font-size="12" fill="#ffffff" font-family="Arial,sans-serif">244</text>
+<rect x="700" y="640" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="724.0" y="668.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="748" y="640" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="772.0" y="668.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="796" y="640" width="48" height="48" fill="#e3eff5" stroke="#d7e4ed" stroke-width="1"/>
+<text x="820.0" y="668.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">17</text>
+<text x="255" y="716.0" text-anchor="end" font-size="11" fill="#34536d" font-family="Arial,sans-serif">Psychiatry-Psychology</text>
+<rect x="268" y="688" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="292.0" y="716.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="316" y="688" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="340.0" y="716.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="364" y="688" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="388.0" y="716.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="412" y="688" width="48" height="48" fill="#94c0d2" stroke="#d7e4ed" stroke-width="1"/>
+<text x="436.0" y="716.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">17</text>
+<rect x="460" y="688" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="484.0" y="716.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="508" y="688" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="532.0" y="716.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="556" y="688" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="580.0" y="716.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="604" y="688" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="628.0" y="716.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="652" y="688" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="676.0" y="716.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="700" y="688" width="48" height="48" fill="#a9cddb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="724.0" y="716.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">13</text>
+<rect x="748" y="688" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="772.0" y="716.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="796" y="688" width="48" height="48" fill="#bad6e3" stroke="#d7e4ed" stroke-width="1"/>
+<text x="820.0" y="716.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">10</text>
+<text x="255" y="764.0" text-anchor="end" font-size="11" fill="#34536d" font-family="Arial,sans-serif">Radiology</text>
+<rect x="268" y="736" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="292.0" y="764.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="316" y="736" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="340.0" y="764.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="364" y="736" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="388.0" y="764.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="412" y="736" width="48" height="48" fill="#e6f2f7" stroke="#d7e4ed" stroke-width="1"/>
+<text x="436.0" y="764.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">9</text>
+<rect x="460" y="736" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="484.0" y="764.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="508" y="736" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="532.0" y="764.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="556" y="736" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="580.0" y="764.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="604" y="736" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="628.0" y="764.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="652" y="736" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="676.0" y="764.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="700" y="736" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="724.0" y="764.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="748" y="736" width="48" height="48" fill="#2c80a2" stroke="#d7e4ed" stroke-width="1"/>
+<text x="772.0" y="764.0" text-anchor="middle" font-size="12" fill="#ffffff" font-family="Arial,sans-serif">198</text>
+<rect x="796" y="736" width="48" height="48" fill="#e5f1f7" stroke="#d7e4ed" stroke-width="1"/>
+<text x="820.0" y="764.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">10</text>
+<text x="255" y="812.0" text-anchor="end" font-size="11" fill="#34536d" font-family="Arial,sans-serif">Surgery</text>
+<rect x="268" y="784" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="292.0" y="812.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="316" y="784" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="340.0" y="812.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="364" y="784" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="388.0" y="812.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="412" y="784" width="48" height="48" fill="#e6f2f7" stroke="#d7e4ed" stroke-width="1"/>
+<text x="436.0" y="812.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">36</text>
+<rect x="460" y="784" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="484.0" y="812.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="508" y="784" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="532.0" y="812.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="556" y="784" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="580.0" y="812.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="604" y="784" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="628.0" y="812.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="652" y="784" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="676.0" y="812.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="700" y="784" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="724.0" y="812.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="748" y="784" width="48" height="48" fill="#eff7fb" stroke="#d7e4ed" stroke-width="1"/>
+<text x="772.0" y="812.0" text-anchor="middle" font-size="12" fill="#193b52" font-family="Arial,sans-serif">0</text>
+<rect x="796" y="784" width="48" height="48" fill="#227a9e" stroke="#d7e4ed" stroke-width="1"/>
+<text x="820.0" y="812.0" text-anchor="middle" font-size="12" fill="#ffffff" font-family="Arial,sans-serif">840</text>
+</svg>
